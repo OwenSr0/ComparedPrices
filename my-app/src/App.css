@@ -9,3 +9,9 @@
   height: 1em;
   width: 1em;
 }
+
+/* Quitar luego */
+
+.form-control{
+  width: 12em;
+}

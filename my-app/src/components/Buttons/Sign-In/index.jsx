@@ -10,7 +10,7 @@ const stackStyle = {
   const SignIn = () => {
     return(
         <Container sx={stackStyle}>
-            <Button variant="outlined">Sign In</Button>
+            <Button variant="outlined"><a href="login">Sign in</a></Button>
         </Container>
     )
   }
