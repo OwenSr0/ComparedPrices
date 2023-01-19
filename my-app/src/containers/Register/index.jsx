@@ -1,11 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from '@mui/material';
-import LoginHeader from './RegisterHeader/index'
+import LoginHeader from './RegisterHeader/index';
+import uniquid from 'uniqid';
+import axios from 'axios';
 
 const Register = () => {
 
-    function register(){
+    const[name, setName]=useState('');
+    const[email, setEmail]=useState('');
+    const[password, setPassword]=useState('');
+    const[number, setNumber]=useState('');
 
+    function register(){
+        var user = {
+            name: name,
+            email: email,
+            password: password,
+            number: number,
+            idUser: uniquid()
+        }
+
+        console.log(user);
+        axios.post('/api/user/register', user)
+        .then(res => {
+            alert(res.data)
+        })
+        .then(err =>{console.log(err)})
     }
 
     return(
@@ -19,17 +39,25 @@ const Register = () => {
                     <div className='col-sn-6 offset-3'>
                         <div className='nb-3'>
                             <label htmlFor="nombre" className='form-label'>Nombre</label>
-                            <input type="text" className='form-control' />
+                            <input type="text" className='form-control' value={name} onChange={(e) => {setName(e.target.value)}} />
                         </div>
                         <div className='nb-3'>
                             <label htmlFor="email" className='form-label'>Email</label>
-                            <input type="text" className='form-control' />
+                            <input type="text" className='form-control' value={email} onChange={(e) => {setEmail(e.target.value)}}/>
                         </div>
                         <div className='nb-3'>
                             <label htmlFor="password" className='form-label'>Contraseña</label>
-                            <input type="text" className='form-control' />
+                            <input type="text" className='form-control' value={password} onChange={(e) => {setPassword(e.target.value)}}/>
                         </div>
-                        <button onClick={register} classNamebtn btn-success>Guardar Usuario</button>
+                        <div className='nb-3'>
+                            <label htmlFor="RePassword" className='form-label'>ReContraseña</label>
+                            <input type="text" className='form-control'/>
+                        </div>
+                        <div className='nb-3'>
+                            <label htmlFor="number" className='form-label'>Numero de telefono</label>
+                            <input type="text" className='form-control' value={number} onChange={(e) => {setNumber(e.target.value)}}/>
+                        </div>
+                        <button onClick={register} className='btn btn-success'>Guardar Usuario</button>
                     </div>
                 </div>
             </Container>
