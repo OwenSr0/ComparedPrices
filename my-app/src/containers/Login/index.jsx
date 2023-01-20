@@ -25,7 +25,7 @@ const Login = () => {
                             <label htmlFor="password" className='form-label'>Contraseña</label>
                             <input type="text" className='form-control' />
                         </div>
-                        <button onClick={login} classNamebtn btn-success>Iniciar Sesion</button>
+                        <button onClick={login} className='btn btn-success'>Iniciar Sesion</button>
                     </div>
                 </div>
             </Container>

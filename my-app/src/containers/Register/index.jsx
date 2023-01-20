@@ -19,8 +19,6 @@ const Register = () => {
             number: number,
             idUser: uniquid()
         }
-
-        console.log(user);
         axios.post('/api/user/register', user)
         .then(res => {
             alert(res.data)
@@ -57,7 +55,7 @@ const Register = () => {
                             <label htmlFor="number" className='form-label'>Numero de telefono</label>
                             <input type="text" className='form-control' value={number} onChange={(e) => {setNumber(e.target.value)}}/>
                         </div>
-                        <button onClick={register} className='btn btn-success'>Guardar Usuario</button>
+                        <a href="#"><button onClick={register} className='btn btn-success'>Guardar Usuario</button></a>
                     </div>
                 </div>
             </Container>

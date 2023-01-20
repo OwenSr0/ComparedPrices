@@ -24,8 +24,8 @@ router.post('/register', (req, res) => {
         number: req.body.number,
         idUser: req.body.IdUser
     })
-    newUser.save(function(error){
-        if(!error){
+    newUser.save(function(err){
+        if(!err){
             res.send('User added')
         } else(
             res.send(err)
