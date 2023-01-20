@@ -1,41 +1,39 @@
-const express = require('express')
-const router = express.Router()
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
-const mongoose = require('mongoose')
-const schema = mongoose.Schema
+const userSchema = new mongoose.Schema({
+  email: {
+    type: String,
+    required: true
+  },
+  password: {
+    type: String,
+    required: true
+  }
+});
 
-
-const schemaUser = new schema({
-    name: String,
-    email: String,
-    password: String,
-    number: String,
-    idUser: String
-})
-
-const ModelUser = mongoose.model('users', schemaUser)
-module.exports = router;
-
-router.post('/register', (req, res) => {
-    const newUser = new ModelUser({
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-        number: req.body.number,
-        idUser: req.body.IdUser
-    })
-    newUser.save(function(err){
-        if(!err){
-            res.send('User added')
-        } else(
-            res.send(err)
-        )
-    })
-})
+userSchema.pre('save', async function (next) {
+    try {
+      const salt = await bcrypt.genSalt();
+      const hashedPassword = await bcrypt.hash(this.password, salt);
+      this.password = hashedPassword;
+      next();
+    } catch (err) {
+      next(err);
+    }
+  });
 
 
-router.get('/test', (req, res) => {
-    res.end('Hey Test')
-})
+  userSchema.methods.isValidPassword = async function (password) {
+    try {
+      return await bcrypt.compare(password, this.password);
+    } catch (err) {
+      throw new Error(err);
+    }
+  };
+
+const User = mongoose.model('User', userSchema);
+module.exports = User;
+
 
 

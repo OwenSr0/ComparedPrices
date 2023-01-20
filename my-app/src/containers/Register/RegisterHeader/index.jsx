@@ -16,7 +16,7 @@ const RegisterHeader = () =>{
                                     <a className="nav-link active" aria-current="page" href="/">Home</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="register">Sign in</a>
+                                    <a className="nav-link" href="login">Sign in</a>
                                 </li>
                             </ul>
                             <form className="d-flex" role="search">

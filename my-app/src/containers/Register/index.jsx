@@ -13,11 +13,8 @@ const Register = () => {
 
     function register(){
         var user = {
-            name: name,
             email: email,
             password: password,
-            number: number,
-            idUser: uniquid()
         }
         axios.post('/api/user/register', user)
         .then(res => {
@@ -33,6 +30,7 @@ const Register = () => {
                 <div className='row'>
                     <h2 className='mt-4'>Crear un nuevo usuario</h2>
                 </div>
+                <form >
                 <div className='row'>
                     <div className='col-sn-6 offset-3'>
                         <div className='nb-3'>
@@ -58,6 +56,7 @@ const Register = () => {
                         <a href="#"><button onClick={register} className='btn btn-success'>Guardar Usuario</button></a>
                     </div>
                 </div>
+                </form>
             </Container>
         </Container>
     )
