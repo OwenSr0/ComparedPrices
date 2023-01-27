@@ -1,12 +1,21 @@
 import React from "react";
-import { Container } from '@mui/material';
+import { Box } from "@mui/system";
 import HomeHeader from './Header/index'
+import BodyHome from './Body/index'
+
+const stackStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+
+}
 
 const Home = () => {
     return(
-        <Container>
+        <Box sx={stackStyle}>
             <HomeHeader/>
-        </Container>
+            <BodyHome />
+
+        </Box>
     )
 }
 

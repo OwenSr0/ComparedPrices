@@ -3,6 +3,7 @@
   min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: white;
+  
 }
 
 #logo {
@@ -14,5 +15,14 @@
 
 .form-control{
   width: 12em;
+}
+
+#notification_home {
+  background-image: url(./img/notification.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
