@@ -1,10 +1,11 @@
 import React from "react";
 import { Box } from "@mui/system";
-import { Typography } from '@mui/material';
+import { Typography, Container } from '@mui/material';
 
 const stackStyle = {
     display: 'flex',
     justifyContent: 'space-evenly',
+    marginTop: '2.5em'
 }
 
 const stackCenter = {
@@ -13,29 +14,36 @@ const stackCenter = {
     alignItems: 'center'
 }
 
-const stackBox = {
-    background: 'red',
-    width: '3em',
-    height: '3em',
-    borderRadius: '4px'
+const stackContainer = {
+    background: '#525252',
+    display: 'flex',
+    alignItems: 'center',
+    width: '10em',
+    height: '4.5em',
+    borderRadius: '25px',
+    marginTop: '1em'
 }
 
+const stackText = {
+    textAlign: 'center',
+    textJustify: 'auto'
+}
 
 
 const BoxHub = () => {
     return(
         <Box sx={stackStyle}>
             <Box sx={stackCenter}>
-                <Box><img  src="./img/notification.png" alt="noti" width="50" height="50" /></Box>
-                <Box sx={stackBox}><Typography >1</Typography></Box>
+                <Box><img  src="./img/notification.png" alt="noti" width="80" height="80" /></Box>
+                <Container sx={stackContainer}><Typography sx={stackText}>Ahora puedes recibir noticiaciones de tus productos favoritos, etc.</Typography></Container>
             </Box>
             <Box sx={stackCenter}>
-                <Box><img src="./img/piggy-bank.png" alt="piggy" width="50" height="50" /></Box>
-                <Box sx={stackBox}><Typography >2</Typography></Box>
+                <Box><img src="./img/piggy-bank1.png" alt="piggy" width="90" height="80" /></Box>
+                <Container sx={stackContainer}><Typography sx={stackText}>Ahorra dinero para darte tus gustitos, etc.</Typography></Container>
             </Box>
             <Box sx={stackCenter}>
-                <Box><img src="./img/balance.png" alt="balance" width="50" height="50" /></Box>
-                <Box sx={stackBox}><Typography >3</Typography></Box>
+                <Box><img src="./img/balance.png" alt="balance" width="80" height="80" /></Box>
+                <Container sx={stackContainer}><Typography sx={stackText}>Compara precios y obten el mejor producto al menor precio.</Typography></Container>
             </Box>
         </Box>
     )

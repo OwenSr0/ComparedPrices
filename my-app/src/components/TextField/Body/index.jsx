@@ -11,14 +11,17 @@ const stackStyle = {
 const stackText = {
   width: '20em',
   background: 'white',
-  borderRadius: '4px'
+  borderRadius: '10px'
 }
 
-
+/* Realizar un div que muestre info de que ingresar en el textfield */
   const TextFieldBody = () => {
     return(
         <Box sx={stackStyle}>
-            <TextField sx={stackText} placeholder='Buscar' color="success" label="Buscar">Buscar</TextField>
+          <div />
+            <TextField sx={stackText} placeholder='Buscar'>Buscar
+              <icon></icon>
+            </TextField>
         </Box>
     )
   }

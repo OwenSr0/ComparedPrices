@@ -16,7 +16,7 @@ const stackHub = {
 const stackText = {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    marginTop: '3em'
 }
 
 
