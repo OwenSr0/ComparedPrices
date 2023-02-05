@@ -19,7 +19,7 @@ const stackText = {
     return(
         <Box sx={stackStyle}>
           <div />
-            <TextField sx={stackText} placeholder='Buscar'>Buscar
+            <TextField sx={stackText} placeholder='Buscar' InputProps={{ style: { fontSize: 18 } }}>Buscar
               <icon></icon>
             </TextField>
         </Box>

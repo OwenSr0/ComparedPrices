@@ -6,7 +6,7 @@ import BodyLogin from './Body';
 const Login = () => {
 
     return(
-        <Container>
+        <Container sx={StackStyle}>
             <HeaderLogo/>
             <BodyLogin />
         </Container>
@@ -15,3 +15,9 @@ const Login = () => {
 }
 
 export default Login;
+
+const StackStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+
+}

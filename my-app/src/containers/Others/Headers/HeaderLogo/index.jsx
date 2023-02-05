@@ -18,7 +18,7 @@ const HeaderLogo = () =>{
     return(
         <Box sx={StackStyle}>
             <Box sx={StactBox}>
-                <img src="./img/logo.png" alt="Logo" width="50" height="50" />
+                <a href="home"><img src="./img/logo.png" alt="Logo"  width="50" height="50" /></a>
             </Box>
             
         </Box>

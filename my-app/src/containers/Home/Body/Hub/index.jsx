@@ -2,32 +2,7 @@ import React from "react";
 import { Box } from "@mui/system";
 import { Typography, Container } from '@mui/material';
 
-const stackStyle = {
-    display: 'flex',
-    justifyContent: 'space-evenly',
-    marginTop: '2.5em'
-}
 
-const stackCenter = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
-}
-
-const stackContainer = {
-    background: '#525252',
-    display: 'flex',
-    alignItems: 'center',
-    width: '10em',
-    height: '4.5em',
-    borderRadius: '25px',
-    marginTop: '1em'
-}
-
-const stackText = {
-    textAlign: 'center',
-    textJustify: 'auto'
-}
 
 
 const BoxHub = () => {
@@ -49,3 +24,31 @@ const BoxHub = () => {
     )
 }
 export default BoxHub;
+
+const stackStyle = {
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    marginTop: '2.5em'
+}
+
+const stackCenter = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+}
+
+const stackContainer = {
+    background: '#242526',
+    display: 'flex',
+    alignItems: 'center',
+    width: '10em',
+    height: '6em',
+    borderRadius: '25px',
+    marginTop: '1em',
+}
+
+const stackText = {
+    textAlign: 'center',
+    textJustify: 'auto',
+    padding: '1em 0 1em 0'
+}
