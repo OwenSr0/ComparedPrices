@@ -35,7 +35,7 @@ const BodyLogin = () => {
                     <button onClick={login} className='btn btn-success'>Iniciar Sesion</button>
                 </Box>
                 <Box sx={stackBox}>
-                    <Typography sx={{fontSize:'16px', marginRight:'10px'}}>No tienes cuenta?  </Typography>
+                    <Typography sx={{fontSize:'16px', marginRight:'10px', marginLeft: '5em'}}>No tienes cuenta?  </Typography>
                     <Link sx={stackLink} href="register" >Sign up</Link>
                 </Box>
                 

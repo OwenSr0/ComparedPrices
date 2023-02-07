@@ -1,13 +1,13 @@
 import React from 'react';
 import { Container } from '@mui/material';
-import HeaderLogo from '../Others/Headers/HeaderLogo';
+import HeaderLogoHome from '../Others/Headers/HeaderLogoHome';
 import BodyLogin from './Body';
 
 const Login = () => {
 
     return(
         <Container sx={StackStyle}>
-            <HeaderLogo/>
+            <HeaderLogoHome/>
             <BodyLogin />
         </Container>
         
