@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container } from '@mui/material';
+import { Box } from '@mui/material';
 import uniquid from 'uniqid';
 import axios from 'axios';
 
@@ -23,7 +23,7 @@ const RegisterForm = () => {
     }
 
     return(
-        <Container sx={StackContainer}>
+        <Box sx={StackContainer}>
             <div className='row'>
                     <h2 className='mt-4'>Crear un nuevo usuario</h2>
                 </div>
@@ -54,7 +54,7 @@ const RegisterForm = () => {
                     </div>
                 </div>
                 </form>
-        </Container>
+        </Box>
     )
 }
 
@@ -66,5 +66,7 @@ const StackContainer = {
     background: '#242526',
     maxWidth:{xs:'40vw', md:'100%', lg:'600px'},
     borderRadius: '25px',
-    marginTop: '2em'
+    marginTop: '2em',
+    marginLeft: '2em',
+    marginRight: '2em'
 }
