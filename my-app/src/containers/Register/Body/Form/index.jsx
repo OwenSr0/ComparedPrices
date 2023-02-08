@@ -3,6 +3,11 @@ import { Box } from '@mui/material';
 import uniquid from 'uniqid';
 import axios from 'axios';
 
+import EmailRegisterField from "../../../../components/TextField/Register/EmailText";
+import NameRegisterField from "../../../../components/TextField/Register/NameText"
+import PasswordRegisterField from "../../../../components/TextField/Register/PasswordText";
+import NumberRegisterField from "../../../../components/TextField/Register/NumberText";
+
 const RegisterForm = () => {
 
     const[name, setName]=useState('');
@@ -12,8 +17,10 @@ const RegisterForm = () => {
 
     function register(){
         var user = {
+            name: name,
             email: email,
             password: password,
+            number: number
         }
         axios.post('/api/user/register', user)
         .then(res => {
@@ -30,26 +37,11 @@ const RegisterForm = () => {
                 <form >
                 <div className='row'>
                     <div className='col-sn-6 offset-3'>
-                        <div className='nb-3'>
-                            <label htmlFor="nombre" className='form-label'>Nombre</label>
-                            <input type="text" className='form-control' value={name} onChange={(e) => {setName(e.target.value)}} />
-                        </div>
-                        <div className='nb-3'>
-                            <label htmlFor="email" className='form-label'>Email</label>
-                            <input type="text" className='form-control' value={email} onChange={(e) => {setEmail(e.target.value)}}/>
-                        </div>
-                        <div className='nb-3'>
-                            <label htmlFor="password" className='form-label'>Contraseña</label>
-                            <input type="text" className='form-control' value={password} onChange={(e) => {setPassword(e.target.value)}}/>
-                        </div>
-                        <div className='nb-3'>
-                            <label htmlFor="RePassword" className='form-label'>ReContraseña</label>
-                            <input type="text" className='form-control'/>
-                        </div>
-                        <div className='nb-3'>
-                            <label htmlFor="number" className='form-label'>Numero de telefono</label>
-                            <input type="text" className='form-control' value={number} onChange={(e) => {setNumber(e.target.value)}}/>
-                        </div>
+                        <NameRegisterField setName={setName}/>
+                        <EmailRegisterField setEmail={setEmail}/>
+                        <PasswordRegisterField setPassword={setPassword}/>
+                        <NumberRegisterField setNumber={setNumber} />
+                        
                         <a href="#"><button onClick={register} className='btn btn-success'>Guardar Usuario</button></a>
                     </div>
                 </div>

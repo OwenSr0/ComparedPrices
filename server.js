@@ -21,12 +21,12 @@ app.listen(5000, function(){
 router.post('/register', async (req, res) => {
     try {
         
-      const { email, password } = req.body;
+      const { name, email, password, number } = req.body;
       
-      const user = new User({ email, password });
+      const user = new User({ name, email, password, number });
       console.log(user)
       await user.save();
-      res.status(201).send( 'added');
+      res.status(201).send('added');
     } catch (err) {
         console.log(err)
       res.status(400).send(err);

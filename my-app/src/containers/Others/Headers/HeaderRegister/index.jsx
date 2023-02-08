@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 import Home from '../../../../components/Buttons/Home/index'
 const StackStyle = {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
 
 }
 
