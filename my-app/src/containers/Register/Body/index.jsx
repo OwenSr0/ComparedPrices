@@ -17,4 +17,5 @@ export default BodyRegister;
 const StackStyle = {
     display: 'flex',
     justifyContent: 'center',
+    alignItems: 'center',
 }

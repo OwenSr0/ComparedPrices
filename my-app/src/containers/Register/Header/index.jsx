@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from '@mui/material';   
-import Home from '../../../../components/Buttons/Home/index'
+import Home from '../../../components/Buttons/Home/index'
 const StackStyle = {
     display: 'flex',
     justifyContent: 'space-around',

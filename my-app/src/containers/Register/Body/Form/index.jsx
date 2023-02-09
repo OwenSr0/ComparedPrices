@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Box } from '@mui/material';
-import uniquid from 'uniqid';
+import { Box, Typography, Link, Button } from '@mui/material';
 import axios from 'axios';
 
 import EmailRegisterField from "../../../../components/TextField/Register/EmailText";
@@ -20,7 +19,9 @@ const RegisterForm = () => {
             name: name,
             email: email,
             password: password,
-            number: number
+            number: number,
+            userId: crypto.randomUUID(),
+            token: crypto.randomUUID()
         }
         axios.post('/api/user/register', user)
         .then(res => {
@@ -31,21 +32,21 @@ const RegisterForm = () => {
 
     return(
         <Box sx={StackContainer}>
-            <div className='row'>
-                    <h2 className='mt-4'>Crear un nuevo usuario</h2>
-                </div>
-                <form >
-                <div className='row'>
-                    <div className='col-sn-6 offset-3'>
-                        <NameRegisterField setName={setName}/>
-                        <EmailRegisterField setEmail={setEmail}/>
-                        <PasswordRegisterField setPassword={setPassword}/>
-                        <NumberRegisterField setNumber={setNumber} />
-                        
-                        <a href="#"><button onClick={register} className='btn btn-success'>Guardar Usuario</button></a>
-                    </div>
-                </div>
-                </form>
+            <Box>
+                <Box sx={stackForm}>
+                    <Typography sx={stactTittle}>Crear un nuevo usuario</Typography>
+                    <NameRegisterField setName={setName}/>
+                    <EmailRegisterField setEmail={setEmail}/>
+                    <PasswordRegisterField setPassword={setPassword}/>
+                    <NumberRegisterField setNumber={setNumber} />
+                    <Button sx={stackButton} onClick={register} variant="contained" disableRipple>Registrarte</Button>
+                    <Box sx={stackBox}>
+                        <Typography sx={{fontSize:'16px', marginRight:'10px'}}>Tienes Cuenta?</Typography>
+                        <Link sx={stackLink} href="login" >Sign In</Link>
+                    </Box>
+                </Box>
+            </Box>
+                    
         </Box>
     )
 }
@@ -56,9 +57,70 @@ const StackContainer = {
     display: 'flex',
     flexDirection: 'column',
     background: '#242526',
-    maxWidth:{xs:'40vw', md:'100%', lg:'600px'},
+    minWidth:{xs:'40vw', md:'100%', lg:'500px'},
     borderRadius: '25px',
-    marginTop: '2em',
+    marginTop: '4em',
     marginLeft: '2em',
     marginRight: '2em'
+}
+
+const stackForm = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+}
+
+const stactTittle = {
+    marginTop: '1em',
+    fontSize: '25px'
+}
+
+const stackBox = {
+    display: 'flex',
+}
+
+const stackLink = {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    fontSize: '16px',
+    marginBottom: '1em'
+  }
+
+const stackButton = {
+    boxShadow: 'none',
+    textTransform: 'none',
+    width: '10em',
+    height: '2.2em',
+    fontSize: '20',
+    padding: '6px 12px',
+    border: '1px solid',
+    lineHeight: 1.5,
+    backgroundColor: '#0063cc',
+    borderColor: '#0063cc',
+    marginBottom: '1em',
+    fontFamily: [
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+      '&:hover': {
+        backgroundColor: '#0069d9',
+        borderColor: '#0062cc',
+        boxShadow: 'none',
+      },
+      '&:active': {
+        boxShadow: 'none',
+        backgroundColor: '#0062cc',
+        borderColor: '#005cbf',
+      },
+      '&:focus': {
+        boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+      },
 }

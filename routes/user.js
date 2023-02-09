@@ -17,6 +17,15 @@ const userSchema = new mongoose.Schema({
   number: {
     type: String,
     required: false
+  },
+  userId: {
+    type: String,
+    required: true,
+
+  },
+  token: {
+    type: String,
+    required: true,
   }
 });
 

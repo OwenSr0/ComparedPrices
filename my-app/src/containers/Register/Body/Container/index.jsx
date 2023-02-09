@@ -22,10 +22,9 @@ const StackContainer = {
     alignItems: 'center',
     maxWidth:{xs:'40vw', md:'100%', lg:'500px'},
     borderRadius: '25px',
-    marginTop: 'auto',
-    marginBottom: 'auto',
     marginLeft: '2em',
-    marginRight: '2em'
+    marginRight: '2em',
+    boxShadow: 'rgba(F, F, F, F, F) 0px 5px 15px'
 }
 
 const stackText = {

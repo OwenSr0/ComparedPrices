@@ -21,9 +21,9 @@ app.listen(5000, function(){
 router.post('/register', async (req, res) => {
     try {
         
-      const { name, email, password, number } = req.body;
+      const { name, email, password, number, userId, token } = req.body;
       
-      const user = new User({ name, email, password, number });
+      const user = new User({ name, email, password, number, userId, token });
       console.log(user)
       await user.save();
       res.status(201).send('added');
