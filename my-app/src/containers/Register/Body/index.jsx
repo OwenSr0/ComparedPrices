@@ -4,6 +4,7 @@ import RegisterForm from './Form/index';
 import RegisterHub from './Container/index'
 
 const BodyRegister = () => {
+
     return(
         <Box sx={StackStyle}>
             <RegisterHub />

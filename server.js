@@ -42,14 +42,31 @@ router.post('/register', async (req, res) => {
       }
       const isValid = await user.isValidPassword(password);
       if (!isValid) {
+
         return res.status(401).send({ message: 'Invalid password' });
       }
       res.status(200).send('iniciado sesion' );
+
     } catch (err) {
       res.status(400).send(err);
     }
   });
 
-router.get('/test', (req, res) => {
-    res.end('Hey Test')
+router.post('/test', async (req, res) => {
+
+  try {
+    const { email } = req.body
+    const Rawr = await User.find({email})
+    res.json(Rawr)
+  } catch (err) {
+    console.log(err)
+    console.log('polizia')
+  }
+    
+})
+
+router.post('/tests', (req, res) => {
+  
+
+  res.end('Hey Tests')
 })

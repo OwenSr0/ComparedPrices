@@ -17,7 +17,7 @@ import PropTypes from 'prop-types';
               <Typography sx={stackLabel}>Password</Typography>
               <Link sx={stackLink} href="#" >Has olvidado tu contraseña?</Link>
             </Box>
-            <TextField sx={stackText} placeholder='Password' label="Password" size="small" onChange={(e) => {setPassword(e.target.value)}} InputProps={{ style: { fontSize: 18 } }} InputLabelProps={{ style: { fontSize: 18 } }}>Password</TextField>
+            <TextField sx={stackText} placeholder='Password' size="small" onChange={(e) => {setPassword(e.target.value)}} InputProps={{ style: { fontSize: 18 } }} InputLabelProps={{ style: { fontSize: 18 } }}>Password</TextField>
             <Typography sx={stackTy}>Contraseña y/o correo incorrecto</Typography>
         </Box>
     )

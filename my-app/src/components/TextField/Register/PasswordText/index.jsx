@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, TextField, Typography, Link  } from '@mui/material';
+import { Box, TextField, Typography } from '@mui/material';
 import PropTypes from 'prop-types';
 
 
@@ -53,14 +53,4 @@ const stackText = {
   background: 'white',
   borderRadius: '4px',
   marginBottom: '1em'
-}
-
-const stackLink = {
-  display: 'flex',
-  justifyContent: 'flex-end',
-  fontSize: '16px'
-}
-
-const stackTy = {
-  display: 'none'
 }

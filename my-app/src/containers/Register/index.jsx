@@ -4,6 +4,7 @@ import HeaderLogoHome from '../Others/Headers/HeaderLogoHome';
 import BodyRegister from './Body/index'
 
 
+
 const Register = () => {
 
     return(
