@@ -3,9 +3,10 @@ import { Box, Typography, Link, Button } from '@mui/material';
 import axios from 'axios';
 
 import EmailRegisterField from "../../../../components/TextField/Register/EmailText";
-import NameRegisterField from "../../../../components/TextField/Register/NameText"
+import NameRegisterField from "../../../../components/TextField/Register/NameText";
 import PasswordRegisterField from "../../../../components/TextField/Register/PasswordText";
 import NumberRegisterField from "../../../../components/TextField/Register/NumberText";
+import {useNavigate} from 'react-router-dom';
 
 const RegisterForm = () => {
 
@@ -13,6 +14,8 @@ const RegisterForm = () => {
     const[email, setEmail]=useState('');
     const[password, setPassword]=useState('');
     const[number, setNumber]=useState('');
+
+    const navigate = useNavigate();
 
     function register(){
         var user = {
@@ -25,7 +28,11 @@ const RegisterForm = () => {
         }
         axios.post('/api/user/register', user)
         .then(res => {
-            alert(res.data)
+            console.log(res.data)
+            window.localStorage.setItem(
+                'loggedAppUser', res.data
+            )
+            navigate("/home")
         })
         .then(err =>{console.log(err)})
     }
@@ -39,7 +46,7 @@ const RegisterForm = () => {
                     <EmailRegisterField setEmail={setEmail}/>
                     <PasswordRegisterField setPassword={setPassword}/>
                     <NumberRegisterField setNumber={setNumber} />
-                    <Button sx={stackButton} onClick={register} variant="contained" disableRipple>Registrarte</Button>
+                    <Button sx={stackButton} onClick={register} variant="contained" >Registrarte</Button>
                     <Box sx={stackBox}>
                         <Typography sx={{fontSize:'16px', marginRight:'10px'}}>Tienes Cuenta?</Typography>
                         <Link sx={stackLink} href="login" >Sign In</Link>
@@ -59,7 +66,6 @@ const StackContainer = {
     background: '#242526',
     minWidth:{xs:'40vw', md:'100%', lg:'500px'},
     borderRadius: '25px',
-    marginTop: '4em',
     marginLeft: '2em',
     marginRight: '2em'
 }

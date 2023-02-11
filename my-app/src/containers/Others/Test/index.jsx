@@ -11,9 +11,14 @@ const Test = () => {
         }
         axios.post('/api/user/test', cosa)
         .then(res => {
-            alert(res.data)
+            window.localStorage.setItem(
+                'loggedAppUser', res.data.token
+            )
+            console.log(res.data)
         })
+        
         .then(err =>{console.log(err)})
+
     }
     
     return(

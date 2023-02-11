@@ -3,9 +3,11 @@ import { Container, Box, Link, Typography } from '@mui/material';
 import axios from 'axios';
 import LoginField from '../../../components/TextField/Login/Email/index'
 import PasswordField from '../../../components/TextField/Login/Password/index'
+import {useNavigate} from 'react-router-dom'
 
 
 const BodyLogin = () => {
+    const navigate = useNavigate();
 
     const[email, setEmail]=useState('');
     const[password, setPassword]=useState('');
@@ -17,21 +19,26 @@ const BodyLogin = () => {
         }
         axios.post('/api/user/login', validate)
         .then(res => {
-            alert(res.data)
+            console.log(res.data)
+            window.localStorage.setItem(
+                'loggedAppUser', res.data.token 
+            )
+            navigate("/home")
         })
         .then(err =>{console.log(err)})
+
     }
 
     return(
-        <Container sx={StackContainer}>
-                <Box sx={StackStyle}>
+        <Container sx={stackContainer}>
+                <Box sx={stackStyle}>
                     <h2 className='mt-4'>Inicia Sesion</h2>
                 </Box>
-                <Box sx={StackTextField}>
+                <Box sx={stackTextField}>
                     <LoginField setEmail={setEmail}/>
                     <PasswordField setPassword={setPassword}/>
                 </Box>
-                <Box sx={StackStyle}>
+                <Box sx={stackStyle}>
                     <button onClick={login} className='btn btn-success'>Iniciar Sesion</button>
                 </Box>
                 <Box sx={stackBox}>
@@ -45,26 +52,25 @@ const BodyLogin = () => {
 
 export default BodyLogin;
 
-const StackTextField ={
+const stackTextField ={
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center'
 
 }
 
-const StackStyle = {
+const stackStyle = {
     display:'flex',
     justifyContent:'center',
     marginBottom: '1em'
 }
 
-const StackContainer = {
+const stackContainer = {
     display: 'flex',
     flexDirection: 'column',
     background: '#242526',
     maxWidth:{xs:'40vw', md:'100%', lg:'600px'},
     borderRadius: '25px',
-    marginTop: '6em'
 }
 
 const stackBox = {

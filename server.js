@@ -26,7 +26,7 @@ router.post('/register', async (req, res) => {
       const user = new User({ name, email, password, number, userId, token });
       console.log(user)
       await user.save();
-      res.status(201).send('added');
+      res.json(token)
     } catch (err) {
         console.log(err)
       res.status(400).send(err);
@@ -42,11 +42,11 @@ router.post('/register', async (req, res) => {
       }
       const isValid = await user.isValidPassword(password);
       if (!isValid) {
-
         return res.status(401).send({ message: 'Invalid password' });
       }
-      res.status(200).send('iniciado sesion' );
-
+      const token = await User.findOne({email}, "token")
+      console.log(token)
+      res.json(token)
     } catch (err) {
       res.status(400).send(err);
     }
@@ -56,7 +56,8 @@ router.post('/test', async (req, res) => {
 
   try {
     const { email } = req.body
-    const Rawr = await User.find({email})
+    const Rawr = await User.findOne({email}, "token")
+    console.log(Rawr)
     res.json(Rawr)
   } catch (err) {
     console.log(err)
