@@ -1,20 +1,19 @@
 import React from "react";
-import { Container, Button} from '@mui/material';
-
-const stackStyle = {
-    width: '6em',
-    marginLeft: '0',
-    marginRight: '0',
-    marginTop: '0.5em',
-    marginBottom: '0.5em',
-  }
+import { Box, Button} from '@mui/material';
 
   const SignIn = () => {
     return(
-        <Container sx={stackStyle}>
+        <Box sx={stactBox}>
             <Button href="login" variant="contained">Sign in</Button>
-        </Container>
+        </Box>
     )
   }
 
 export default SignIn;
+
+const stactBox = {
+  display: 'flex',
+  justifyContent: 'center',
+  gridColumnStart: '7',
+  margin: 'auto 0 auto 0'
+}

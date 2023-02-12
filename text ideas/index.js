@@ -25,3 +25,35 @@ router.post("/register", (req, res) => {
         };
         
     });
+
+
+    import React from "react";
+import { Box, Button } from '@mui/material';
+
+const UserIcon = () => {
+
+    return(
+        <Box sx={stactBox}>
+            <Button sx={stackButton}>
+                <img src="./img/profile-user.png" alt="user-profile" width="50" height="50" />
+            </Button>
+            <UserMenu />
+        </Box>
+    )
+}
+
+export default UserIcon;
+
+const stactBox = {
+    display: 'flex',
+    justifyContent: 'center',
+    gridColumnStart: '7',
+    margin: 'auto 0 auto 0'
+}
+
+const stackButton = {
+
+    margin: 'auto 0 auto 0',
+    width: '2.5em',
+    height: '2.5em',
+}

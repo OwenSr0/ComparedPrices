@@ -17,12 +17,14 @@
   width: 12em;
 }
 
-#notification_home {
-  background-image: url(./img/notification.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 2.5rem;
-  height: 2.5rem;
+#userProfileOn {
+  display: none
 }
 
+#userProfileOff {
+  display: block
+}
+
+#userIcon {
+  display: none;
+}

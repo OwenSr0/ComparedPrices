@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { Container } from '@mui/material';
-import HeaderLogoHome from '../Others/Headers/HeaderLogoHome';
+import LoginHeader from './Header';
 import BodyLogin from './Body';
 import {useNavigate} from 'react-router-dom'
 import SignFooter from '../Others/Footer/Sign/index';
@@ -23,7 +23,7 @@ const Login = () => {
     return(
         <Container sx={stackStyle}>
             
-            <HeaderLogoHome/>
+            <LoginHeader/>
             <BodyLogin />
             <SignFooter />
         </Container>

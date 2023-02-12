@@ -3,16 +3,11 @@ import { Box } from "@mui/system";
 import HomeHeader from './Header/index'
 import BodyHome from './Body/index'
 
-const stackStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-
-}
-
 const Home = () => {
+
     return(
         <Box sx={stackStyle}>
-            <HomeHeader/>
+            <HomeHeader />
             <BodyHome />
 
         </Box>
@@ -20,3 +15,9 @@ const Home = () => {
 }
 
 export default Home;
+
+const stackStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+
+}
