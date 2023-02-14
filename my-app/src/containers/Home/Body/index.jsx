@@ -8,23 +8,11 @@ const stackStyle = {
     flexDirection: 'column',
 }
 
-const stackHub = {
-    display: 'flex',
-    justifyContent: 'center',
-}
-
-const stackText = {
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: '3em'
-}
-
-
 const BodyHome = () => {
     return(
         <Box sx={stackStyle}>
                 <BoxHub/>
-                <Box sx={stackText}><TextFieldBody/></Box>
+                <TextFieldBody/>
         </Box>
          
     )

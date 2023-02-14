@@ -1,12 +1,14 @@
 import React from "react";
-import { Container } from '@mui/material';
-import HomeHeader from './Header/index'
+import { Box } from '@mui/material';
+import SearchHeader from './Header/index'
+import SearchBody from './Body/index'
 
 const Search = () => {
     return(
-        <Container>
-            <HomeHeader/>
-        </Container>
+        <Box>
+            <SearchHeader/>
+            <SearchBody />
+        </Box>
     )
 }
 

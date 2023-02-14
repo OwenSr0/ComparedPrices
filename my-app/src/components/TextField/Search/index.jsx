@@ -6,7 +6,7 @@ import { TextField, Box, Button  } from '@mui/material';
 
 
 /* Realizar un div que muestre info de que ingresar en el textfield */
-  const TextFieldBody = () => {
+  const SearchTextField = () => {
 
     function search(){
       console.log('uwu')
@@ -16,7 +16,7 @@ import { TextField, Box, Button  } from '@mui/material';
         <Box sx={stackStyle}>
           <div></div>
           <Box sx={stackBox}>
-            <TextField sx={stackText} placeholder='Buscar' InputProps={{ style: { fontSize: 18 } }}>Buscar</TextField>
+            <TextField sx={stackText} placeholder='keyword, manufacturer, or Amazon URL' InputProps={{ style: { fontSize: 18 } }}>Buscar</TextField>
           </Box>
           <Box sx={stackBox0}>
             <Button sx={stackImg} onClick={search}><img src="./img/searching-glass.png" alt="len" width='25px' height='25px'/></Button>
@@ -25,33 +25,33 @@ import { TextField, Box, Button  } from '@mui/material';
     )
   }
 
-export default TextFieldBody;
+export default SearchTextField;
 
 const stackStyle = {
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
-  marginTop: '3em'
+  marginTop: '1em'
 }
 
 const stackBox = {
   display: 'grid',
-  width: '20em',
-  gridTemplateColumns: ' 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% ',
+  width: '40em',
+  gridTemplateColumns: ' repeat(10, 10%) ',
   gridTemplateRows: 'auto',
 }
 
 const stackBox0 = {
   position: 'absolute',
   display: 'grid',
-  width: '20em',
+  width: '40em',
   height: '2em',
-  gridTemplateColumns: ' 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% ',
+  gridTemplateColumns: ' repeat(10, 10%) ',
   gridTemplateRows: 'auto',
 }
 
 const stackText = {
-  width: '20em',
+  width: '40em',
   height: 'auto',
   background: 'white',
   borderRadius: '10px',
@@ -61,7 +61,7 @@ const stackText = {
 
 const stackImg = {
   position: 'absolute',
-  gridColumn: '8/9',
+  gridColumn: '10/11',
   gridRow: '1/2',
   display: 'flex',
   justifyContent: 'center',
