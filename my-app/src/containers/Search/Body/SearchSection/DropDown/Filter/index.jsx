@@ -43,7 +43,8 @@ const stackDrop = {
     background: 'white',
     width: '8em',
     height: '43px',
-    marginLeft: '1em'
+    marginLeft: '1em',
+    borderRadius: '15px',
     
 }
 
