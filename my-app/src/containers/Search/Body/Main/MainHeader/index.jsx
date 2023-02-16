@@ -10,13 +10,13 @@ const MainHeader = () => {
     const page = parseInt(query.get('page') || '1', 10);
 
     return(
-        <Container>
+        <Container sx={stackStyle}>
             <Box>
             <Pagination
                 page={page}
                 count={10}
                 renderItem={(item) => (
-                    <PaginationItem
+                    <PaginationItem sx={stackItem}
                     component={Link}
                     to={`/search${item.page === 1 ? '' : `?page=${item.page}`}`}
                     {...item}
@@ -24,12 +24,20 @@ const MainHeader = () => {
                 )}
             />
             </Box>
-            <Box>uwu</Box>
+            <Box></Box>
         </Container>
     )
 }
 
 export default MainHeader;
+
+const stackStyle = {
+    display: 'flex',
+}
+
+const stackItem = {
+    color: "white"
+}
 
 
 

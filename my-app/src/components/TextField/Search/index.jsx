@@ -1,6 +1,6 @@
 import React from "react";
 import { TextField, Box, Button  } from '@mui/material';
-
+import SearchIcon from '@mui/icons-material/Search';
 
 
 
@@ -19,7 +19,7 @@ import { TextField, Box, Button  } from '@mui/material';
             <TextField sx={stackText} placeholder='keyword, manufacturer, or Amazon URL' InputProps={{ style: { fontSize: 18 } }}>Buscar</TextField>
           </Box>
           <Box sx={stackBox0}>
-            <Button sx={stackImg} onClick={search}><img src="./img/searching-glass.png" alt="len" width='25px' height='25px'/></Button>
+            <Button sx={stackImg} onClick={search}><SearchIcon color="action" alt="len" width='25px' height='25px'/></Button>
           </Box>
         </Box>
     )

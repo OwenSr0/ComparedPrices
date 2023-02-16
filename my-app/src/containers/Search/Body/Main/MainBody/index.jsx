@@ -1,12 +1,25 @@
 import React from "react";
 import { Box } from '@mui/material';
+import ItemRow from './ItemRow/index'
 
-const SearchBody = () => {
+const MainBody = () => {
+
+
     return(
-        <Box>
-            
+        <Box sx={stackStyle}>
+            <ItemRow />
+            <ItemRow />
+            <ItemRow />
+            <ItemRow />
+            <ItemRow />
         </Box>
     )
 }
 
-export default SearchBody;
+export default MainBody;
+
+const stackStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+}
+
