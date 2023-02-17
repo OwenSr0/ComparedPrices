@@ -1,7 +1,12 @@
 import React from "react";
 import { Box, Typography, Button } from '@mui/material';
 
-const RowBest = () => {
+const RowBest = (props) => {
+
+    const {
+        user= user,
+    } = props
+
     return(
         <Box sx={stackStyle}>
             <Typography sx={stackTittle}>
@@ -9,8 +14,8 @@ const RowBest = () => {
             </Typography>
             
                 <Box sx={stackBestItems}>
-                    <Typography sx={stackP}>amazon</Typography>
-                    <Typography sx={stackP}>100$</Typography>
+                    <Typography sx={stackP}>{user.username}</Typography>
+                    <Typography sx={stackP}>{user.id}</Typography>
                     <Button>uwu</Button>
                 </Box>
                 <Box sx={stackBestItems}>

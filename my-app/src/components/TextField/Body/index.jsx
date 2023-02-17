@@ -1,15 +1,14 @@
 import React, {useState} from "react";
 import { TextField, Box, Button  } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { useSearchParams } from "react-router-dom";
 
 /* Realizar un div que muestre info de que ingresar en el textfield */
   const TextFieldBody = () => {
 
-    const [query, setQueryl] = useState('');
+    const [query, setQuery] = useState('');
 
     const handleChange = (event) => {
-      setQueryl(event.target.value);
+      setQuery(event.target.value);
     }
 
     return(

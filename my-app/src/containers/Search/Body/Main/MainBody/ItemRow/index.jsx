@@ -4,22 +4,17 @@ import RowItem from './Item/index';
 import RowInfo from './Info/index';
 import RowBest from './Best/index'
 
-const ItemRow = () => {
+const ItemRow = (props) => {
 
+    const {
+        user= user,
+    } = props
 
     return(
-        <Box sx={stackBox}>
-            <Box sx={stackItems}>
-                <RowItem />
-                <RowInfo />
-                <RowBest />
-            </Box>
-            <Box sx={stackItems}>
-                <RowItem />
-                <RowInfo />
-                <RowBest />
-            </Box>
-
+        <Box sx={stackItems}>
+            <RowItem />
+            <RowInfo user={user}/>
+            <RowBest user={user}/>
         </Box>
     )
 }

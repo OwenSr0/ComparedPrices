@@ -9,9 +9,7 @@ const MainHeader = () => {
     const location = useLocation();
     const query = new URLSearchParams(location.search);
     const page = parseInt(query.get('page') || '1', 10);
-    console.log(page)
     const search = query.get('q');
-    console.log(search)
 
     return(
         <Container sx={stackStyle}>

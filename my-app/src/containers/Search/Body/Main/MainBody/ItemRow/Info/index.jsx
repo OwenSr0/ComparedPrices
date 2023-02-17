@@ -1,16 +1,21 @@
 import React from "react";
 import { Box, Typography } from '@mui/material';
 
-const RowInfo = () => {
+const RowInfo = (props) => {
+
+    const {
+        user= user,
+    } = props
+
     return(
         <Box sx={stackInfo}>
             <Typography sx={stackP}>Detalles</Typography>
             <Box sx={stackBox}>
-                <Typography sx={stackTy}>Marca: uwu</Typography>
-                <Typography sx={stackTy}>Modelo: uwu</Typography>
-                <Typography sx={stackTy}>alsdjlf;: uwu</Typography>
-                <Typography sx={stackTy}>año: uwu</Typography>
-                <Typography sx={stackTy}>a: uwu</Typography>
+                <Typography sx={stackTy}>{user.name}</Typography>
+                <Typography sx={stackTy}>{user.email}</Typography>
+                <Typography sx={stackTy}>{user.address.street}</Typography>
+                <Typography sx={stackTy}>{user.address.zipcode}</Typography>
+                <Typography sx={stackTy}>{user.company.name}</Typography>
             </Box>
 
         </Box>
