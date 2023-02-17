@@ -4,7 +4,7 @@ import { Box, Typography, Button } from '@mui/material';
 const RowBest = () => {
     return(
         <Box sx={stackStyle}>
-            <Typography sx={stackP}>
+            <Typography sx={stackTittle}>
                 Mejor precio        
             </Typography>
             
@@ -39,11 +39,6 @@ const stackStyle = {
 
 }
 
-const stackBox = {
-    display: 'flex',
-
-}
-
 const stackBestItems = {
     background: '#242526',
     display: 'flex',
@@ -51,10 +46,16 @@ const stackBestItems = {
     borderRadius: '10px'
 }
 
-const stackP = {
+const stackTittle = {
     display: 'flex',
     color: 'black',
-    alignItems: 'center',
     justifyContent: 'center'
 }
 
+const stackP= {
+    display: 'flex',
+    color: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
+
+}

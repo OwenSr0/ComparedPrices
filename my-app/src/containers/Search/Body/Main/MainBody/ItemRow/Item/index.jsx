@@ -4,7 +4,7 @@ import { Box, Button } from '@mui/material';
 const RowItem = () => {
     return(
         <Box sx={stackStyle}>
-            <Box sx={stackImg}><img src="./img/switchE.jpg" alt="Item" width='180px' height='120px' /></Box>
+            <Box sx={stackImg}><img alt="Item" width='180px' height='120px' /></Box>
             <Button sx={stackButton}>Visit it</Button>
 
         </Box>

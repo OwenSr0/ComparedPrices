@@ -22,7 +22,7 @@ const SearchHeader = () =>{
         <Box sx={stackStyle}>
            
             <Box sx={stactBox}>
-                <a href="home"><img src="./img/logo.png" alt="Logo"  width="50" height="50" /></a>
+                <a href="home"><img alt="Logo"  width="50" height="50" /></a>
             </Box>
             <Box sx={stackT}><Typography sx={stackText}>Buscador</Typography></Box>
             <Box sx={stackConditionals}>

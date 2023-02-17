@@ -12,12 +12,13 @@ function App() {
 
   return (
       <BrowserRouter >
-        <Routes>
+        <Routes >
           <Route path='/' element={<Home/>}></Route>
           <Route path='/home' element={<Home />}></Route>
           <Route path='/login' element={<Login/>}></Route>
           <Route path='/register' element={<Register/>}></Route>
-          <Route path='/search' element={<Search/>}></Route>
+          <Route path='/search/' element={<Search/>}></Route>
+          <Route path='/search/:query' element={<Search/>}></Route>
           <Route path='/sign-out' element={<Logout/>}></Route>
           <Route path='/test' element={<Test/>}></Route>
         </Routes>

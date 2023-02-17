@@ -3,11 +3,15 @@ import { Box, Container, Pagination } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
 import PaginationItem from '@mui/material/PaginationItem';
 
+
 const MainHeader = () => {
 
     const location = useLocation();
     const query = new URLSearchParams(location.search);
     const page = parseInt(query.get('page') || '1', 10);
+    console.log(page)
+    const search = query.get('q');
+    console.log(search)
 
     return(
         <Container sx={stackStyle}>
@@ -18,7 +22,7 @@ const MainHeader = () => {
                 renderItem={(item) => (
                     <PaginationItem sx={stackItem}
                     component={Link}
-                    to={`/search${item.page === 1 ? '' : `?page=${item.page}`}`}
+                    to={`/search${search ? `?q=${search}` : ''}${item.page === 1 ? '' : `&page=${item.page}`}`}
                     {...item}
                     />
                 )}
@@ -28,6 +32,8 @@ const MainHeader = () => {
         </Container>
     )
 }
+
+
 
 export default MainHeader;
 

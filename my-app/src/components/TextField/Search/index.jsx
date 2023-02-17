@@ -17,8 +17,6 @@ import SearchIcon from '@mui/icons-material/Search';
           <div></div>
           <Box sx={stackBox}>
             <TextField sx={stackText} placeholder='keyword, manufacturer, or Amazon URL' InputProps={{ style: { fontSize: 18 } }}>Buscar</TextField>
-          </Box>
-          <Box sx={stackBox0}>
             <Button sx={stackImg} onClick={search}><SearchIcon color="action" alt="len" width='25px' height='25px'/></Button>
           </Box>
         </Box>
@@ -41,15 +39,6 @@ const stackBox = {
   gridTemplateRows: 'auto',
 }
 
-const stackBox0 = {
-  position: 'absolute',
-  display: 'grid',
-  width: '40em',
-  height: '2em',
-  gridTemplateColumns: ' repeat(10, 10%) ',
-  gridTemplateRows: 'auto',
-}
-
 const stackText = {
   width: '40em',
   height: 'auto',
@@ -60,7 +49,6 @@ const stackText = {
 }
 
 const stackImg = {
-  position: 'absolute',
   gridColumn: '10/11',
   gridRow: '1/2',
   display: 'flex',
