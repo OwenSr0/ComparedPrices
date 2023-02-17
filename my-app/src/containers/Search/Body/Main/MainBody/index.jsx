@@ -1,25 +1,19 @@
 import React, {useState, useEffect} from "react";
 import { Box } from '@mui/material';
 import ItemRow from './ItemRow/index'
-import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 
-const MainBody = () => {
+const MainBody = (props) => {
+
+    const {
+        search
+    } = props
 
     const[users, setUsers] = useState([])
     const[dinamycUsers, setDinamycUsers] = useState([])
 
-
-    const location = useLocation();
-    const query = new URLSearchParams(location.search);
-    const page = parseInt(query.get('page') || '1', 10);
-    const search = query.get('q');
-    if(search == null){
-
-    }
-
     const getUsers=async()=> {
-        await axios.get("https://jsonplaceholder.typicode.com/users")
+        await axios.get(`https://jsonplaceholder.typicode.com/${search}`)
         .then(response=>{
             setUsers(response.data);
             setDinamycUsers(response.data);
