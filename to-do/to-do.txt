@@ -1,0 +1,5 @@
+// buscar la api de amazon / alguna api?
+// agregar la api de amazon a nuestro buscador
+
+
+/* Realizar un div que muestre info de que ingresar en el textfield en los search */

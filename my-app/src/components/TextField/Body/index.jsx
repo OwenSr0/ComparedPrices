@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { TextField, Box, Button  } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
 
 /* Realizar un div que muestre info de que ingresar en el textfield */
@@ -17,7 +18,7 @@ import { Link } from 'react-router-dom';
           <Box sx={stackBox}>
             <TextField sx={stackText} placeholder='Buscar' InputProps={{ style: { fontSize: 18 } } } type="text" value={query} onChange={handleChange}>Buscar</TextField>
 
-            <Link to={`/search?q=${query}`}><Button sx={stackImg}><img src="./img/searching-glass.png" alt="len" width='25px' height='25px'/></Button></Link>
+            <Link to={`/search?q=${query}`}><Button sx={stackImg}><SearchIcon color="action" alt="len" width='25px' height='25px'/></Button></Link>
           </Box>
         </Box>
     )

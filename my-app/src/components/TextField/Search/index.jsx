@@ -1,23 +1,34 @@
-import React from "react";
+import React, {useState} from "react";
 import { TextField, Box, Button  } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import { Link } from '@mui/material';
 
 
-
-
-/* Realizar un div que muestre info de que ingresar en el textfield */
   const SearchTextField = () => {
 
-    function search(){
-      console.log('uwu')
+    const [query, setQuery] = useState('');
+    const [stackLink, setStackLink] = useState({pointerEvents: 'none'});
+
+    const handleChange = (event) => {
+      setQuery(event.target.value);
+      if(!query){
+        setStackLink({
+          pointerEvents: 'auto',
+        })
+      }
     }
+    const handleClick = (e) => {
+      console.log()
+      window.location.assign(`/search?q=${query}`);
+    }
+
 
     return(
         <Box sx={stackStyle}>
           <div></div>
           <Box sx={stackBox}>
-            <TextField sx={stackText} placeholder='keyword, manufacturer, or Amazon URL' InputProps={{ style: { fontSize: 18 } }}>Buscar</TextField>
-            <Button sx={stackImg} onClick={search}><SearchIcon color="action" alt="len" width='25px' height='25px'/></Button>
+            <TextField sx={stackText} placeholder='keyword, manufacturer, or Amazon URL' InputProps={{ style: { fontSize: 18 }}} onChange={handleChange}>Buscar</TextField>
+            <Link to={`/search?q=${query}`} sx={stackLink}><Button sx={stackImg} onClick={handleClick}><SearchIcon color="action" alt="len" width='25px' height='25px'/></Button></Link>
           </Box>
         </Box>
     )
@@ -44,12 +55,12 @@ const stackText = {
   height: 'auto',
   background: 'white',
   borderRadius: '10px',
-  gridColumn: '1/8',
+  gridColumn: '1/10',
   gridRow: '1/2'
 }
 
 const stackImg = {
-  gridColumn: '10/11',
+  gridColumn: '8/9',
   gridRow: '1/2',
   display: 'flex',
   justifyContent: 'center',

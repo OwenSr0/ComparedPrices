@@ -2,13 +2,18 @@ const express = require('express')
 const app = express()
 const filebd = require('./connect')
 const router = express.Router()
+const routerS = express.Router()
 const bodyParser = require('body-parser')
 const User = require('./routes/user')
+const axios = require('axios')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:'true'}))
 
+
 app.use('/api/user', router)
+
+app.use('/api/searches', routerS)
 
 app.get('/', (req,res) => {
     res.end('hola')
@@ -45,12 +50,27 @@ router.post('/register', async (req, res) => {
         return res.status(401).send({ message: 'Invalid password' });
       }
       const token = await User.findOne({email}, "token")
-      console.log(token)
       res.json(token)
     } catch (err) {
       res.status(400).send(err);
     }
   });
+
+  routerS.post('/search', async (req, res) => {
+    
+    try {
+      const search = req.body.search
+      await axios.get(`https://jsonplaceholder.typicode.com/${search}`)
+        .then(response=>{
+          res.json(response.data)
+      }).catch(err=>{
+          console.log(err);
+      })
+    } catch (err) {
+      console.log(err)
+    }
+      
+  })  
 
 router.post('/test', async (req, res) => {
 

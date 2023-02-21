@@ -20,21 +20,26 @@ const SearchMain = () => {
     const search = query.get('q');
 
 
-    const getUsers=async()=> {
-        await axios.get(`https://jsonplaceholder.typicode.com/${search}`)
-        .then(response=>{
-            setUsers(response.data);
-            setDinamycUsers(response.data);
+    const getUsers=async(search)=> {
+        var search = {
+            search: search
+        }
+        axios.post('/api/searches/search', search)
+        .then(res => {
+            setUsers(res.data);
+            setDinamycUsers(res.data);
             setValid('')
-        }).catch(err=>{
+        })
+        .then(err =>{
             setValid('No se han encontrado resultados');
-            console.log(err);
+            console.log(err)
         })
     }
 
     useEffect(()=>{
+        console.log(search)
         if (search) {
-            getUsers();
+            getUsers(search);
         } else {
             setValid(' ');
         }
