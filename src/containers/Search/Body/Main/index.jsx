@@ -2,16 +2,15 @@ import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import { Box } from '@mui/material';
 import MainHeader from './MainHeader/index'
-import ItemRow from '../Main/MainBody/ItemRow/index'
-import Empty from "../../../Others/Empty";
+import ItemBox from './ItemBox/index'
+import NotFound from "./ItemBox/NotFound/index";
 
 import { useLocation } from 'react-router-dom';
-import NotFound from "./MainBody/NotFound";
+
 
 const SearchMain = () => {
 
-    const[users, setUsers] = useState([])
-    const[dinamycUsers, setDinamycUsers] = useState([])
+    const[items, setItems] = useState([])
     const[valid, setValid] = useState('')
 
     const location = useLocation();
@@ -26,12 +25,16 @@ const SearchMain = () => {
         }
         axios.post('/api/searches/search', search)
         .then(res => {
-            setUsers(res.data);
-            setDinamycUsers(res.data);
-            setValid('')
+            setItems(res.data);
+            console.log(res.data)
+            
+            if(res.data.length == 0){
+                setValid('No se han encontrado resultados');
+            } else{
+                setValid('')
+            }
         })
         .then(err =>{
-            setValid('No se han encontrado resultados');
             console.log(err)
         })
     }
@@ -41,20 +44,20 @@ const SearchMain = () => {
         if (search) {
             getUsers(search);
         } else {
-            setValid(' ');
+            setValid('');
         }
     },[])
 
     return(
         <Box>
-            {users.length > 0 && <MainHeader/>}
+            {items.length > 0 && <MainHeader/>}
             <Box sx={stackStyle}>
-                {users &&
-                users.map((user)=>(
-                    <ItemRow key={user.id} user={user}/>
+                {items &&
+                items.map((item)=>(
+                    <ItemBox key={item.id} item={item}/>
                 ))}
             </Box>
-            {users.length > 0 && <MainHeader/>}
+            {items.length > 0 && <MainHeader/>}
             {valid.length > 0 && <NotFound valid={valid}/>}
         </Box>
     )
