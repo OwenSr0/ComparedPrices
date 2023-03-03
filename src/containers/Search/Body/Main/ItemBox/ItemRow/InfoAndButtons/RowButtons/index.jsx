@@ -4,13 +4,13 @@ import { Box, Button } from '@mui/material';
 const RowButtons= (props) => {
 
     const {
-        user= props.props.props.props.user,
+        item= props.props.props.props.item,
     } = props
 
     return(
         <Box sx={stackStyle}>
             <Button sx={stackButton} variant="contained">Comparo</Button>
-            <Button sx={stackButton} variant="contained">Buy</Button>            
+            <Button sx={stackButton} onClick={() => window.open(item.url)} variant="contained">Buy</Button>            
         </Box>
     )
 }

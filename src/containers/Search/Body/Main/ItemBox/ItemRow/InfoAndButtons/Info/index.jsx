@@ -6,13 +6,12 @@ const RowInfo = (props) => {
     const {
         item= props.props.props.props.item,
     } = props
-
     return(
         <Box sx={stackInfo}>
             <Typography sx={stackTy}>Platform: {item.platform}</Typography>
             <Typography sx={stackTy}>Price: ${item.price}</Typography>
-            <Typography sx={stackTy}>Brand: {item.brand}</Typography>
-            <Typography sx={stackTy}>Model: {item.model}</Typography>
+            {item.brand !== undefined && <Typography sx={stackTy}>Brand: {item.brand}</Typography>}
+            {item.model !== undefined && <Typography sx={stackTy}>Model: {item.model}</Typography>}
             <Typography sx={stackTy}>Condition: {item.condition}</Typography>
         </Box>
     )

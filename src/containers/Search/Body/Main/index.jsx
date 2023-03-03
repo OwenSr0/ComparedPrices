@@ -18,17 +18,17 @@ const SearchMain = () => {
     const page = parseInt(query.get('page') || '1', 10);
     const search = query.get('q');
 
-
     const getUsers=async(search)=> {
-        var search = {
-            search: search
+        var searchs = {
+            search: search,
+            page: page - 1,
         }
-        axios.post('/api/searches/search', search)
+        axios.post('/api/searches/search', searchs)
         .then(res => {
             setItems(res.data);
             console.log(res.data)
             
-            if(res.data.length == 0){
+            if(res.data.length === 0){
                 setValid('No se han encontrado resultados');
             } else{
                 setValid('')
@@ -46,7 +46,7 @@ const SearchMain = () => {
         } else {
             setValid('');
         }
-    },[])
+    },[page])
 
     return(
         <Box>

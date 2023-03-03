@@ -7,7 +7,7 @@ const RowItem = (props) => {
     } = props
     return(
         <Box sx={stackStyle}>
-            <Box sx={stackImg}><img src={imgurl} alt="Item" width='150px' height='150px' /></Box>
+            <Box sx={stackImg}><img src={imgurl} alt="Item" style={stackInImg}  /></Box>
 
         </Box>
                 
@@ -18,11 +18,20 @@ export default RowItem;
 
 const stackStyle = {
     display: 'flex',
-    margin: '1em'
+    margin: 'auto'
 }
 
 const stackImg = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    width: '150px',
+    height: '150px',
+}
+
+const stackInImg = {
+    maxWidth: '170px',
+    maxHeight: '170px',
+    width: 'auto',
+    height: 'auto'
 }
