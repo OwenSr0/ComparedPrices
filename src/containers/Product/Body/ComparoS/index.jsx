@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 const ComparoSection = () => {
     return(
         <Box>
-            comparo
+            ComparoSection
         </Box>
     )
 }

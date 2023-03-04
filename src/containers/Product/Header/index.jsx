@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material';
 import UserIcon from './User/index'
 import SignIn from '../../../components/Buttons/Sign-In/index'
 import '../../../App.css';
-const ComparoHeader = () =>{
+const ProductHeader = () =>{
 
     const[user, setUser]=useState('');
 
@@ -35,7 +35,7 @@ const ComparoHeader = () =>{
     )
 }
 
-export default ComparoHeader;
+export default ProductHeader;
 
 const stackStyle = {
     display: 'grid',
