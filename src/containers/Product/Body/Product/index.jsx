@@ -1,19 +1,26 @@
 import React from "react";
 import { Box, Typography, Button } from '@mui/material';
 
-const ProductHeader = () => {
+const ProductHeader = (props) => {
+
+    const {
+        title = props.item.title,
+        price = props.item.price,
+        platform = props.item.platform
+    } = props
+
     return(
         <Box sx={stackStyle}>
             <Box>
                 <Box><img src="./img/switchE.jpg" alt="" width="100px" height="100px" /></Box>
             </Box>
             <Box sx={stackProduct}>
-                <Typography>Name of Product</Typography>
-                <Typography>Tags</Typography>
+                <Typography>{title}</Typography>
+                <Typography>{platform}</Typography>
             </Box>
             <Box>
             <Typography>best price</Typography>
-            <Typography>$1999</Typography>
+            <Typography>${price}</Typography>
             <Button variant="contained">buy it</Button>
             </Box>
         </Box>
@@ -24,10 +31,12 @@ export default ProductHeader;
 
 const stackStyle = {
     background: '#242526',
-    width: 'auto',
+    width: '45em',
     display: 'flex',
-    justifyContent: 'space-evenly',
-    margin: '1em'
+    justifyContent: 'space-around',
+    margin: '1em',
+    padding: '1em',
+    borderRadius: '25px',
 }
 
 const stackProduct = {

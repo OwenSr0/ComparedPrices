@@ -15,7 +15,7 @@ const SearchMain = () => {
 
     const location = useLocation();
     const query = new URLSearchParams(location.search);
-    const page = parseInt(query.get('page') || '1', 10);
+    const page = parseInt(query.get('page') || '1', 5);
     const search = query.get('q');
 
     const getUsers=async(search)=> {
