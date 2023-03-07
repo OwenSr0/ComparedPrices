@@ -4,12 +4,12 @@ import Comparo from './Comparo/index'
 import ComparoInfo from './ComparoInfo/index'
 
 
-const ComparoSection = () => {
+const ComparoSection = (props) => {
 
     return(
         <Box sx={stackStyle}>
-            <Comparo />
-            <ComparoInfo />
+            <Comparo props={props.items} />
+            <ComparoInfo props={props} />
         </Box>
     )
 }

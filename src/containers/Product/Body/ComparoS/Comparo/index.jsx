@@ -2,7 +2,12 @@ import React from "react";
 import { Box, Typography } from '@mui/material';
 import ItemComparo from './ItemComparo/index'
 
-const Comparo = () => {
+const Comparo = (props) => {
+
+    const {
+        items = props.props
+    }  = props
+    
     return(
         <Box sx={stackStyle}>
             <Box sx={stackHeader}>
@@ -11,7 +16,11 @@ const Comparo = () => {
                 <Typography sx={stackTy2}>price</Typography>
             </Box>
             <Box>
-                <ItemComparo />
+                {items &&
+                    items.map((item)=>(
+                        <ItemComparo key={item.id}  item={item}/>
+                    ))} 
+                
 
             </Box>
         </Box>

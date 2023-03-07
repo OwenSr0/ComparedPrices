@@ -6,13 +6,14 @@ const ProductHeader = (props) => {
     const {
         title = props.item.title,
         price = props.item.price,
-        platform = props.item.platform
+        platform = props.item.platform,
+        image = props.item.imgurl
     } = props
 
     return(
         <Box sx={stackStyle}>
             <Box>
-                <Box><img src="./img/switchE.jpg" alt="" width="100px" height="100px" /></Box>
+                <Box><img src={image} alt="" width="100px" height="100px" /></Box>
             </Box>
             <Box sx={stackProduct}>
                 <Typography>{title}</Typography>
@@ -42,5 +43,6 @@ const stackStyle = {
 const stackProduct = {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    alignItems: 'center'
 }

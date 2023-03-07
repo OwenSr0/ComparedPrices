@@ -19,26 +19,34 @@ const ProductBody = () => {
     const itemId = query.get('q');
 
     const getItem=async()=> {
-        var reqs = {
-            platform: platform,
-            itemId: itemId,
-        }
-        axios.post('/api/searches/product', reqs)
-        .then(res => {
-            setItem(res.data[0]);
-            if(res.data.length === 0){
-                setValid('No se ha encontrado el producto');
-            } else{
-                setValid('')
+        try {
+            const reqs0 = {
+                platform: platform,
+                itemId: itemId,
+            };
+            const res0 = await axios.post('/api/searches/product', reqs0);
+            setItem(res0.data[0]);
+            if (res0.data.length === 0) {
+                return setValid('No se ha encontrado el producto');
+            } else {
+                setValid('');
             }
-        })
-        .then(err =>{
-            console.log(err)
-        })
+            const reqs1 = {
+                title: res0.data[0].title,
+                condition: res0.data[0].condition,
+                attributes: res0.data[0].attributes
+            }
+            const res1 = await axios.post('/api/searches/comparo', reqs1);
+            setItems(res1.data);
+            console.log(res1.data)
+
+    } catch (error) {
+        console.log(error);
+        setValid('No se ha encontrado el producto');
     }
+    };
 
     useEffect(()=>{
-        console.log(itemId)
         if (itemId) {
             getItem();
         } else {
@@ -49,7 +57,7 @@ const ProductBody = () => {
     return(
         <Box sx={stackStyle}>
             <ProductHeader item={item} />
-            <ComparoSection />
+            <ComparoSection item={item} items={items} />
         </Box>
     )
 }
