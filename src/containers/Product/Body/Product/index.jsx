@@ -7,7 +7,8 @@ const ProductHeader = (props) => {
         title = props.item.title,
         price = props.item.price,
         platform = props.item.platform,
-        image = props.item.imgurl
+        image = props.item.imgurl,
+        url = props.item.url
     } = props
 
     return(
@@ -22,7 +23,7 @@ const ProductHeader = (props) => {
             <Box>
             <Typography>best price</Typography>
             <Typography>${price}</Typography>
-            <Button variant="contained">buy it</Button>
+            <Button variant="contained" onClick={() => window.open(url)}>buy it</Button>
             </Box>
         </Box>
     )
@@ -32,10 +33,10 @@ export default ProductHeader;
 
 const stackStyle = {
     background: '#242526',
-    width: '45em',
+    width: '82vw',
     display: 'flex',
     justifyContent: 'space-around',
-    margin: '1em',
+    marginBottom: '1em',
     padding: '1em',
     borderRadius: '25px',
 }

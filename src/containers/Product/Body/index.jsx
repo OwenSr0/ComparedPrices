@@ -38,7 +38,6 @@ const ProductBody = () => {
             }
             const res1 = await axios.post('/api/searches/comparo', reqs1);
             setItems(res1.data);
-            console.log(res1.data)
 
     } catch (error) {
         console.log(error);

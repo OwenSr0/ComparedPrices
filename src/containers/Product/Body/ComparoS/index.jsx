@@ -19,10 +19,9 @@ export default ComparoSection;
 const stackStyle = {
     
     display: 'flex',
-    justifyContent: 'space-around',
-    width: '45em',
-    margin: '1em',
-    padding: '1em',
+    justifyContent: 'space-between',
+    width: '82vw',
+    maxWidth: '50em',
     borderRadius: '25px',
 
 }

@@ -4,11 +4,17 @@ import { Box, Typography, Button } from '@mui/material';
 const ItemComparo = (props) => {
 
     const item = props.item
+    const stack = props.stack
     const {
         title = item.title,
         platform = item.platform,
         price = item.price,
-        url = item.url
+        url = item.url,
+        stackTy = stack.stackTy,
+        stackTy1 = stack.stackTy1,
+        stackTy2 = stack.stackTy2
+
+
     } = props
 
     return(
@@ -29,25 +35,8 @@ const stackStyle = {
     alignItems: 'center'
 }
 
-const stackTy = {
-    width: '40vh',
-    margin: '0.5em',
-    textAlign: 'center'
-}
-
-const stackTy1 = {
-    width: '20vh',
-    margin: '0.5em',
-    textAlign: 'center'
-}
-
-const stackTy2 = {
-    width: '10vh',
-    margin: '0.5em',
-    textAlign: 'center'
-}
-
 const stackButton = {
     width: '10vh',
-    height: '2.5em'
+    height: '2.5em',
+    marginRight: '10px'
 }
