@@ -7,9 +7,14 @@ const RowButtons= (props) => {
         item= props.props.props.props.item,
     } = props
 
+    const handleClick = (e) => {
+        console.log()
+        window.location.assign(`/product?q=${item.id}`);
+      }
+
     return(
         <Box sx={stackStyle}>
-            <Button sx={stackButton} variant="contained">Comparo</Button>
+            <Button sx={stackButton} onClick={handleClick} >Comparo</Button>
             <Button sx={stackButton} onClick={() => window.open(item.url)} variant="contained">Buy</Button>            
         </Box>
     )

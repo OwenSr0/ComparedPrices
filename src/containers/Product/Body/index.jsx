@@ -25,16 +25,17 @@ const ProductBody = () => {
                 itemId: itemId,
             };
             const res0 = await axios.post('/api/searches/product', reqs0);
-            setItem(res0.data[0]);
+            console.log(res0)
+            setItem(res0.data);
             if (res0.data.length === 0) {
                 return setValid('No se ha encontrado el producto');
             } else {
                 setValid('');
             }
             const reqs1 = {
-                title: res0.data[0].title,
-                condition: res0.data[0].condition,
-                attributes: res0.data[0].attributes
+                title: res0.data.title,
+                condition: res0.data.condition,
+                attributes: res0.data.attributes
             }
             const res1 = await axios.post('/api/searches/comparo', reqs1);
             setItems(res1.data);
@@ -55,7 +56,7 @@ const ProductBody = () => {
 
     return(
         <Box sx={stackStyle}>
-            <ProductHeader item={item} />
+            <ProductHeader item={item} items={items}/>
             <ComparoSection item={item} items={items} />
         </Box>
     )

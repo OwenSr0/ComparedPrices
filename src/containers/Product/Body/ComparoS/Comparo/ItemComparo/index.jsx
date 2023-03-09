@@ -22,7 +22,7 @@ const ItemComparo = (props) => {
             <Typography sx={stackTy}>{title}</Typography>
             <Typography sx={stackTy1}>{platform}</Typography>
             <Typography sx={stackTy2}>${price}</Typography>
-            <Button sx={stackButton} onClick={() => window.open(url)}>Buy</Button>
+            <Button sx={stackButton} onClick={() => window.open(url)}>Ver</Button>
         </Box>
     )
 }
@@ -38,5 +38,9 @@ const stackStyle = {
 const stackButton = {
     width: '10vh',
     height: '2.5em',
-    marginRight: '10px'
+    marginRight: '10px',
+    background: '#2B2C2E',
+    boxShadow: ' 0 0 2.5px black',
+    color: 'white'
+
 }
