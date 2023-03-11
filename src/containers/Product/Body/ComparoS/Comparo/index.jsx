@@ -7,7 +7,7 @@ const Comparo = (props) => {
     const {
         items = props.props
     }  = props
-    
+    console.log(items)
     return(
         <Box sx={stackStyle}>
             <Box sx={stackHeader}>
@@ -31,10 +31,9 @@ export default Comparo;
 
 const stackStyle = {
     background: '#242526',
-    height: '19em',
-    borderRadius: '25px',
+    height: '16em',
     width: 'auto',
-    maxWidth: '34.2em',
+    borderRadius: '25px',
     padding: '1em',
 }
 
@@ -44,7 +43,7 @@ const stackHeader = {
 
 const stackBox = {
     overflow: 'auto',
-    maxHeight: '15em',
+    maxHeight: '20vh',
         '&::-webkit-scrollbar': {
           backgroundColor: '#f5f5f5',
           borderRadius: '5px',
@@ -58,7 +57,7 @@ const stackBox = {
 }
 
 const stackTy = {
-    width: '45vh',
+    width: '50vh',
     margin: '0.5em',
     textAlign: 'center',
     fontSize: '20px'

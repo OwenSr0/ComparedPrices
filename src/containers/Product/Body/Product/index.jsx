@@ -20,7 +20,7 @@ const ProductHeader = (props) => {
                 <Box><img src={image} alt="" width="100px" height="100px" /></Box>
             </Box>
             <Box sx={stackProduct}>
-                <Typography>{title}</Typography>
+                <Typography sx={stackTitle}>{title}</Typography>
                 <Typography>{platform}</Typography>
             </Box>
             <Box sx={stackBox}>
@@ -48,6 +48,11 @@ const stackProduct = {
     flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: 'center'
+}
+const stackTitle = {
+    maxWidth: '55vw',
+    textAlign: 'center',
+    margin: '1em'
 }
 
 const stackBox = {

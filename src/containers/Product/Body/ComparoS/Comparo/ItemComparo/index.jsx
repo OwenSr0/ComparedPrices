@@ -17,6 +17,7 @@ const ItemComparo = (props) => {
 
     } = props
 
+    console.log(url)
     return(
         <Box sx={stackStyle}>
             <Typography sx={stackTy}>{title}</Typography>
@@ -31,6 +32,7 @@ export default ItemComparo;
 
 const stackStyle = {
     display: 'flex',
+    width: 'auto',
     overflow: 'auto',
     alignItems: 'center'
 }
@@ -38,7 +40,7 @@ const stackStyle = {
 const stackButton = {
     width: '10vh',
     height: '2.5em',
-    marginRight: '10px',
+    margin: '0 10px 0 1em',
     background: '#2B2C2E',
     boxShadow: ' 0 0 2.5px black',
     color: 'white'

@@ -17,10 +17,9 @@ const ComparoSection = (props) => {
 export default ComparoSection;
 
 const stackStyle = {
-    
     display: 'flex',
-    justifyContent: 'space-between',
     width: '82vw',
+    mxHeight: '16em',
     maxWidth: '50em',
     borderRadius: '25px',
 

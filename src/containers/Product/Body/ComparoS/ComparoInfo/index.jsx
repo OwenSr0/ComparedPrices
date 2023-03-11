@@ -4,17 +4,13 @@ import { Box, Typography } from '@mui/material';
 const ComparoInfo = (props) => {
     /* agregar una funcion que ejecute imprimir typo cada variable del objeto */
     const item = props.props.item
-    var brand;
-    var model;
-    var condition;
-    var {
-        brand = item.brand,
-        model = item.model,
-        condition = item.condition
-    } = props
+    const brand = item.brand;
+    const model = item.model;
+    const condition = item.condition;
+
     return(
         <Box sx={stackStyle}>
-            <Typography sx={{textAlign: 'center'}}>Details</Typography>
+            <Typography sx={{textAlign: 'center'}}>Detalles</Typography>
             <Box sx={stackBox}>
                 {brand && <Typography>Marca: {brand}</Typography>}
                 {model && <Typography>Modelo: {model}</Typography>}
@@ -33,16 +29,18 @@ export default ComparoInfo;
 const stackStyle = {
     background: '#242526',
     display: 'flex',
-    witdh: 'auto',
     height: 'auto',
+    width: '14em',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     borderRadius: '25px',
-    padding: '1em'
+    padding: '1em',
+    marginLeft: '1em'
 }
 
 const stackBox = {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingTop: '1em'
 }
