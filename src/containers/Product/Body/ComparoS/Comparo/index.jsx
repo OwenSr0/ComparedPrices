@@ -31,7 +31,7 @@ export default Comparo;
 
 const stackStyle = {
     background: '#242526',
-    height: '16em',
+    height: 'auto',
     width: 'auto',
     borderRadius: '25px',
     padding: '1em',
@@ -43,7 +43,7 @@ const stackHeader = {
 
 const stackBox = {
     overflow: 'auto',
-    maxHeight: '20vh',
+    maxHeight: '30vh',
         '&::-webkit-scrollbar': {
           backgroundColor: '#f5f5f5',
           borderRadius: '5px',

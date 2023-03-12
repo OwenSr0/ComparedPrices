@@ -33,8 +33,10 @@ export default ItemComparo;
 const stackStyle = {
     display: 'flex',
     width: 'auto',
+    height: 'auto',
+    minHeight: '8vh',
     overflow: 'auto',
-    alignItems: 'center'
+    alignItems: 'center',
 }
 
 const stackButton = {

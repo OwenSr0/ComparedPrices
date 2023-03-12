@@ -4,7 +4,6 @@ import { Box, Typography, Button } from '@mui/material';
 const ProductHeader = (props) => {
 
     const {
-        id = props.item.id,
         title = props.item.title,
         price = props.item.price,
         platform = props.item.platform,
@@ -12,19 +11,17 @@ const ProductHeader = (props) => {
         url = props.item.url,
     } = props
 
-    const [prices, setPrices] = useState(price);
-
     return(
         <Box sx={stackStyle}>
-            <Box>
-                <Box><img src={image} alt="" width="100px" height="100px" /></Box>
+            <Box sx={stackBoxImg}>
+                <Box sx={stackImg}><img src={image} alt="image" style={stackInImg} /></Box>
             </Box>
             <Box sx={stackProduct}>
                 <Typography sx={stackTitle}>{title}</Typography>
                 <Typography>{platform}</Typography>
             </Box>
             <Box sx={stackBox}>
-                <Typography sx={{textAlign: 'center'}}>${price}</Typography>
+                <Typography sx={{textAlign: 'center', margin: '1em'}}>${price}</Typography>
                 <Button sx={stackButton} onClick={() => window.open(url)}>Comprar</Button>
             </Box>
         </Box>
@@ -43,6 +40,25 @@ const stackStyle = {
     borderRadius: '25px',
 }
 
+const stackBoxImg = {
+    display: 'flex',
+}
+
+const stackImg = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '150px',
+    height: '150px',
+}
+
+const stackInImg = {
+    maxWidth: '170px',
+    maxHeight: '170px',
+    width: 'auto',
+    height: 'auto'
+}
+
 const stackProduct = {
     display: 'flex',
     flexDirection: 'column',
@@ -58,7 +74,7 @@ const stackTitle = {
 const stackBox = {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-around'
+    justifyContent: 'space-between'
 }
 
 const stackButton = {

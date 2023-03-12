@@ -6,6 +6,7 @@ const RowInfo = (props) => {
     const {
         item= props.props.props.props.item,
     } = props
+
     return(
         <Box sx={stackInfo}>
             <Typography sx={stackTy}>Platform: {item.platform}</Typography>
@@ -31,3 +32,4 @@ const stackTy = {
     marginLeft: '1em',
     color: 'white',
 }
+

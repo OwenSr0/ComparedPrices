@@ -34,6 +34,7 @@ const ProductBody = () => {
             }
             const reqs1 = {
                 title: res0.data.title,
+                price: res0.data.price,
                 condition: res0.data.condition,
                 attributes: res0.data.attributes
             }

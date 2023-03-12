@@ -20,7 +20,7 @@ const stackStyle = {
     display: 'flex',
     width: '82vw',
     mxHeight: '16em',
-    maxWidth: '50em',
+    maxWidth: '51em',
     borderRadius: '25px',
 
 }
