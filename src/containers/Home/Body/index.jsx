@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/system";
-import TextFieldBody from "../../../components/TextField/Body";
+import TextFieldBody from "../../../components/TextField/Home/index";
 import BoxHub from "./Hub/index"
 
 const stackStyle = {

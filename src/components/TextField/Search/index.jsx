@@ -2,12 +2,24 @@ import React, {useState} from "react";
 import { TextField, Box, Button  } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from '@mui/material';
+import { useLocation } from 'react-router-dom';
 
 
   const SearchTextField = () => {
 
-    const [query, setQuery] = useState('');
+    const location = useLocation();
+    const lastQuery = new URLSearchParams(location.search);
+    const search = lastQuery.get('q');
+
+    const [query, setQuery] = useState('first');
+    const [boolean, setBoolean] = useState(true);
     const [stackLink, setStackLink] = useState({pointerEvents: 'none'});
+
+    if (boolean){
+      setQuery(search)
+      setBoolean(false)
+    }
+
 
     const handleChange = (event) => {
       setQuery(event.target.value);
@@ -17,17 +29,21 @@ import { Link } from '@mui/material';
         })
       }
     }
-    const handleClick = (e) => {
-      console.log()
+    const handleClick = () => {
       window.location.assign(`/search?q=${query}`);
     }
 
-
+    const handleKeyDown = (event) => {
+      if (event.key === 'Enter') {
+        window.location.assign(`/search?q=${query}`);
+      }
+    }
+                  
     return(
         <Box sx={stackStyle}>
           <div></div>
           <Box sx={stackBox}>
-            <TextField sx={stackText} placeholder='keyword, manufacturer, or Amazon URL' InputProps={{ style: { fontSize: 18 }}} onChange={handleChange}>Buscar</TextField>
+            <TextField sx={stackText} placeholder='keyword, manufacturer, or Amazon URL' InputProps={{ style: { fontSize: 18 }}} value={query} onChange={handleChange} onKeyDown={handleKeyDown}>Buscar</TextField>
             <Link  sx={stackLink}><Button sx={stackImg} onClick={handleClick}><SearchIcon color="action" alt="len" width='25px' height='25px'/></Button></Link>
           </Box>
         </Box>

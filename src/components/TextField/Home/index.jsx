@@ -8,15 +8,17 @@ import { Link } from 'react-router-dom';
 
     const [query, setQuery] = useState('');
 
-    const handleChange = (event) => {
-      setQuery(event.target.value);
+    const handleKeyDown = (event) => {
+      if (event.key === 'Enter') {
+        window.location.href = `/search?q=${query}`;
+      }
     }
 
     return(
         <Box sx={stackStyle}>
           <div></div>
           <Box sx={stackBox}>
-            <TextField sx={stackText} placeholder='Buscar' InputProps={{ style: { fontSize: 18 } } } type="text" value={query} onChange={handleChange}>Buscar</TextField>
+            <TextField sx={stackText} placeholder='Buscar' InputProps={{ style: { fontSize: 18 } } } type="text" value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={handleKeyDown}>Buscar</TextField>
 
             <Link to={`/search?q=${query}`}><Button sx={stackImg}><SearchIcon color="action" alt="len" width='25px' height='25px'/></Button></Link>
           </Box>

@@ -26,5 +26,5 @@ const stackSort = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '2.5em'
+    height: '2.5em',
 }

@@ -23,24 +23,22 @@ const SearchMain = () => {
             search: search,
             page: page - 1,
         }
-        axios.post('/api/searches/search', searchs)
-        .then(res => {
+        try {
+            const res = await axios.post('/api/searches/search', searchs);
             setItems(res.data);
-            console.log(res.data)
-            
-            if(res.data.length === 0){
-                setValid('No se han encontrado resultados');
-            } else{
-                setValid('')
+        
+            if (res.data.length === 0) {
+              setValid('No se han encontrado resultados');
+            } else {
+              setValid('');
             }
-        })
-        .then(err =>{
-            console.log(err)
-        })
-    }
+          } catch (err) {
+            setValid('No se han encontrado resultados');
+            console.log(err);
+          }
+        };
 
     useEffect(()=>{
-        console.log(search)
         if (search) {
             getUsers(search);
         } else {

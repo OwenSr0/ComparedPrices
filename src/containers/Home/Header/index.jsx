@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Box } from '@mui/material'; 
-import UserIcon from './User/index'
+import UserIcon from '../../../components/Header/User/index'
 import SignIn from '../../../components/Buttons/Sign-In/index'
 import '../../../App.css';
 const HomeHeader = () =>{
