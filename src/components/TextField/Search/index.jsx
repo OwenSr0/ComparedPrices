@@ -23,7 +23,7 @@ import { useLocation } from 'react-router-dom';
 
     const handleChange = (event) => {
       setQuery(event.target.value);
-      if(!query){
+      if(query){
         setStackLink({
           pointerEvents: 'auto',
         })

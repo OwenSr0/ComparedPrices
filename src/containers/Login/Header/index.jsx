@@ -1,13 +1,12 @@
 import React from "react";
 import { Box } from '@mui/material';   
 import Home from '../../../components/Buttons/Home/index'
+import Logo from '../../../components/Other/Logo/index'
 
 const LoginHeader = () =>{
     return(
-        <Box sx={StackStyle}>
-            <Box sx={StactBox}>
-                <a href="home"><img src="./img/logo.png" alt="Logo"  width="50" height="50" /></a>
-            </Box>
+        <Box sx={stackStyle}>
+            <Logo />
             <Home/>
         </Box>
     )
@@ -15,15 +14,8 @@ const LoginHeader = () =>{
 
 export default LoginHeader;
 
-const StackStyle = {
+const stackStyle = {
     display: 'flex',
     justifyContent: 'space-between',
-
-}
-
-const StactBox = {
-    display: 'flex',
-    marginTop: '0.2em',
-    marginBottom: '0.2em',
 
 }

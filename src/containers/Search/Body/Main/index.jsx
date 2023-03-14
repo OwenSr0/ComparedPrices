@@ -18,7 +18,7 @@ const SearchMain = () => {
     const page = parseInt(query.get('page') || '1', 5);
     const search = query.get('q');
 
-    const getUsers=async(search)=> {
+    const getItems=async(search)=> {
         var searchs = {
             search: search,
             page: page - 1,
@@ -26,7 +26,7 @@ const SearchMain = () => {
         try {
             const res = await axios.post('/api/searches/search', searchs);
             setItems(res.data);
-        
+            console.log(res.data)
             if (res.data.length === 0) {
               setValid('No se han encontrado resultados');
             } else {
@@ -40,7 +40,7 @@ const SearchMain = () => {
 
     useEffect(()=>{
         if (search) {
-            getUsers(search);
+            getItems(search);
         } else {
             setValid('');
         }

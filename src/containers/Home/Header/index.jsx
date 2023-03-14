@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Box } from '@mui/material'; 
 import UserIcon from '../../../components/Header/User/index'
 import SignIn from '../../../components/Buttons/Sign-In/index'
+import Logo from '../../../components/Other/Logo/index'
 import '../../../App.css';
 const HomeHeader = () =>{
 
@@ -20,10 +21,7 @@ const HomeHeader = () =>{
 
     return(
         <Box sx={stackStyle}>
-            <Box sx={StactBox}>
-                <a href="home"><img src="./img/logo.png" alt="Logo"  width="50" height="50" /></a>
-            </Box>
-
+            <Logo/>
             <Box sx={stackConditionals} id='userProfileOn'><UserIcon/></Box>
             <Box sx={stackConditionals} id='userProfileOff'><SignIn/></Box>
             
@@ -38,15 +36,6 @@ const stackStyle = {
     width: '100%',
     gridTemplateColumns: ' 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% ',
     gridTemplateRows: '3em',
-}
-
-const StactBox = {
-    gridColumnStart: '2',
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: '0.2em',
-    marginBottom: '0.2em',
-
 }
 
 const stackConditionals = {
