@@ -1,26 +1,38 @@
 import React, {useState} from "react";
-import { TextField, Box, Button  } from '@mui/material';
+import { TextField, Box, Button, Link  } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import { Link } from 'react-router-dom';
+
 
 /* Realizar un div que muestre info de que ingresar en el textfield */
   const TextFieldBody = () => {
 
+    const [stackLink, setStackLink] = useState({pointerEvents: 'none'});
     const [query, setQuery] = useState('');
 
-    const handleKeyDown = (event) => {
-      if (event.key === 'Enter') {
-        window.location.href = `/search?q=${query}`;
-      }
+    const handleChange = (event) => {
+      setQuery(event.target.value);
+      if(event.target.value.length > 2){setStackLink({pointerEvents: 'auto',})}else{setStackLink({pointerEvents: 'none',})};
     }
 
+    const handleKeyDown = (event) => {
+      if (event.key === 'Enter'&& event.target.value.length > 2) {
+        window.location.assign(`/search?q=${query}`);
+      }
+    }
+    
+    const handleClick = () => {
+      if(query.length > 2){
+      window.location.href = `/search?q=${query}`;
+      }
+    }
+    //el div sin nada espera una caja de info que algun dia agregare
     return(
         <Box sx={stackStyle}>
           <div></div>
           <Box sx={stackBox}>
-            <TextField sx={stackText} placeholder='Buscar' InputProps={{ style: { fontSize: 18 } } } type="text" value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={handleKeyDown}>Buscar</TextField>
+            <TextField sx={stackText} placeholder='Buscar productos, marcas, urls y más…' InputProps={{ style: { fontSize: 18 } } } type="text" value={query} onChange={handleChange} onKeyDown={handleKeyDown}>Buscar</TextField>
 
-            <Link to={`/search?q=${query}`}><Button sx={stackImg}><SearchIcon color="action" alt="len" width='25px' height='25px'/></Button></Link>
+            <Link sx={stackLink}><Button sx={stackImg} onClick={handleClick}><SearchIcon color="action" alt="len" width='25px' height='25px'/></Button></Link>
           </Box>
         </Box>
     )
@@ -59,4 +71,9 @@ const stackImg = {
   alignItems: 'center',
   width:'100%',
   height: '100%',
+    '&:hover': {
+      background: '#cccccc',
+      cursor: 'pointer',
+      borderRadius: '8px',
+    },
 }

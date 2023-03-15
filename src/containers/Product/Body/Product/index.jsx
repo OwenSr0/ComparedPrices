@@ -41,7 +41,10 @@ const stackStyle = {
 }
 
 const stackBoxImg = {
+    background: 'white',
     display: 'flex',
+    padding: '20px',
+    borderRadius: '26px'
 }
 
 const stackImg = {
@@ -74,7 +77,7 @@ const stackTitle = {
 const stackBox = {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between'
+    justifyContent: 'center'
 }
 
 const stackButton = {

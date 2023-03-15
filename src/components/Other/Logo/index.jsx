@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 const Logo = () => {
     return(
         <Box sx={stactStyle}>
-            <a href="home"><img src="./favicon.png" alt="Logo"  width="55" height="55" /></a>
+            <a href="/"><img src="./favicon.png" alt="Logo"  width="55" height="55" /></a>
         </Box>
     )
 }
@@ -15,6 +15,7 @@ const stactStyle = {
     gridColumnStart: '2',
     display: 'flex',
     justifyContent: 'center',
+    alignItems: 'center',
     marginTop: '0.2em',
     marginBottom: '0.2em',
 }

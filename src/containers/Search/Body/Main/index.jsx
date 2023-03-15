@@ -15,15 +15,20 @@ const SearchMain = () => {
 
     const location = useLocation();
     const query = new URLSearchParams(location.search);
-    const page = parseInt(query.get('page') || '1', 5);
+    var page = parseInt(query.get('page') || '1', 6);
     const search = query.get('q');
 
     const getItems=async(search)=> {
+        if(isNaN(page)){
+            page = 1;
+        }
         var searchs = {
             search: search,
             page: page - 1,
         }
         try {
+            console.log(page)
+            console.log(searchs.page)
             const res = await axios.post('/api/searches/search', searchs);
             setItems(res.data);
             console.log(res.data)

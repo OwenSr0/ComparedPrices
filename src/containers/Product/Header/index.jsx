@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
-import { Box, Typography } from '@mui/material'; 
+import { Box, Typography } from '@mui/material';
+import Logo from '../../../components/Other/Logo/index'
 import UserIcon from '../../../components/Header/User/index'
 import SignIn from '../../../components/Buttons/Sign-In/index'
 import '../../../App.css';
@@ -21,9 +22,7 @@ const ProductHeader = () =>{
     return(
         <Box sx={stackStyle}>
            
-            <Box sx={stactBox}>
-                <a href="home"><img alt="Logo"  width="50" height="50" /></a>
-            </Box>
+           <Logo/>
             <Box sx={stackT}><Typography sx={stackText}>Product</Typography></Box>
             <Box sx={stackConditionals}>
                 <Box  id='userProfileOn'><UserIcon/></Box>
@@ -42,15 +41,6 @@ const stackStyle = {
     width: '100%',
     gridTemplateColumns: ' 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% ',
     gridTemplateRows: '3em',
-}
-
-const stactBox = {
-    gridColumnStart: '2',
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: 'auto',
-    marginBottom: 'auto',
-
 }
 
 const stackT = {

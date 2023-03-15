@@ -1,7 +1,6 @@
 import React, {useState} from "react";
-import { TextField, Box, Button  } from '@mui/material';
+import { TextField, Box, Button, Link  } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import { Link } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 
 
@@ -11,7 +10,7 @@ import { useLocation } from 'react-router-dom';
     const lastQuery = new URLSearchParams(location.search);
     const search = lastQuery.get('q');
 
-    const [query, setQuery] = useState('first');
+    const [query, setQuery] = useState('');
     const [boolean, setBoolean] = useState(true);
     const [stackLink, setStackLink] = useState({pointerEvents: 'none'});
 
@@ -23,19 +22,18 @@ import { useLocation } from 'react-router-dom';
 
     const handleChange = (event) => {
       setQuery(event.target.value);
-      if(query){
-        setStackLink({
-          pointerEvents: 'auto',
-        })
-      }
-    }
-    const handleClick = () => {
-      window.location.assign(`/search?q=${query}`);
+      if(event.target.value.length > 2){setStackLink({pointerEvents: 'auto',})}else{setStackLink({pointerEvents: 'none',})};
     }
 
     const handleKeyDown = (event) => {
-      if (event.key === 'Enter') {
+      if (event.key === 'Enter'&& event.target.value.length > 2) {
         window.location.assign(`/search?q=${query}`);
+      }
+    }
+  
+    const handleClick = () => {
+      if(query.length > 2){
+      window.location.href = `/search?q=${query}`;
       }
     }
                   
@@ -43,7 +41,7 @@ import { useLocation } from 'react-router-dom';
         <Box sx={stackStyle}>
           <div></div>
           <Box sx={stackBox}>
-            <TextField sx={stackText} placeholder='keyword, manufacturer, or Amazon URL' InputProps={{ style: { fontSize: 18 }}} value={query} onChange={handleChange} onKeyDown={handleKeyDown}>Buscar</TextField>
+            <TextField sx={stackText} placeholder='Buscar productos, marcas, urls y más…' InputProps={{ style: { fontSize: 18 }}} value={query} onChange={handleChange} onKeyDown={handleKeyDown}>Buscar</TextField>
             <Link  sx={stackLink}><Button sx={stackImg} onClick={handleClick}><SearchIcon color="action" alt="len" width='25px' height='25px'/></Button></Link>
           </Box>
         </Box>

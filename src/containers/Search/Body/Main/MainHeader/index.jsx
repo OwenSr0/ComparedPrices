@@ -8,7 +8,7 @@ const MainHeader = () => {
 
     const location = useLocation();
     const query = new URLSearchParams(location.search);
-    const page = parseInt(query.get('page') || '1', 5);
+    const page = parseInt(query.get('page') || '1', 6);
     const search = query.get('q');
 
     return(
