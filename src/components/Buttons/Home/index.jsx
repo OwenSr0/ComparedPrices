@@ -1,20 +1,27 @@
 import React from "react";
-import { Container, Button } from '@mui/material';
+import { Box, Button } from '@mui/material';
 
-const stackStyle = {
-    width: '6em',
-    marginLeft: '0',
-    marginRight: '0',
-    marginTop: '0.5em',
-    marginBottom: '0.5em',
-  }
+
 
   const Home = () => {
     return(
-        <Container sx={stackStyle}>
+        <Box sx={stackStyle}>
             <Button href="home" variant="contained">Home</Button>
-        </Container>
+        </Box>
     )
   }
 
 export default Home;
+
+const stackStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  width: '6em',
+  marginLeft: '0',
+  marginRight: '0',
+  marginTop: '0.5em',
+  marginBottom: '0.5em',
+
+  gridColumn: '2/3',
+  gridRow: '1/2',
+}

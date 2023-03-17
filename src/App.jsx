@@ -5,6 +5,8 @@ import Login from './containers/Login/index'
 import Register from './containers/Register/index';
 import Search from './containers/Search';
 import Product from './containers/Product/index'
+import About from './containers/About/index'
+import Info from './containers/Info/index'
 import Logout from './containers/Logout/index';
 import Test from './containers/Others/Test/index';
 import './App.css';
@@ -22,6 +24,8 @@ function App() {
           <Route path='/search/:query' element={<Search/>}></Route>
           <Route path='/product' element={<Product/>}></Route>
           <Route path='/sign-out' element={<Logout/>}></Route>
+          <Route path='/about' element={<About/>}></Route>
+          <Route path='/info' element={<Info/>}></Route>
           <Route path='/test' element={<Test/>}></Route>
         </Routes>
       </BrowserRouter>
