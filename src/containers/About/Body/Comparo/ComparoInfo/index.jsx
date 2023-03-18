@@ -7,25 +7,29 @@ const ComparoInfo = () => {
             <Box sx={stackBox}>
                 <Box sx={stackItem}><img src="./img/good-price.png" alt="good" style={stackImg}/></Box>
                 <Box sx={stackItem}>
-                    <Typography sx={stackTy1}>
-                        Comparo Land
-                    </Typography>
-                    <Typography sx={stackTy2}> 
-                        Somos tu plataforma de confianza para encontrar el producto que necesitas al mejor precio, sin costo y sin registros previos.
-                        Nuestro enfoque es brindarte la mejor experiencia de usuario.
-                    </Typography>
+                    <Box sx={stackItems}> 
+                        <Typography sx={stackTy1}>
+                            Comparo Land
+                        </Typography>
+                        <Typography sx={stackTy2}> 
+                            Somos tu plataforma de confianza para encontrar el producto que necesitas al mejor precio, sin costo y sin registros previos.
+                            Nuestro enfoque es brindarte la mejor experiencia de usuario.
+                        </Typography>
+                    </Box>
                 </Box>
             </Box>
             
             <Box sx={stackBox}>
                 <Box sx={stackItem}>
-                    <Typography sx={stackTy1}>
-                    ¿Qué ofrecemos?
-                    </Typography>
-                    <Typography sx={stackTy2}> 
-                        Nos enorgullece ofrecer un algoritmo de busqueda de productos de vanguardia que te ayuda a encontrar lo que necesitas al mejor 
-                        precio. Nuestro algoritmo utiliza tus búsquedas y preferencias para ofrecerte la mejor opción.
-                    </Typography>
+                    <Box sx={stackItems}> 
+                        <Typography sx={stackTy1}>
+                        ¿Qué ofrecemos?
+                        </Typography>
+                        <Typography sx={stackTy2}> 
+                            Nos enorgullece ofrecer un algoritmo de busqueda de productos de vanguardia que te ayuda a encontrar lo que necesitas al mejor 
+                            precio. Nuestro algoritmo utiliza tus búsquedas y preferencias para ofrecerte la mejor opción.
+                        </Typography>
+                    </Box>
                 </Box>
                 <Box sx={stackItem}><img src="./img/settings.png" alt="setting" style={stackImg}/></Box>
             </Box>
@@ -49,11 +53,23 @@ const stackBox = {
 
 const stackItem = {
     display: 'flex',
-    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '30vw'
+    width: '30vw',
+    
 }
+
+const stackItems = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    background: '#242526',
+    padding: '1em',
+    borderRadius: '1em'
+}
+
+
+
 
 const stackTy1 = {
     textAlign: 'justify',

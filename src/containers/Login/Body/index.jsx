@@ -43,7 +43,7 @@ const BodyLogin = () => {
                 </Box>
                 <Box sx={stackBox}>
                     <Typography sx={{fontSize:'16px', marginRight:'10px', marginLeft: '5em'}}>No tienes cuenta?  </Typography>
-                    <Link sx={stackLink} href="register" >Sign up</Link>
+                    <Link sx={stackLink} href="register" >Registrate</Link>
                 </Box>
                 
             </Container>

@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import { Container } from '@mui/material';
 import LoginHeader from './Header';
 import BodyLogin from './Body';
-import {useNavigate} from 'react-router-dom'
-import SignFooter from '../Others/Footer/Sign/index';
+import HalfFooterToS from '../../components/Footer/HalfFooterToS/index';
+import {useNavigate} from 'react-router-dom';
 
 const Login = () => {
     const[user, setUser]=useState('');
@@ -22,10 +22,9 @@ const Login = () => {
 
     return(
         <Container sx={stackStyle}>
-            
             <LoginHeader/>
             <BodyLogin />
-            <SignFooter />
+            <HalfFooterToS />
         </Container>
         
     )

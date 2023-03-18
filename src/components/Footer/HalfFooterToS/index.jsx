@@ -1,19 +1,17 @@
 import React from "react";
 import { Box, Typography, Link } from '@mui/material';
 
-const ComparoFooter = () => {
+const HalfFooterToS = () => {
     return(
         <Box sx={stackStyle}>
-            <Link href="/about" sx={stackText2}>About</Link>
-            <Link href="/about" sx={stackText2}>Autor</Link>
-            <Typography sx={stackText1}>2023 © Comparo </Typography>
-            <Link href="/info" sx={stackText2}>Condiciones de uso</Link>
-            <Link href="/info" sx={stackText2}>Aviso de privacidad</Link>
+            <Link href="/" sx={stackText2}>Condiciones de uso</Link>
+            <Typography sx={stackText1}>2023 © Comparo</Typography>
+            <Link href="/" sx={stackText2}>Aviso de privacidad</Link>
         </Box>
     )
 }
 
-export default ComparoFooter;
+export default HalfFooterToS;
 
 const stackStyle = {
     display: 'flex',

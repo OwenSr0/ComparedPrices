@@ -9,9 +9,10 @@ const BodyAutor = () => {
         <Box sx={stackStyle}>
             <Typography sx={stackTy}>Autor</Typography>
             <Box sx={stackBox}>
-                <AutorInfo />
-                <AutorImg />
+            
                 <AutorSocial />
+                <AutorImg />
+                <AutorInfo />
             </Box>
             
 

@@ -49,7 +49,7 @@ const RegisterForm = () => {
                     <Button sx={stackButton} onClick={register} variant="contained" >Registrarte</Button>
                     <Box sx={stackBox}>
                         <Typography sx={{fontSize:'16px', marginRight:'10px'}}>Tienes Cuenta?</Typography>
-                        <Link sx={stackLink} href="login" >Sign In</Link>
+                        <Link sx={stackLink} href="login" >Ingresa</Link>
                     </Box>
                 </Box>
             </Box>
