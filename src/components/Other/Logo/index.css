@@ -1,0 +1,17 @@
+@media screen and (max-width: 1299px){
+    #img{
+        width: 65px;
+      };
+}
+
+@media screen and (max-width: 950px){
+    #img{
+        width: 80px;
+      };
+}  
+
+@media screen and (max-width: 599px){
+  #img{
+      width: 45px;
+    };
+}

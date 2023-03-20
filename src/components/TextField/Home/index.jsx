@@ -30,9 +30,8 @@ import SearchIcon from '@mui/icons-material/Search';
         <Box sx={stackStyle}>
           <div></div>
           <Box sx={stackBox}>
-            <TextField sx={stackText} placeholder='Buscar productos, marcas, urls y más…' InputProps={{ style: { fontSize: 18 } } } type="text" value={query} onChange={handleChange} onKeyDown={handleKeyDown}>Buscar</TextField>
-
-            <Link sx={stackLink}><Button sx={stackImg} onClick={handleClick}><SearchIcon color="action" alt="len" width='25px' height='25px'/></Button></Link>
+            <TextField sx={stackText} placeholder='Buscar productos, marcas, urls y más…' InputProps={{ style: { fontSize: 16} } } type="text" value={query} onChange={handleChange} onKeyDown={handleKeyDown}>Buscar</TextField>
+            <Link sx={stackLink}><Button sx={stackImg} onClick={handleClick}><SearchIcon color="action" alt="len" sx={stackIcon}/></Button></Link>
           </Box>
         </Box>
     )
@@ -44,27 +43,56 @@ const stackStyle = {
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
-  marginTop: '3em'
+  marginTop: {
+    xs: "2em",
+    md: '3em',
+    lg: '2em',
+    xl: '3em'
+  }
 }
 
 const stackBox = {
   display: 'grid',
-  width: '20em',
-  gridTemplateColumns: ' 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% ',
+  width: {
+    xs: '18em',
+    sm: '20em'
+  },
+  gridTemplateColumns: {
+    xs: '10% 10% 10% 10% 10% 10% 10% 10% 10% 10%',
+    sm: ' 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% '
+  },
   gridTemplateRows: 'auto',
+  border: {
+    xs: '2px solid white',
+    lg: '0'
+  },
+  borderRadius: '10px'
 }
 
 const stackText = {
-  width: '20em',
+  width: {
+    xs: '17.75em',
+    sm: '20em'
+  },
+  paddingRight: {
+    xs: '3em',
+    sm: '2.5em'
+  },
   height: 'auto',
   background: 'white',
   borderRadius: '10px',
-  gridColumn: '1/8',
-  gridRow: '1/2'
+  gridColumn: {
+    xs: '1/9',
+    sm: '1/8'
+  },
+  gridRow: '1/2',
 }
 
 const stackImg = {
-  gridColumn: '8/9',
+  gridColumn: {
+    xs: '9/11',
+    sm: '8/9'
+  },
   gridRow: '1/2',
   display: 'flex',
   justifyContent: 'center',
@@ -76,4 +104,23 @@ const stackImg = {
       cursor: 'pointer',
       borderRadius: '8px',
     },
+  paddingLeft: {
+    xs: '15px',
+    sm: "0"
+  }
+}
+
+const stackIcon = {
+  width: {
+    xs: "1em",
+    sm: "1em",
+    lg: '1em',
+    xl: '1em'
+  },
+  height: {
+    xs: "1em",
+    sm: "1em",
+    lg: '1em',
+    xl: '1em'
+  }
 }

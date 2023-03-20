@@ -20,17 +20,34 @@ const stackStyle = {
     justifyContent: 'center',
     alignItems: 'center',
     marginTop:'0',
-    height: '2em'
+    height: {
+        sm: '3em',
+        lg: '2em'
+    }
 }
 
 const stackText1 = {
-    fontSize: '16px',
-    margin: '0 3em 0 3em'
+    fontSize: {
+        xs: '14px',
+        sm: '16px'
+    },
+    margin: {
+        sm: '0 1em 0 1em',
+        lg: '0 3em 0 3em'
+    },
+    width: {
+        sm: '14em',
+        md: '10em',
+        lg: 'auto'
+    }
 }
 
 const stackText2 = {
     width: '11em',
     textAlign: 'center',
-    fontSize: '18px',
+    fontSize: {
+        xs: '14px',
+        sm: '18px'
+    },
     marginBottom: '3px'
 }

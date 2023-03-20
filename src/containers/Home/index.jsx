@@ -24,7 +24,10 @@ const stackStyle = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    height: '100vh'
+    height: {
+        xs: '85vh',
+        sm: '100vh'
+    }
 }
 
 const stackBox = {

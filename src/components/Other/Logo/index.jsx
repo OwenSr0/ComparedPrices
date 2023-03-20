@@ -1,10 +1,11 @@
 import React from "react";
 import { Box } from '@mui/material';
+import './index.css'
 
 const Logo = () => {
     return(
         <Box sx={stactStyle}>
-            <a href="/"><img src="./favicon.png" alt="Logo"  width="55" height="55" /></a>
+            <a href="/"><img src="./favicon.png" alt="Logo"  width={'60px'} id="img"/></a>
         </Box>
     )
 }
@@ -19,3 +20,4 @@ const stactStyle = {
     marginTop: '0.2em',
     marginBottom: '0.2em',
 }
+
