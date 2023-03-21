@@ -1,13 +1,14 @@
 import React from "react";
 import { Box } from '@mui/material';
-import AboutHeader from './Header/index';
 import BodyInfo from './Body/index';
 import ComparoFooter from './Footer/index';
+import FullHeader from '../../components/Header/FullHeader/index'
 
 const About = () => {
+    const title = 'Acerca de Comparo';
     return(
         <Box>
-            <AboutHeader />
+            <FullHeader title={title}/>
             <BodyInfo />
             <ComparoFooter />
         </Box>

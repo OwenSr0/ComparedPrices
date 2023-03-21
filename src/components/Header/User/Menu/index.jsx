@@ -13,8 +13,8 @@ const UserMenu = () => {
     return(
         <Box sx={stackStyle}>
             <Box sx={stackBox}>
-                <Link sx={stackLink} href="#">Profile</Link>
-                <Link sx={stackLinks} href="#">Setups</Link>
+                <Link sx={stackLink} href="#">Perfíl</Link>
+                <Link sx={stackLinks} href="#">Configuración</Link>
                 <Link sx={stackLink} onClick={logoutB}>Cerrar Sesión</Link>
             </Box>
             
@@ -25,31 +25,48 @@ const UserMenu = () => {
 export default UserMenu;
 
 const stackStyle = {
+    gridColumnStart: '4',
     display: 'grid',
     width: '100%',
-    gridTemplateColumns: ' 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% ',
+    gridTemplateColumns: {
+        xs: ' 55% auto 5%',
+        sm: ' 70% auto 5%',
+        lg: ' 75% auto 10%'
+    },
     gridTemplateRows: '1.6em 1.6em 1.6em 1.6em',
     position: 'absolute',
     left: '0px',
-    marginTop: '2.1em'
+    marginTop: {
+        xs: '3em',
+        sm: '2.4em',
+        xl: '2em'
+    }
 }
 
 const stackBox = {
     background: '#242526',
     borderRadius: '25px',
-    gridColumn: '7/8',
+    gridColumn: {
+        xs: '2/3'
+    },
     gridRow: '1/4',
     boxShadow: ' 0 0 4px black',
+    margin: {
+        lg: '0 auto 0 auto',
+        xl: '0 auto 0 auto'
+    }
 }
 
 const stackLink = {
     display: 'flex',
     justifyContent: 'center',
+    margin: '0 20px 0 20px'
 }
 
 const stackLinks = {
     display: 'flex',
     justifyContent: 'center',
     borderTop: '1px solid gray',
-    borderBottom: '1px solid gray'
+    borderBottom: '1px solid gray',
+    margin: '0 10px 0 10px'
 }

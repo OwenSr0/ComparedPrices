@@ -21,9 +21,9 @@ const DefaultHeader = () =>{
 
     return(
         <Box sx={stackStyle}>
-            <Box sx={stackConditionals}><Logo/></Box>
-            <Box sx={stackConditionals} id='userProfileOn'><UserIcon/></Box>
-            <Box sx={stackConditionals} id='userProfileOff'><SignIn/></Box>
+            <Box sx={stackBox1}><Logo/></Box>
+            <Box sx={stackBox2} id='userProfileOn'><UserIcon/></Box>
+            <Box sx={stackBox2} id='userProfileOff'><SignIn/></Box>
             
         </Box>
     )
@@ -32,25 +32,34 @@ const DefaultHeader = () =>{
 export default DefaultHeader;
 
 const stackStyle = {
-    display: 'flex',
-    justifyContent: 'space-between',
+    display: 'grid',
+    gridTemplateColumns: {
+        xs: '10% auto 26% auto 10%',
+        lg: '10% auto 50% auto 10%'
+    },
+    gridTmeplateRows: {
+        xs: '3em'
+    },
     width: '100%',
     height: {
         xs: "auto",
         sm: "auto",
         lg: '3em'
     },
-    marginTop: {
-        sm: '5px',
+    paddingTop: {
+        xs: '1em',
         lg: '0'
-    }
+    },
 }
 
-const stackConditionals = {
+const stackBox1 = {
+    gridColumnStart: '2',
+    margin: ' auto 0 auto 0'
+}
+
+const stackBox2 = {
+    gridColumnStart: '4',
     margin: {
-        xs: "auto 1.5em",
-        md: 'auto 3em',
-        lg: 'auto 4em ',
-        xl: ' auto 7em '
-    } 
+        xs: 'auto 0 auto 0'
+    }   
 }

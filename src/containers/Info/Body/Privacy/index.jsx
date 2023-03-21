@@ -21,7 +21,13 @@ const InfoPrivacy = () => {
 export default InfoPrivacy;
 
 const stackStyle = {
-    width: '40em',
+    width: {
+        xs: '18em',
+        sm: '22.5em',
+        md: '25em',
+        lg: '35em',
+        xl: '40em'
+    },
     marginTop: '2em',
     marginBottom: '2em'
 }
@@ -32,5 +38,9 @@ const stackTy1 = {
 
 const stackTy2 = {
     marginTop: '10px',
-    textAlign: 'justify'
+    textAlign: 'justify',
+    fontSize: {
+        xs: '14px',
+        sm: '24px'
+    }
 }

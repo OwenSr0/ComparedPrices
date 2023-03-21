@@ -18,5 +18,8 @@ const stackStyle = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginTop: '1em'
+    marginTop: {
+        xs: '2em',
+        xl: '1em'
+    }
 }

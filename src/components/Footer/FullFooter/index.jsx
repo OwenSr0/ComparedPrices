@@ -46,7 +46,7 @@ const stackText2 = {
     width: '11em',
     textAlign: 'center',
     fontSize: {
-        xs: '14px',
+        xs: '16px',
         sm: '18px'
     },
     marginBottom: '3px'

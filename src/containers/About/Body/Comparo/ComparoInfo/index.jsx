@@ -55,7 +55,7 @@ const stackItem = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '30vw',
+    width: '18em',
     
 }
 
@@ -85,6 +85,5 @@ const stackTy2 = {
 }
 
 const stackImg = {
-    width: '20vw',
-    height: '20vw',
+    width: '12em'
 }

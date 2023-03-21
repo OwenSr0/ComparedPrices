@@ -23,5 +23,5 @@ const stackStyle = {
 
 const stackTy = {
     marginTop: '0.3em',
-    fontSize: '1em'
+    fontSize: '1.1em'
 }

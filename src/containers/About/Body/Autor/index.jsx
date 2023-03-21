@@ -31,6 +31,10 @@ const stackStyle = {
 
 const stackBox = {
     display: 'flex',
+    flexDirection: {
+        xs: 'column',
+        lg: 'row'
+    },
     alignItems: 'center'
 }
 

@@ -1,17 +1,17 @@
 @media screen and (max-width: 1299px){
-    #img{
-        width: 65px;
+    #imgUser{
+        width: 55px;
       };
 }
 
 @media screen and (max-width: 950px){
-    #img{
-        width: 80px;
+    #imgUser{
+        width: 60px;
       };
 }  
 
 @media screen and (max-width: 599px){
-  #img{
-      width: 50px;
+  #imgUser{
+      width: 35px;
     };
 }
