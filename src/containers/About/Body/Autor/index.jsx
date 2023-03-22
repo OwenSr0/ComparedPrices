@@ -26,18 +26,32 @@ const stackStyle = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginTop: '1em'
+    marginTop: {
+        xs: '3em',
+        sm: '1em'
+    }
 }
 
 const stackBox = {
     display: 'flex',
     flexDirection: {
         xs: 'column',
-        lg: 'row'
+        sm: 'row'
+    },
+    flexWrap: {
+        sm: 'wrap',
+        lg: 'nowrap'
+    },
+    justifyContent: {
+        sm: 'center',
+        lg: '0'
     },
     alignItems: 'center'
 }
 
 const stackTy = {
-    fontSize: '1.3em'
+    fontSize: {
+        xs: '1.6em',
+        sm: '1.3em'
+    }
 }

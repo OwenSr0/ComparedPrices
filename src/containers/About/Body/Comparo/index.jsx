@@ -6,7 +6,7 @@ import ComparoSocial from './ComparoSocial/index';
 
 const BodyComparo = () => {
     return(
-        <Box>
+        <Box sx={stackStyle}>
             <ComparoHeader />
             <ComparoInfo />
             <ComparoSocial />
@@ -15,3 +15,9 @@ const BodyComparo = () => {
 }
 
 export default BodyComparo;
+
+const stackStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+}

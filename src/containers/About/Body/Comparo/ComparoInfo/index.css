@@ -1,0 +1,13 @@
+@media screen and (max-width: 950px){
+  #imgGood, #imgSetting{
+      width: 300px;
+      display: flex;
+    };
+}
+
+@media screen and (max-width: 599px){
+  #imgGood, #imgSetting{
+      width: 200px;
+      display: flex;
+    };
+}

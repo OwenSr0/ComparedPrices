@@ -1,8 +1,8 @@
 import React from "react";
 import { Box } from '@mui/material';
 import BodyInfo from './Body/index';
-import ComparoFooter from './Footer/index';
-import FullHeader from '../../components/Header/FullHeader/index'
+import FullHeader from '../../components/Header/FullHeader/index';
+import HalfFooterPrivacy from '../../components/Footer/HalfFooterPrivacy/index';
 
 const About = () => {
     const title = 'Acerca de Comparo';
@@ -10,7 +10,7 @@ const About = () => {
         <Box>
             <FullHeader title={title}/>
             <BodyInfo />
-            <ComparoFooter />
+            <HalfFooterPrivacy />
         </Box>
     )
 }

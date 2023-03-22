@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import { Container } from '@mui/material';
-import LoginHeader from './Header';
+import VerificationHeader from '../../components/Header/VerificationHeader/index';
 import BodyLogin from './Body';
-import HalfFooterToS from '../../components/Footer/HalfFooterToS/index';
+import HalfFooterPrivacy from '../../components/Footer/HalfFooterPrivacy/index';
 import {useNavigate} from 'react-router-dom';
 
 const Login = () => {
@@ -22,9 +22,9 @@ const Login = () => {
 
     return(
         <Container sx={stackStyle}>
-            <LoginHeader/>
+            <VerificationHeader />
             <BodyLogin />
-            <HalfFooterToS />
+            <HalfFooterPrivacy />
         </Container>
         
     )
@@ -36,5 +36,8 @@ const stackStyle = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    height: '100vh'
+    height: {
+        xs: '85vh',
+        sm: '100vh'
+    }
 }

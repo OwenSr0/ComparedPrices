@@ -18,8 +18,15 @@ const AutorInfo = () => {
 export default AutorInfo;
 
 const stackStyle = {
-    width: '12em',
-    margin: '1em'
+    width: {
+        xs: '16em',
+        sm: '12em'
+    },
+    margin: '1em',
+    order: {
+        xs: '-1',
+        sm: '0'
+    }
 }
 
 const stackTy1 = {
@@ -29,5 +36,9 @@ const stackTy1 = {
 
 const stackTy2 = {
     marginTop: '0.7em',
-    textAlign: 'justify'
+    textAlign: 'justify',
+    fontSize: {
+        xs: '22px',
+        sm: '24px'
+    }
 }

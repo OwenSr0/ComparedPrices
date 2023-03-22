@@ -30,19 +30,19 @@ const BodyLogin = () => {
     }
 
     return(
-        <Container sx={stackContainer}>
-                <Box sx={stackStyle}>
-                    <h2 className='mt-4'>Inicia Sesion</h2>
+        <Container sx={stackStyle}>
+                <Box sx={stackBox}>
+                    <h2 className='mt-4'>Inicia Sesión</h2>
                 </Box>
                 <Box sx={stackTextField}>
                     <LoginField setEmail={setEmail}/>
                     <PasswordField setPassword={setPassword}/>
                 </Box>
-                <Box sx={stackStyle}>
-                    <button onClick={login} className='btn btn-success'>Iniciar Sesion</button>
-                </Box>
                 <Box sx={stackBox}>
-                    <Typography sx={{fontSize:'16px', marginRight:'10px', marginLeft: '5em'}}>No tienes cuenta?  </Typography>
+                    <button onClick={login} className='btn btn-success'>Iniciar Sesión</button>
+                </Box>
+                <Box sx={stackBox1}>
+                    <Typography sx={stackTy2}>¿No tienes cuenta?</Typography>
                     <Link sx={stackLink} href="register" >Registrate</Link>
                 </Box>
                 
@@ -52,6 +52,18 @@ const BodyLogin = () => {
 
 export default BodyLogin;
 
+const stackStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    background: '#242526',
+    maxWidth:{
+    xs:'90%',
+    sm:'70%',
+    lg:'600px'
+    },
+    borderRadius: '25px',
+}
+
 const stackTextField ={
     display: 'flex',
     flexDirection: 'column',
@@ -59,28 +71,30 @@ const stackTextField ={
 
 }
 
-const stackStyle = {
+const stackBox = {
     display:'flex',
     justifyContent:'center',
     marginBottom: '1em'
 }
 
-const stackContainer = {
+const stackBox1 = {
     display: 'flex',
-    flexDirection: 'column',
-    background: '#242526',
-    maxWidth:{xs:'40vw', md:'100%', lg:'600px'},
-    borderRadius: '25px',
-}
-
-const stackBox = {
-    display: 'flex'
+    justifyContent: {
+        xs: 'center',
+        sm: '0'
+    }
 }
 
 const stackLink = {
     display: 'flex',
     justifyContent: 'flex-end',
     fontSize: '16px',
-    marginBottom: '1em'
+    margin: '1px 0.5em 1em 0.5em'
 
   }
+
+const stackTy2 = {
+    fontSize:'16px',
+    margin: '2px 0.5em 0 0.5em'
+    
+}

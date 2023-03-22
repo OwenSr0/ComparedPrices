@@ -18,10 +18,24 @@ const stackStyle = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginTop: '1em'
+    marginTop: {
+        xs: '1em',
+        sm: '2em',
+        lg: '1em'
+    }
 }
 
 const stackTy = {
-    marginTop: '0.3em',
-    fontSize: '1.1em'
+    margin: {
+        xs: '0.3em 1em 0 1em',
+        sm: '0.3em 3em 0 3em',
+        md: '0.3em 1em 0 1em'
+    },
+    fontSize: {
+        xs: '1em',
+        sm: '1.5em',
+        lg: '1.1em'
+    },
+    textAlign: 'center'
+
 }

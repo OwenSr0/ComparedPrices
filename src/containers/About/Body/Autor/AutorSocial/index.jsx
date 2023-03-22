@@ -37,7 +37,7 @@ const AutorSocial = () => {
                 <Button sx={stackButton} onClick={() => window.open('https://github.com/OwenSr0')}><img src="./img/github.png" alt="github" style={stackSize} /></Button>
                 <Button sx={stackButton} onClick={() => window.open('https://www.linkedin.com/in/owen-sanchez-7bb1991a9/')}><img src="./img/linkedin.png" alt="linkedin" style={stackSize} /></Button>
             </Box>
-            <Box>
+            <Box sx={stackBox}>
                 <Button sx={stackButton} onClick={handleClick}><img src="./img/email-icon.png" alt="email" style={stackSize} /></Button>
                 <Button sx={stackButton} onClick={() => window.open('https://twitter.com/ComparoLand')}><img src="./img/twitter-icon.png" alt="twitter" style={stackSize} /></Button>
             </Box>
@@ -50,15 +50,22 @@ export default AutorSocial;
 const stackStyle = {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '12em',
-    margin: '1em'
+    width: {
+        xs: '17em',
+        sm: '12em'
+    },
+    margin: '1em',
+    order: {
+        xs: '1',
+        sm: '0'
+    }
 }
 
 
 const stackBox = {
-    display: 'flex'
+    display: 'flex',
+    justifyContent: 'center',
+    width: '100%'
 }
 
 const stackButton = {

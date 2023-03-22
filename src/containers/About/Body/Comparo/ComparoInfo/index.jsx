@@ -1,11 +1,12 @@
 import React from "react";
 import { Box, Typography } from '@mui/material';
+import './index.css'
 
 const ComparoInfo = () => {
     return(
         <Box sx={stackStyle}>
             <Box sx={stackBox}>
-                <Box sx={stackItem}><img src="./img/good-price.png" alt="good" style={stackImg}/></Box>
+                <Box sx={stackItem1}><img src="./img/good-price.png" alt="good" width="360px" id="imgGood"/></Box>
                 <Box sx={stackItem}>
                     <Box sx={stackItems}> 
                         <Typography sx={stackTy1}>
@@ -31,7 +32,7 @@ const ComparoInfo = () => {
                         </Typography>
                     </Box>
                 </Box>
-                <Box sx={stackItem}><img src="./img/settings.png" alt="setting" style={stackImg}/></Box>
+                <Box sx={stackItem}><img src="./img/settings.png" alt="setting" width="360px" id="imgSetting"/></Box>
             </Box>
 
         </Box>
@@ -47,16 +48,42 @@ const stackStyle = {
 
 const stackBox = {
     display: 'flex',
+    flexDirection: {
+        xs: 'column',
+        sm: 'row'
+    },
     justifyContent: 'center',
-    marginTop: '2em'
+    margin: {
+        sm: '2em 1.5em 0 1.5em',
+        md: '2em 2em 0 2em'
+    }
 }
 
 const stackItem = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '18em',
-    
+    width: {
+        xs: '16em',
+        sm: '14em',
+        lg: '18em',
+        xl: '16em'
+    },
+}
+const stackItem1 ={
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: {
+        xs: '16em',
+        sm: '14em',
+        lg: '18em',
+        xl: '16em'
+    },
+    order: {
+        xs: '1',
+        sm: '0'
+    }
 }
 
 const stackItems = {
@@ -65,25 +92,25 @@ const stackItems = {
     alignItems: 'center',
     background: '#242526',
     padding: '1em',
-    borderRadius: '1em'
+    borderRadius: '1em',
+    margin: {
+        xs: '1em 0 1em 0',
+        sm: '0'
+    }
 }
-
-
-
 
 const stackTy1 = {
     textAlign: 'justify',
-    fontSize: '1.2em'
+    fontSize: '1.3em'
 }
 
 
 const stackTy2 = {
     textAlign: 'justify',
     marginTop: '1em',
-    fontSize: '25px'
+    fontSize: {
+        xs: '18px',
+        sm: '25px'
+    }
     
-}
-
-const stackImg = {
-    width: '12em'
 }

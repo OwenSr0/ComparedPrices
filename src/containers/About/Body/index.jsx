@@ -13,3 +13,4 @@ const BodyInfo = () => {
 }
 
 export default BodyInfo;
+

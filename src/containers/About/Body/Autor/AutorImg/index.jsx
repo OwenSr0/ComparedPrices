@@ -1,10 +1,11 @@
 import React from "react";
 import { Box } from '@mui/material';
+import './index.css'
 
 const AutorImg = () => {
     return(
         <Box sx={stackStyle}>
-            <img src="./img/autor.png" alt="autor" style={stackImg}/>
+            <img src="./img/autor.png" alt="autor" width='350px'  id="imgAutor"/>
         </Box>
     )
 }
@@ -12,12 +13,13 @@ const AutorImg = () => {
 export default AutorImg;
 
 const stackStyle = {
-    margin: '1em',
-    borderRadius: '10px'
-}
-
-const stackImg = {
-    width: '350px',
-    height: '350px',
-    borderRadius: '1em',
+    borderRadius: '10px',
+    order: {
+        sm: '-1',
+        lg: '0'
+    },
+    margin: {
+        sm: '1em 5em 1em 5em',
+        lg: '1em'
+    }
 }

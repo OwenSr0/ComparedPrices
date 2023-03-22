@@ -25,6 +25,7 @@ const stackStyle = {
 }
 
 const stackText1 = {
+    textAlign: 'center',
     fontSize: {
         xs: '16px',
         sm: '16px'

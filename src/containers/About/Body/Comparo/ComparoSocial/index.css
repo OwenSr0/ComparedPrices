@@ -1,0 +1,11 @@
+@media screen and (max-width: 950px){
+  #imgTwitter, #imgEmail{
+      width: 120px;
+    };
+}
+
+@media screen and (max-width: 599px){
+  #imgTwitter, #imgEmail{
+      width: 80px;
+    };
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Button } from '@mui/material';
+import './index.css'
 
 const ComparoSocial = () => {
     const email = 'contacto@comparo.land';
@@ -34,12 +35,8 @@ const ComparoSocial = () => {
     return(
         <Box sx={stackStyle}>
             <Box sx={stackBox}>
-                <Button onClick={() => window.open('https://twitter.com/ComparoLand')}><img src="./img/twitter-icon.png" alt="twitter" style={stackImg}/></Button>
-                <Button onClick={handleClick}><img src="./img/email-icon.png" alt="email" style={stackImg}/></Button>
-            </Box>
-            <Box>
-                <a href="/"><img src="" alt="" /></a>
-                <a href="/"><img src="" alt="" /></a>
+                <Button onClick={() => window.open('https://twitter.com/ComparoLand')}><img src="./img/twitter-icon.png" alt="twitter" width="100px" id="imgTwitter"/></Button>
+                <Button onClick={handleClick}><img src="./img/email-icon.png" alt="email" width="100px" id="imgEmail"/></Button>
             </Box>
         </Box>
     )
@@ -50,15 +47,21 @@ export default ComparoSocial;
 const stackStyle = {
     display: 'flex',
     flexDirection: 'column',
+    width: {
+        xs: '13em',
+        sm: 'auto'
+    }
 }
 
 const stackBox = {
     display: 'flex',
-    justifyContent: 'space-evenly',
+    width: {
+        xs: 'auto',
+        sm: '15em',
+        md: '18em',
+        lg: '22em',
+        xl: '20em',
+    },
+    justifyContent: 'space-between',
     marginTop: '1.5em'
-}
-
-const stackImg = {
-    width: '5em',
-    height: '5em',
 }
