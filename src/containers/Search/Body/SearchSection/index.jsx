@@ -11,8 +11,10 @@ const SearchSection = () => {
         <Box>
             <SearchTextField />
             <Box sx={stackSort}>
-                <SortFilter />
-                <SortOrder />
+                <Box sx={stackBox}>
+                    <SortFilter />
+                    <SortOrder />
+                </Box>
                 <AdvancedOptionsB />
             </Box>
             <AdvancedOptions />
@@ -24,7 +26,19 @@ export default SearchSection;
 
 const stackSort = {
     display: 'flex',
+    flexDirection: {
+        xs: 'column',
+        lg: 'row'
+    },
     justifyContent: 'center',
     alignItems: 'center',
-    height: '2.5em',
+    height: {
+        xs: '8em',
+        sm: '4em',
+        lg: '2.5em'
+    }
+}
+
+const stackBox = {
+    display: 'flex'
 }

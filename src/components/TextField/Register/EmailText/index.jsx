@@ -14,7 +14,7 @@ import PropTypes from 'prop-types';
     return(
         <Box sx={stackStyle}>
             <Typography sx={stackLabel}>Email</Typography>
-            <TextField  sx={stackText}  placeholder='Email' size="small" onChange={(e) => {setEmail(e.target.value)}} InputProps={{ style: { fontSize: 18 } }} InputLabelProps={{ style: { fontSize: 18 } }}>Email</TextField>
+            <TextField  sx={stackText}  placeholder='Email' size="small" onChange={(e) => {setEmail(e.target.value)}} InputProps={{ style: { fontSize: 16 } }} InputLabelProps={{ style: { fontSize: 18 } }}>Email</TextField>
             <Typography sx={stackTy}>Correo invalido</Typography>
         </Box>
     )
@@ -37,15 +37,17 @@ const stackStyle = {
 }
 
 const stackLabel = {
-  fontSize: '16px',
+  fontSize: {
+    xs: '14px',
+    sm: '16px'
+  },
   marginBottom: '0.5em'
 }
 
 const stackText = {
-  fontSize: '1em',
   background: 'white',
   borderRadius: '4px',
-  marginBottom: '1em'
+  marginBottom: '0.5em'
 }
 
 const stackTy = {

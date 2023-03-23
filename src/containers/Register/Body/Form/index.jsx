@@ -64,10 +64,19 @@ const StackContainer = {
     display: 'flex',
     flexDirection: 'column',
     background: '#242526',
-    minWidth:{xs:'40vw', md:'100%', lg:'500px'},
+    width:{
+        xs:'85%',
+        sm: '60%',
+        md:'60%',
+        lg:'19em',
+        xl:'18em'},
     borderRadius: '25px',
     marginLeft: '2em',
-    marginRight: '2em'
+    marginRight: '2em',
+    marginTop: {
+        sm: '1em',
+        xl: '0'
+    }
 }
 
 const stackForm = {
@@ -77,8 +86,17 @@ const stackForm = {
 }
 
 const stactTittle = {
-    marginTop: '1em',
-    fontSize: '25px'
+    margin: {
+        xs: '0.5em 1em 0 1em',
+        sm: '1em 0 0 0'
+    },
+    fontSize: {
+        xs: '1.7em',
+        sm: '1.2em',
+        lg: '1.3em',
+        xl: '1.2em'
+    },
+    textAlign: 'center'
 }
 
 const stackBox = {
@@ -89,13 +107,16 @@ const stackLink = {
     display: 'flex',
     justifyContent: 'flex-end',
     fontSize: '16px',
-    marginBottom: '1em'
+    marginBottom: '1.05em'
   }
 
 const stackButton = {
     boxShadow: 'none',
     textTransform: 'none',
-    width: '10em',
+    width: {
+        xs: '8em',
+        sm: '10em'
+    },
     height: '2.2em',
     fontSize: '20',
     padding: '6px 12px',
@@ -103,7 +124,8 @@ const stackButton = {
     lineHeight: 1.5,
     backgroundColor: '#0063cc',
     borderColor: '#0063cc',
-    marginBottom: '1em',
+    marginBottom: {xs: '0.5em',sm: '1em'},
+    marginTop: {xs: '0.5em', sm: '0'},
     fontFamily: [
         '-apple-system',
         'BlinkMacSystemFont',

@@ -6,7 +6,7 @@ import { Box, Button } from '@mui/material';
   const Home = () => {
     return(
         <Box sx={stackStyle}>
-            <Button href="home" sx={stackButton}>Home</Button>
+            <Button href="home" sx={stackButton}>Inicio</Button>
         </Box>
     )
   }

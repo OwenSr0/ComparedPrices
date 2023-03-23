@@ -54,18 +54,29 @@ const stackStyle = {
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
-  marginTop: '1em'
+  margin: {
+    sm: '1em 0 0.5em 0',
+    lg: '1em 0 0.5em 0'
+  }
 }
 
 const stackBox = {
   display: 'grid',
-  width: '40em',
+  width: {
+    xs: '14.5em',
+    sm: '25em',
+    lg: '40em'
+  },
   gridTemplateColumns: ' repeat(10, 10%) ',
   gridTemplateRows: 'auto',
 }
 
 const stackText = {
-  width: '40em',
+  width: {
+    xs: '16em',
+    sm: '25em',
+    lg: '40em'
+  },
   height: 'auto',
   background: 'white',
   borderRadius: '10px',

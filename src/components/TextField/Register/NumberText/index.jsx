@@ -14,7 +14,7 @@ import PropTypes from 'prop-types';
     return(
         <Box sx={stackStyle}>
             <Typography sx={stackLabel}>Numero Celular</Typography>
-            <TextField  sx={stackText}  placeholder='Numero' size="small" onChange={(e) => {setNumber(e.target.value)}} InputProps={{ style: { fontSize: 18 } }} InputLabelProps={{ style: { fontSize: 18 } }}>Number</TextField>
+            <TextField  sx={stackText}  placeholder='Numero' size="small" onChange={(e) => {setNumber(e.target.value)}} InputProps={{ style: { fontSize: 16 } }} InputLabelProps={{ style: { fontSize: 18 } }}>Number</TextField>
         </Box>
     )
   }
@@ -36,7 +36,10 @@ const stackStyle = {
 }
 
 const stackLabel = {
-  fontSize: '16px',
+  fontSize: {
+    xs: '14px',
+    sm: '16px'
+  },
   marginBottom: '0.5em'
 }
 
@@ -44,9 +47,5 @@ const stackText = {
   fontSize: '1em',
   background: 'white',
   borderRadius: '4px',
-  marginBottom: '1em'
-}
-
-const stackTy = {
-  display: 'none'
+  marginBottom: '0.5em'
 }

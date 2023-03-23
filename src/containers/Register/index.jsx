@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import { Box } from '@mui/material';
-import HeaderRegister from './Header/index';
+import { Box, Container } from '@mui/material';
+import VerificationHeader from '../../components/Header/VerificationHeader/index';
 import BodyRegister from './Body/index';
-import HalfFooterToS from '../../components/Footer/HalfFooterToS/index';
+import HalfFooterPrivacy from '../../components/Footer/HalfFooterPrivacy/index';
+
 import {useNavigate} from 'react-router-dom';
 
 const Register = () => {
@@ -23,9 +24,9 @@ const Register = () => {
 
     return(
         <Box sx={stackStyle}>
-            <HeaderRegister />
+            <Container><VerificationHeader /></Container>
             <BodyRegister/>
-            <HalfFooterToS />
+            <HalfFooterPrivacy />
         </Box>
     )
 }

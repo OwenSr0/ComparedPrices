@@ -19,7 +19,11 @@ const stackStyle = {
     display: 'flex',
     width: '100%',
     height: '100%',
-    justifyContent: 'space-evenly'
+    justifyContent: 'space-evenly',
+    marginTop: {
+        sm: '0.5em',
+        md: '0'
+    }
 }
 
 

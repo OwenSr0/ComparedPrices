@@ -23,7 +23,11 @@ const RowButtons= (props) => {
 export default RowButtons;
 
 const stackStyle = {
-    minWidth: '8.5em',
+    maxWidth: {
+        xs: '10em',
+        sm: '7em',
+        lg: '10em'
+    },
     width: '100%',
     display:'flex',
     justifyContent: 'center'
@@ -31,5 +35,10 @@ const stackStyle = {
 
 const stackButton = {
     height: '2em',
-    margin: '0 10px 0 10px'
+    margin: '0 10px 0 10px',
+    fontSize: {
+        xs: '18px',
+        sm: '14px',
+        lg: '24px'
+    }
 }

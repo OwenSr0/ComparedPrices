@@ -21,7 +21,11 @@ export default ItemBox;
 const stackStyle = {
     display: 'flex',
     flexDirection: 'column',
-    width: '18em',
+    width: {
+        xs: '20em',
+        sm: '13em',
+        lg: '18em'
+    },
     height: 'auto',
     background: 'white',
     borderRadius: '20px',

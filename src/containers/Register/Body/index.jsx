@@ -17,6 +17,14 @@ export default BodyRegister;
 
 const StackStyle = {
     display: 'flex',
+    flexDirection: {
+        sm: 'column',
+        lg: 'row'
+    },
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: {
+        lg: '1em',
+        xl: '0'
+    }
 }

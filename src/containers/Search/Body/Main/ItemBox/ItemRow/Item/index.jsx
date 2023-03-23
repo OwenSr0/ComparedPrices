@@ -1,5 +1,6 @@
 import React from "react";
 import { Box } from '@mui/material';
+import './index.css'
 
 const RowItem = (props) => {
     const {
@@ -7,7 +8,7 @@ const RowItem = (props) => {
     } = props
     return(
         <Box sx={stackStyle}>
-            <Box sx={stackImg}><img src={imgurl} alt="Item" style={stackInImg}  /></Box>
+            <Box sx={stackImg}><img src={imgurl} alt="Item" width="auto" height="auto" id="imgItem"/></Box>
 
         </Box>
                 
@@ -27,11 +28,4 @@ const stackImg = {
     alignItems: 'center',
     width: '150px',
     height: '150px',
-}
-
-const stackInImg = {
-    maxWidth: '170px',
-    maxHeight: '170px',
-    width: 'auto',
-    height: 'auto'
 }

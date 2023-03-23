@@ -1,0 +1,19 @@
+#imgItem{
+  max-width: 170px;
+  max-height: 170px;
+  border-radius:15px;
+}
+
+@media screen and (max-width: 950px){
+  #imgItem{
+      max-width: 120px;
+      max-height: 120px;
+    };
+}
+
+@media screen and (max-width: 599px){
+  #imgItem{
+    max-width: 120px;
+    max-height: 120px;
+    };
+}

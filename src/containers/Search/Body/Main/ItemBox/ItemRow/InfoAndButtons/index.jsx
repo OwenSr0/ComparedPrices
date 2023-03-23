@@ -19,6 +19,10 @@ export default InfoAndButtons;
 const stackStyle = {
     display: 'flex',
     flexDirection: 'column',
-    maxWidth: '10em',
+    maxWidth: { 
+        xs: '10em',
+        sm: '7em',
+        lg: '10em'
+    },
     margin: 'auto 0 auto 0'
 }

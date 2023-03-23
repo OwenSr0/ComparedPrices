@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import { Box } from '@mui/material';
-import MainHeader from './MainHeader/index'
-import ItemBox from './ItemBox/index'
+import PaginationSearch from '../../../../components/Other/Paginations/PaginationSearch/index';
+import ItemBox from './ItemBox/index';
 import NotFound from "./ItemBox/NotFound/index";
 
 import { useLocation } from 'react-router-dom';
@@ -53,14 +53,14 @@ const SearchMain = () => {
 
     return(
         <Box>
-            {items.length > 0 && <MainHeader/>}
+            {items.length > 0 && <PaginationSearch/>}
             <Box sx={stackStyle}>
                 {items &&
                 items.map((item)=>(
                     <ItemBox key={item.id} item={item}/>
                 ))}
             </Box>
-            {items.length > 0 && <MainHeader/>}
+            {items.length > 0 && <PaginationSearch/>}
             {valid.length > 0 && <NotFound valid={valid}/>}
         </Box>
     )

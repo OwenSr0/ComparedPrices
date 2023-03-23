@@ -19,9 +19,23 @@ export default AdvancedOptionsB;
 const stackButton = {
     boxShadow: 'none',
     textTransform: 'none',
-    width: '10em',
-    height: '3em',
-    fontSize: '20',
+    width: {
+      xs: '12em',
+      xl: '10em'
+    },
+    height: {
+      xs: '2.5em',
+      lg: '3em'
+    },
+    fontSize: {
+      xs: '18px',
+      lg: '16px',
+      xl: '20'
+    },
+    marginTop: {
+      xs: '0.5em',
+      lg: '0'
+    },
     padding: '6px 12px',
     border: '1px solid',
     lineHeight: 1.5,

@@ -1,10 +1,10 @@
 import React from "react";
-import { Box, Container, Pagination } from '@mui/material';
+import { Box, Pagination } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
 import PaginationItem from '@mui/material/PaginationItem';
+import './index.css'
 
-
-const MainHeader = () => {
+const PaginationSearch = () => {
 
     const location = useLocation();
     const query = new URLSearchParams(location.search);
@@ -12,9 +12,8 @@ const MainHeader = () => {
     const search = query.get('q');
 
     return(
-        <Container sx={stackStyle}>
-            <Box>
-            <Pagination
+        <Box sx={stackStyle}>
+            <Pagination sx={stackBox}
                 page={page}
                 count={5}
                 renderItem={(item) => (
@@ -25,18 +24,24 @@ const MainHeader = () => {
                     />
                 )}
             />
-            </Box>
-            <Box></Box>
-        </Container>
+        </Box>
     )
 }
 
 
 
-export default MainHeader;
+export default PaginationSearch;
 
 const stackStyle = {
     display: 'flex',
+}
+
+const stackBox ={
+    margin: {
+        sm: '0 0 0 6vw',
+        lg: '0 0 0 14vw',
+        xl: '0 0 0 18vw'
+    }
 }
 
 const stackItem = {

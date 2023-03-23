@@ -14,9 +14,9 @@ import PropTypes from 'prop-types';
     return(
         <Box sx={stackStyle}>
             <Box sx={stackLP}>
-              <Typography sx={stackLabel}>Password</Typography>
+              <Typography sx={stackLabel}>Contraseña</Typography>
             </Box>
-            <TextField sx={stackText} placeholder='Password' size="small" onChange={(e) => {setPassword(e.target.value)}} InputProps={{ style: { fontSize: 18 } }} InputLabelProps={{ style: { fontSize: 18 } }}>Password</TextField>
+            <TextField sx={stackText} placeholder='Password' size="small" onChange={(e) => {setPassword(e.target.value)}} InputProps={{ style: { fontSize: 16 } }} InputLabelProps={{ style: { fontSize: 18 } }}>Password</TextField>
         </Box>
     )
   }
@@ -43,14 +43,16 @@ const stackLP = {
 }
 
 const stackLabel = {
-  fontSize: '16px',
-  marginBottom: '0.5em'
+  fontSize: {
+    xs: '14px',
+    sm: '16px'
+  },
+  marginBottom: '10px'
 }
 
 const stackText = {
-  type: 'password',
   fontSize: '1em',
   background: 'white',
   borderRadius: '4px',
-  marginBottom: '1em'
+  marginBottom: '0.5em'
 }

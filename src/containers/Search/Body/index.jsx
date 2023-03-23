@@ -5,7 +5,7 @@ import SearchMain from "./Main/index"
 
 const SearchBody = () => {
     return(
-        <Box>
+        <Box sx={stackStyle}>
             <SearchSection />
             <SearchMain />
         </Box>
@@ -13,3 +13,10 @@ const SearchBody = () => {
 }
 
 export default SearchBody;
+
+const stackStyle = {
+    marginTop: {
+        xs: '2em',
+        sm: '0'
+    }
+}

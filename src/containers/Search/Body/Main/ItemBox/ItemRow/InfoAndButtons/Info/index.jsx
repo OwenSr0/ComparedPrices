@@ -28,7 +28,10 @@ const stackInfo = {
 }
 
 const stackTy = {
-    fontSize: '17px',
+    fontSize: {
+        xs: '14px',
+        lg: '17px'
+    },
     marginLeft: '1em',
     color: 'white',
 }

@@ -25,6 +25,7 @@ const UserMenu = () => {
 export default UserMenu;
 
 const stackStyle = {
+    position: 'relative',
     gridColumnStart: '4',
     display: 'grid',
     width: '100%',
@@ -34,13 +35,13 @@ const stackStyle = {
         lg: ' 75% auto 10%'
     },
     gridTemplateRows: '1.6em 1.6em 1.6em 1.6em',
-    position: 'absolute',
     left: '0px',
     marginTop: {
         xs: '3em',
         sm: '2.4em',
         xl: '2em'
-    }
+    },
+    zIndex: '1'
 }
 
 const stackBox = {

@@ -14,7 +14,7 @@ const SortOrder = () => {
 
     return(
         <Box sx={stackStyle}>
-            <Typography>Order by</Typography>
+            <Typography sx={stackTy}>Order by</Typography>
             <FormControl sx={stackDrop}>
                     <NativeSelect sx={stackNative}
                     placeholder="All"
@@ -35,13 +35,23 @@ export default SortOrder;
 const stackStyle = {
     display: 'flex',
     borderRadius: '20px',
-    margin: '0 2em 0 2em'
+    margin: {
+        xs: '0 1em 0 1em',
+        lg: '0 1em 0 1em',
+        xl: '0 2em 0 2em'
+    }
 }
 
 const stackDrop = {
     background: 'white',
-    width: '8em',
-    height: '43px',
+    width: {
+        sm: '7em',
+        lg: '8em'
+    },
+    height: {
+        xs: '2em',
+        sm: '43px'
+    },
     marginLeft: '1em',
     borderRadius: '15px',
 }
@@ -49,5 +59,16 @@ const stackDrop = {
 const stackNative = {
     display: 'flex',
     justifyContent: 'center',
-    paddingLeft: '10px'
+    paddingLeft: '10px',
+    fontSize: {
+        xs: '18px',
+        sm: '24px'
+    }
+}
+
+const stackTy = {
+    fontSize: {
+        xs: '18px',
+        sm: '24px'
+    }
 }
