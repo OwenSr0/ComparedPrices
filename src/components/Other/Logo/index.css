@@ -1,17 +1,23 @@
+#imgProduct{
+  max-width: 170px;
+  max-height: 170px;
+}
+
 @media screen and (max-width: 1299px){
-    #img{
-        width: 65px;
+    #imgProduct{
+        max-width: 130px;
+        max-height: 130px;
       };
 }
 
 @media screen and (max-width: 950px){
-    #img{
+    #imgProduct{
         width: 90px;
       };
 }  
 
 @media screen and (max-width: 599px){
-  #img{
+  #imgProduct{
       width: 50px;
     };
 }

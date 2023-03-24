@@ -18,9 +18,21 @@ export default ComparoSection;
 
 const stackStyle = {
     display: 'flex',
-    width: '82vw',
-    maxHeight: '16em',
-    maxWidth: '51em',
+    flexDirection: {
+        xs: 'column',
+        lg: 'row'
+    },
+    width: {
+        xs: '85%',
+        sm: '25em',
+        lg: '40em',
+        xl: '50em'
+    },
+    maxHeight: {
+        xs: 'auto',
+        lg: '14em',
+        xl: '16em'
+    },
     borderRadius: '25px',
 
 }

@@ -31,20 +31,39 @@ const ItemComparo = (props) => {
 export default ItemComparo;
 
 const stackStyle = {
-    display: 'flex',
-    width: 'auto',
-    height: 'auto',
-    minHeight: '8vh',
+    minHeight: '2.25em',
     overflow: 'auto',
-    alignItems: 'center',
+    display: 'grid',
+    gridTemplateColumns: {
+        xs: '60% 20% 20% 3em',
+        sm: '52.5% 17.5% 15% 15%'
+    },
+    alignItems: 'center'
 }
 
 const stackButton = {
-    width: '10vh',
-    height: '2.5em',
-    margin: '0 10px 0 1em',
+    width: {
+        sm: '3.5em',
+        lg: '3.5em',
+        xl: '5em'
+    },
+    height: {
+        lg: '2em',
+        xl: '2.5em'
+    },
+    margin: {
+        xs: '0 auto 0 auto',
+        lg: '0',
+        xl: '0 10px 0 1em'
+    },
     background: '#2B2C2E',
     boxShadow: ' 0 0 2.5px black',
-    color: 'white'
+    color: 'white',
+    fontSize: {
+        xs: '8px',
+        sm: '24px',
+        lg: '18px',
+        xl: '24px'
+    }
 
 }

@@ -68,5 +68,6 @@ export default ProductBody;
 const stackStyle = {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: '1em'
 }

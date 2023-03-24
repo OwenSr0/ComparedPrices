@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import { Box, Typography, Button } from '@mui/material';
+import './index.css'
 
 const ProductHeader = (props) => {
 
@@ -14,7 +15,7 @@ const ProductHeader = (props) => {
     return(
         <Box sx={stackStyle}>
             <Box sx={stackBoxImg}>
-                <Box sx={stackImg}><img src={image} alt="image" style={stackInImg} /></Box>
+                <Box sx={stackImg}><img src={image} alt="product" id="imgProduct"/></Box>
             </Box>
             <Box sx={stackProduct}>
                 <Typography sx={stackTitle}>{title}</Typography>
@@ -32,34 +33,52 @@ export default ProductHeader;
 
 const stackStyle = {
     background: '#242526',
-    width: '82vw',
+    width: {
+        xs: '85%',
+        sm: '25em',
+        lg: '40em',
+        xl: '50em'
+    },
     display: 'flex',
+    flexDirection: {
+        xs: 'column',
+        sm: 'row'
+    },
     justifyContent: 'space-around',
     marginBottom: '1em',
     padding: '1em',
     borderRadius: '25px',
+    alignItems: {
+        xs: 'center',
+        sm: 'unset'
+    }
 }
 
 const stackBoxImg = {
     background: 'white',
     display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: '20px',
-    borderRadius: '26px'
+    borderRadius: '26px',
+    width: 'auto'
+
 }
 
 const stackImg = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '150px',
-    height: '150px',
-}
-
-const stackInImg = {
-    maxWidth: '170px',
-    maxHeight: '170px',
-    width: 'auto',
-    height: 'auto'
+    width: {
+        xs: '100px',
+        sm: '110px',
+        xl: '150px'
+    },
+    height: {
+        xs: '100px',
+        sm: '110px',
+        xl: '150px'
+    }
 }
 
 const stackProduct = {
@@ -69,9 +88,18 @@ const stackProduct = {
     alignItems: 'center'
 }
 const stackTitle = {
-    maxWidth: '55vw',
+    maxWidth: {
+        xs: '90%',
+        sm: '80%',
+        lg: '30em',
+        xl: '35em'
+    },
     textAlign: 'center',
-    margin: '1em'
+    margin: '1em',
+    fontSize: {
+        xs: '14px',
+        sm: '24px'
+    }
 }
 
 const stackBox = {

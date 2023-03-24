@@ -11,9 +11,9 @@ const Comparo = (props) => {
     return(
         <Box sx={stackStyle}>
             <Box sx={stackHeader}>
-                <Typography sx={stackTy}>title</Typography>
-                <Typography sx={stackTy1}>platform</Typography>
-                <Typography sx={stackTy2}>price</Typography>
+                <Typography sx={stackTy}>Título</Typography>
+                <Typography sx={stackTy1}>Pagina</Typography>
+                <Typography sx={stackTy2}>Precio</Typography>
             </Box>
             <Box sx={stackBox}>
                 {items &&
@@ -32,18 +32,30 @@ export default Comparo;
 const stackStyle = {
     background: '#242526',
     height: 'auto',
-    width: 'auto',
+    width: {
+        lg: '25em',
+        xl: '36em'
+    },
     borderRadius: '25px',
     padding: '1em',
 }
 
 const stackHeader = {
-    display: 'flex'
+    display: 'grid',
+    gridTemplateColumns: {
+        xs: '60% 15% 25%',
+        sm: '52.5% 17.5% 15% 15%'
+    },
+    alignItems: 'center'
 }
 
 const stackBox = {
     overflow: 'auto',
-    maxHeight: '30vh',
+    maxHeight: {
+        xs: '11em',
+        lg: '10em',
+        xl: '11em'
+    },
         '&::-webkit-scrollbar': {
           backgroundColor: '#f5f5f5',
           borderRadius: '5px',
@@ -54,27 +66,41 @@ const stackBox = {
           borderRadius: '5px',
           backgroundColor: 'black',
         },
+    
 }
 
 const stackTy = {
-    width: '50vh',
     margin: '0.5em',
     textAlign: 'center',
-    fontSize: '20px'
+    gridColumnStart: '1',
+    fontSize: {
+        xs: '10px',
+        sm: '19px',
+        lg: '16px',
+        xl: '20px'
+    }
 }
 
 const stackTy1 = {
-    width: '25vh',
-    margin: '0.5em',
     textAlign: 'center',
-    fontSize: '20px'
+    gridColumnStart: '2',
+    fontSize: {
+        xs: '10px',
+        sm: '19px',
+        lg: '16px',
+        xl: '20px'
+    }
 }
 
 const stackTy2 = {
-    width: '10vh',
-    margin: '0.5em',
     textAlign: 'center',
-    fontSize: '20px'
+    gridColumnStart: '3',
+    fontSize: {
+        xs: '10px',
+        sm: '19px',
+        lg: '16px',
+        xl: '20px'
+    }
 }
 
 const stack = {
