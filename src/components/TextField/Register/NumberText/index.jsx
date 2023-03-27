@@ -1,23 +1,39 @@
 import React from "react";
-import { Box, TextField, Typography, } from '@mui/material';
+import { Box } from '@mui/material';
 import PropTypes from 'prop-types';
 
-
-
+import FilledInput from '@mui/material/FilledInput';
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
 
   const NumberRegisterField = (props) => {
 
     const {
       setNumber,
+      register
     } = props;
 
+    const handleKeyDown = (event) => {
+      if (event.key === 'Enter'&& event.target.value.length > 2) {
+        register()
+      }
+    }
+
     return(
-        <Box sx={stackStyle}>
-            <Typography sx={stackLabel}>Numero Celular</Typography>
-            <TextField  sx={stackText}  placeholder='Numero' size="small" onChange={(e) => {setNumber(e.target.value)}} InputProps={{ style: { fontSize: 16 } }} InputLabelProps={{ style: { fontSize: 18 } }}>Number</TextField>
-        </Box>
-    )
-  }
+      <Box sx={stackStyle}>
+        <FormControl sx={stackForm} variant="filled">
+            <InputLabel style={{ fontSize: '20px', color: 'gray', top: '-5px'}}>Numero de telefono(Opcional)</InputLabel>
+            <FilledInput style={{ fontSize: '18px', height: '3em'}}
+              onChange={(e) => {setNumber(e.target.value)}}
+              onKeyDown={handleKeyDown}
+              required={true}
+              type="number"
+              label="Nombre"
+            />
+        </FormControl>
+      </Box>
+  )
+}
 
 export default NumberRegisterField;
 
@@ -35,17 +51,7 @@ const stackStyle = {
   width: '13em',
 }
 
-const stackLabel = {
-  fontSize: {
-    xs: '14px',
-    sm: '16px'
-  },
-  marginBottom: '0.5em'
-}
-
-const stackText = {
-  fontSize: '1em',
+const stackForm = {
   background: 'white',
-  borderRadius: '4px',
-  marginBottom: '0.5em'
+  borderRadius: '5px'
 }

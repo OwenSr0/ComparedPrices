@@ -7,7 +7,6 @@ const Comparo = (props) => {
     const {
         items = props.props
     }  = props
-    console.log(items)
     return(
         <Box sx={stackStyle}>
             <Box sx={stackHeader}>
@@ -16,10 +15,17 @@ const Comparo = (props) => {
                 <Typography sx={stackTy2}>Precio</Typography>
             </Box>
             <Box sx={stackBox}>
-                {items &&
-                    items.map((item)=>(
-                        <ItemComparo key={item.id}  item={item} stack={stack}/>
-                    ))} 
+                {items ? (
+                    (() => {
+                    const itemBoxes = [];
+                    for (let i = 0; i < items.length; i++) {
+                        itemBoxes.push(<ItemComparo key={items[i].id} item={items[i]} stack={stack}/>);
+                    }
+                    return itemBoxes;
+                    })()
+                ) : (
+                    <div>No items to display</div>
+                )}
                 
 
             </Box>

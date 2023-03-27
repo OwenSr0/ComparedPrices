@@ -30,7 +30,8 @@ const stackStyle = {
     background: 'white',
     borderRadius: '20px',
     padding: '10px',
-    margin: '1em'
+    margin: '1em',
+    shadow: '3px white'
 }
 
 const stackBox = {

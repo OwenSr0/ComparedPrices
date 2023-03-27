@@ -27,11 +27,8 @@ const SearchMain = () => {
             page: page - 1,
         }
         try {
-            console.log(page)
-            console.log(searchs.page)
-            const res = await axios.post('/api/searches/search', searchs);
+            const res = await axios.post('http://18.217.165.43:80/api/searches/search', searchs);
             setItems(res.data);
-            console.log(res.data)
             if (res.data.length === 0) {
               setValid('No se han encontrado resultados');
             } else {
@@ -55,10 +52,17 @@ const SearchMain = () => {
         <Box>
             {items.length > 0 && <PaginationSearch/>}
             <Box sx={stackStyle}>
-                {items &&
-                items.map((item)=>(
-                    <ItemBox key={item.id} item={item}/>
-                ))}
+                {items ? (
+                    (() => {
+                    const itemBoxes = [];
+                    for (let i = 0; i < items.length; i++) {
+                        itemBoxes.push(<ItemBox key={items[i].id} item={items[i]} />);
+                    }
+                    return itemBoxes;
+                    })()
+                ) : (
+                    <div>No items to display</div>
+                )}
             </Box>
             {items.length > 0 && <PaginationSearch/>}
             {valid.length > 0 && <NotFound valid={valid}/>}

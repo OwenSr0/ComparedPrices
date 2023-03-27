@@ -1,6 +1,15 @@
 import React from "react";
-import { Box, TextField, Typography, Link  } from '@mui/material';
+import { Box, Typography, Link  } from '@mui/material';
 import PropTypes from 'prop-types';
+
+import IconButton from '@mui/material/IconButton';
+import FilledInput from '@mui/material/FilledInput';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormControl from '@mui/material/FormControl';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+
 
 
 
@@ -9,7 +18,22 @@ import PropTypes from 'prop-types';
 
     const {
       setPassword,
+      login
     } = props;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Enter'&& event.target.value.length > 2) {
+        login()
+      }
+    }
+
+    const [showPassword, setShowPassword] = React.useState(false);
+
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+    const handleMouseDownPassword = (event) => {
+      event.preventDefault();
+    };
 
     return(
         <Box sx={stackStyle}>
@@ -17,7 +41,29 @@ import PropTypes from 'prop-types';
               <Typography sx={stackLabel}>Password</Typography>
               <Link sx={stackLink} href="#" >¿Olvidadaste tu contraseña?</Link>
             </Box>
-            <TextField sx={stackText} placeholder='Password' size="small" onChange={(e) => {setPassword(e.target.value)}} InputProps={{ style: { fontSize: 16 } }} InputLabelProps={{ style: { fontSize: 18 } }}>Password</TextField>
+            <FormControl sx={stackForm} variant="filled">
+              <InputLabel htmlFor="outlined-adornment-password" style={{ fontSize: '20px', color: 'gray', top: '-5px'}}>Contraseña</InputLabel>
+              <FilledInput style={{ fontSize: '18px', height: '3em'}}
+                id="outlined-adornment-password"
+                type={showPassword ? 'text' : 'password'}
+                onChange={(e) => {setPassword(e.target.value)}}
+                onKeyDown={handleKeyDown}
+                required={true}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label="Contraseña"
+              />
+          </FormControl>
             <Typography sx={stackTy}>Contraseña y/o correo incorrecto</Typography>
         </Box>
     )
@@ -57,12 +103,10 @@ const stackLabel = {
   marginBottom: '0.5em'
 }
 
-const stackText = {
-  fontSize: '1em',
+const stackForm = {
   background: 'white',
-  borderRadius: '4px',
-  marginBottom: '1em',
-  width: 'auto'
+  borderRadius: '5px',
+  marginBottom: '1em'
 }
 
 const stackLink = {

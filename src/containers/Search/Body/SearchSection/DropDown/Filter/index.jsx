@@ -8,7 +8,6 @@ const SortFilter = () => {
 
         const handleChange = (event) => {
             setCategory(event.target.value);
-          console.log(category)
         };
        
 

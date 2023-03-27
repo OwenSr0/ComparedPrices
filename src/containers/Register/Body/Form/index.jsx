@@ -18,6 +18,11 @@ const RegisterForm = () => {
     const navigate = useNavigate();
 
     function register(){
+        if (!name || !email || !password) {
+            alert('Rellena todos los campos');
+            return false;
+          }
+          
         var user = {
             name: name,
             email: email,
@@ -26,7 +31,7 @@ const RegisterForm = () => {
             userId: crypto.randomUUID(),
             token: crypto.randomUUID()
         }
-        axios.post('/api/user/register', user)
+        axios.post('http://18.217.165.43:80/api/user/register', user)
         .then(res => {
             console.log(res.data)
             window.localStorage.setItem(
@@ -39,21 +44,22 @@ const RegisterForm = () => {
 
     return(
         <Box sx={StackContainer}>
-            <Box>
                 <Box sx={stackForm}>
                     <Typography sx={stactTittle}>Crear un nuevo usuario</Typography>
-                    <NameRegisterField setName={setName}/>
-                    <EmailRegisterField setEmail={setEmail}/>
-                    <PasswordRegisterField setPassword={setPassword}/>
-                    <NumberRegisterField setNumber={setNumber} />
-                    <Button sx={stackButton} onClick={register} variant="contained" >Registrarte</Button>
                     <Box sx={stackBox}>
-                        <Typography sx={{fontSize:'16px', marginRight:'10px'}}>Tienes Cuenta?</Typography>
-                        <Link sx={stackLink} href="login" >Ingresa</Link>
+                        <NameRegisterField setName={setName} register={register}/>
+                        <EmailRegisterField setEmail={setEmail} register={register}/>
+                        <PasswordRegisterField setPassword={setPassword} register={register}/>
+                        <NumberRegisterField setNumber={setNumber} register={register}/>
+                    </Box>
+                    <Box>
+                        <Button sx={stackButton} onClick={register} variant="contained" >Registrarte</Button>
+                        <Box sx={stackBox1}>
+                            <Typography sx={{fontSize:'16px', marginRight:'10px'}}>Tienes Cuenta?</Typography>
+                            <Link sx={stackLink} href="login" >Ingresa</Link>
+                        </Box>
                     </Box>
                 </Box>
-            </Box>
-                    
         </Box>
     )
 }
@@ -85,6 +91,18 @@ const stackForm = {
     alignItems: 'center'
 }
 
+const stackBox = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: {
+        xs: 'space-around',
+    },
+    height: {
+        xs: '15em',
+        sm: '11em'
+    }
+}
+
 const stactTittle = {
     margin: {
         xs: '0.5em 1em 0 1em',
@@ -99,7 +117,7 @@ const stactTittle = {
     textAlign: 'center'
 }
 
-const stackBox = {
+const stackBox1 = {
     display: 'flex',
 }
 

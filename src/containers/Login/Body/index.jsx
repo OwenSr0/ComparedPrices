@@ -1,9 +1,9 @@
-import React, {useState} from "react";
-import { Container, Box, Link, Typography } from '@mui/material';
+import React, { useState } from "react";
 import axios from 'axios';
-import LoginField from '../../../components/TextField/Login/Email/index'
-import PasswordField from '../../../components/TextField/Login/Password/index'
-import {useNavigate} from 'react-router-dom'
+import LoginField from '../../../components/TextField/Login/Email/index';
+import PasswordField from '../../../components/TextField/Login/Password/index';
+import { useNavigate } from 'react-router-dom';
+import { Container, Box, Link, Typography } from '@mui/material';
 
 
 const BodyLogin = () => {
@@ -12,22 +12,23 @@ const BodyLogin = () => {
     const[email, setEmail]=useState('');
     const[password, setPassword]=useState('');
 
-    function login(){
-        var validate = {
+    async function login() {
+        if (!email || !password) {
+            alert('Rellena todos los campos');
+            return false;
+        }
+        try {
+          const validate = {
             email: email,
             password: password,
+          };
+          const res = await axios.post('http://18.217.165.43:80/api/user/login', validate);
+          window.localStorage.setItem('loggedAppUser', res.data.token);
+          navigate('/home');
+        } catch (error) {
+          console.log(error);
         }
-        axios.post('/api/user/login', validate)
-        .then(res => {
-            console.log(res.data)
-            window.localStorage.setItem(
-                'loggedAppUser', res.data.token 
-            )
-            navigate("/home")
-        })
-        .then(err =>{console.log(err)})
-
-    }
+      }
 
     return(
         <Container sx={stackStyle}>
@@ -35,8 +36,8 @@ const BodyLogin = () => {
                     <h2 className='mt-4'>Inicia Sesión</h2>
                 </Box>
                 <Box sx={stackTextField}>
-                    <LoginField setEmail={setEmail}/>
-                    <PasswordField setPassword={setPassword}/>
+                    <LoginField setEmail={setEmail} login={login}/>
+                    <PasswordField setPassword={setPassword} login={login}/>
                 </Box>
                 <Box sx={stackBox}>
                     <button onClick={login} className='btn btn-success'>Iniciar Sesión</button>

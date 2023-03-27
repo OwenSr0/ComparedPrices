@@ -1,6 +1,11 @@
 import React from "react";
-import { Box, TextField, Typography, } from '@mui/material';
+import { Box } from '@mui/material';
 import PropTypes from 'prop-types';
+
+import FilledInput from '@mui/material/FilledInput';
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+
 
 
 
@@ -9,13 +14,27 @@ import PropTypes from 'prop-types';
 
     const {
       setEmail,
+      register
     } = props;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Enter'&& event.target.value.length > 2) {
+        register()
+      }
+    }
 
     return(
         <Box sx={stackStyle}>
-            <Typography sx={stackLabel}>Email</Typography>
-            <TextField  sx={stackText}  placeholder='Email' size="small" onChange={(e) => {setEmail(e.target.value)}} InputProps={{ style: { fontSize: 16 } }} InputLabelProps={{ style: { fontSize: 18 } }}>Email</TextField>
-            <Typography sx={stackTy}>Correo invalido</Typography>
+          <FormControl sx={stackForm} variant="filled">
+              <InputLabel style={{ fontSize: '20px', color: 'gray', top: '-5px'}}>Correo Electronico</InputLabel>
+              <FilledInput style={{ fontSize: '18px', height: '3em'}}
+                onChange={(e) => {setEmail(e.target.value)}}
+                onKeyDown={handleKeyDown}
+                required={true}
+                type="email"
+                label="Nombre"
+              />
+          </FormControl>
         </Box>
     )
   }
@@ -36,20 +55,7 @@ const stackStyle = {
   width: '13em',
 }
 
-const stackLabel = {
-  fontSize: {
-    xs: '14px',
-    sm: '16px'
-  },
-  marginBottom: '0.5em'
-}
-
-const stackText = {
+const stackForm = {
   background: 'white',
-  borderRadius: '4px',
-  marginBottom: '0.5em'
-}
-
-const stackTy = {
-  display: 'none'
+  borderRadius: '5px'
 }
