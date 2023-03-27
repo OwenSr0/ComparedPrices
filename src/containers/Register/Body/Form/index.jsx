@@ -17,29 +17,26 @@ const RegisterForm = () => {
 
     const navigate = useNavigate();
 
-    function register(){
+    async function register() {
         if (!name || !email || !password) {
             alert('Rellena todos los campos');
             return false;
-          }
+        }
           
         var user = {
             name: name,
             email: email,
             password: password,
-            number: number,
-            userId: crypto.randomUUID(),
-            token: crypto.randomUUID()
+            number: number
+        };
+          
+        try {
+            const res = await axios.post('/api/user/register', user);
+            window.localStorage.setItem('loggedAppUser', res.data);
+            navigate("/home");
+        } catch (err) {
+            console.log(err);
         }
-        axios.post('http://18.217.165.43:80/api/user/register', user)
-        .then(res => {
-            console.log(res.data)
-            window.localStorage.setItem(
-                'loggedAppUser', res.data
-            )
-            navigate("/home")
-        })
-        .then(err =>{console.log(err)})
     }
 
     return(
