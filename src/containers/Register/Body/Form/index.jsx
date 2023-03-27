@@ -31,7 +31,7 @@ const RegisterForm = () => {
         };
           
         try {
-            const res = await axios.post('18.217.165.43:80/api/user/register', user);
+            const res = await axios.post('http://18.217.165.43:80/api/user/register', user);
             window.localStorage.setItem('loggedAppUser', res.data);
             navigate("/home");
         } catch (err) {
