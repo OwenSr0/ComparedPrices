@@ -22,7 +22,7 @@ const BodyLogin = () => {
             email: email,
             password: password,
           };
-          const res = await axios.post('http://18.217.165.43:80/api/user/login', validate);
+          const res = await axios.post('https://backend.comparo.land/api/user/login', validate);
           window.localStorage.setItem('loggedAppUser', res.data.token);
           navigate('/home');
         } catch (error) {

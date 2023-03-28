@@ -69,12 +69,12 @@ const stackImg = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    width: {
+    maxWidth: {
         xs: '100px',
         sm: '110px',
         xl: '150px'
     },
-    height: {
+    maxHeight: {
         xs: '100px',
         sm: '110px',
         xl: '150px'

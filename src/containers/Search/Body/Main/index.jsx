@@ -27,7 +27,7 @@ const SearchMain = () => {
             page: page - 1,
         }
         try {
-            const res = await axios.post('http://18.217.165.43:80/api/searches/search', searchs);
+            const res = await axios.post('https://backend.comparo.land/api/searches/search', searchs);
             setItems(res.data);
             if (res.data.length === 0) {
               setValid('No se han encontrado resultados');

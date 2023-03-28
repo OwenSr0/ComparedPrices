@@ -24,7 +24,7 @@ const ProductBody = () => {
                 platform: platform,
                 itemId: itemId,
             };
-            const res0 = await axios.post('http://18.217.165.43:80/api/searches/product', reqs0);
+            const res0 = await axios.post('https://backend.comparo.land/api/searches/product', reqs0);
             setItem(res0.data);
             if (res0.data.length === 0) {
                 return setValid('No se ha encontrado el producto');
@@ -37,7 +37,7 @@ const ProductBody = () => {
                 condition: res0.data.condition,
                 attributes: res0.data.attributes
             }
-            const res1 = await axios.post('http://18.217.165.43:80/api/searches/comparo', reqs1);
+            const res1 = await axios.post('https://backend.comparo.land/api/searches/comparo', reqs1);
             setItems(res1.data);
 
     } catch (error) {
