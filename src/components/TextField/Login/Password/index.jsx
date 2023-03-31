@@ -38,7 +38,6 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
     return(
         <Box sx={stackStyle}>
             <Box sx={stackLP}>
-              <Typography sx={stackLabel}>Password</Typography>
               <Link sx={stackLink} href="#" >¿Olvidadaste tu contraseña?</Link>
             </Box>
             <FormControl sx={stackForm} variant="filled">
@@ -90,17 +89,10 @@ const stackStyle = {
 
 const stackLP = {
   display:'flex',
-  justifyContent: 'space-between',
+  justifyContent: 'flex-end',
   textAlign: 'center',
-  width: 'auto'
-}
-
-const stackLabel = {
-  fontSize: {
-    xs: '13px',
-    sm: '16px',
-  },
-  marginBottom: '0.5em'
+  width: 'auto',
+  marginBottom: '10px'
 }
 
 const stackForm = {

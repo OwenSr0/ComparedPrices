@@ -5,7 +5,7 @@ import './index.css'
 const Logo = () => {
     return(
         <Box sx={stactStyle}>
-            <a href="/"><img src="./favicon.png" alt="Logo"  width='60px' id="img"/></a>
+            <a href="/"><img src="/favicon.png" alt="Logo"  width='60px' id="img"/></a>
         </Box>
     )
 }

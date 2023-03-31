@@ -1,13 +1,15 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './containers/Home/index';
-import Login from './containers/Login/index'
+import Login from './containers/Login/index';
 import Register from './containers/Register/index';
 import Search from './containers/Search';
-import Product from './containers/Product/index'
-import About from './containers/About/index'
-import Info from './containers/Info/index'
-import Contact from './containers/Contact/index'
+import Product from './containers/Product/index';
+import About from './containers/About/index';
+import Info from './containers/Info/index';
+import Contact from './containers/Contact/index';
+import Blog from './containers/Blog/index';
+import BlogAdd from './containers/Blog/Add';
 import Logout from './containers/Logout/index';
 import Test from './containers/Others/Test/index';
 import './App.css';
@@ -27,6 +29,10 @@ function App() {
           <Route path='/about' element={<About/>}></Route>
           <Route path='/info' element={<Info/>}></Route>
           <Route path='/contact' element={<Contact/>}></Route>
+
+          <Route path='/blog' element={<Blog/>}></Route>
+          <Route path='/blog/add' element={<BlogAdd/>}></Route>
+
           <Route path='/test' element={<Test/>}></Route>
         </Routes>
       </BrowserRouter>

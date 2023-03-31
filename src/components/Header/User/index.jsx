@@ -21,7 +21,7 @@ const UserIcon = () => {
     return(
         <Box sx={stactBox}>
             <Button sx={stackButton} onClick={showMenu} >
-                <img src="./img/profile-user.png" alt="user-profile" width="50" id="imgUser"/>
+                <img src="/img/profile-user.png" alt="user-profile" width="50" id="imgUser"/>
             </Button>
             <Box id='userIcon'><UserMenu /></Box>
         </Box>

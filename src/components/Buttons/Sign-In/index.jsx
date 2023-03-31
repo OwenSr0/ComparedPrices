@@ -4,7 +4,7 @@ import { Box, Button} from '@mui/material';
   const SignIn = () => {
     return(
         <Box sx={stactStyle}>
-            <Button href="login" sx={stackButton}>Ingresa</Button>
+            <Button href="/login" sx={stackButton}>Ingresa</Button>
         </Box>
     )
   }
