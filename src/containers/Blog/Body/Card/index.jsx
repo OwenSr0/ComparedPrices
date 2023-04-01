@@ -1,21 +1,29 @@
 import React from "react";
 import { Box, Card, Typography, Button } from '@mui/material';
 
-const BlogCard = () => {
+const BlogCard = (props) => {
 
+    const { 
+        title,
+        img,
+        resume,
+        autor,
+        date,
+        time,
+    } = props.item
     return(
         <Card sx={stackStyle}>
             
-            <Typography sx={stackTitle}>Celulares mas vendidos en el 2022</Typography>
+            <Typography sx={stackTitle}>{title}</Typography>
             <Box sx={{display:'flex'}}>
-                <img src="https://freddyvega.com/content/images/size/w2000/2022/05/sabana.jpg" alt="" width="640px" height="400px" />
+                <img src={img} width="640px" height="400px" />
                 <Box sx={stackBox2}>
-                    <Typography sx={stackDescripton}>Amy es mi primer foto en Instagram. La conocí por más de doce años, diez de los cuáles no nos caimos tan bien. Ella era salvaje, independiente, explosiva, energética y</Typography>
+                    <Typography sx={stackDescripton}>{resume}</Typography>
                     <Box>
-                        <Typography sx={stackTy}>Owen Sanchez</Typography>
+                        <Typography sx={stackTy}>{autor}</Typography>
                         <Box sx={stackBox3}>
-                            <Typography sx={stackTy}>6 AGO. 2022</Typography>
-                            <Typography sx={stackTy}>10 MIN READ</Typography>
+                            <Typography sx={stackTy}>{date}</Typography>
+                            <Typography sx={stackTy}>{time}</Typography>
                         </Box>
                         <Button sx={stackButton} variant="outlined">Ver</Button>
                     </Box>
