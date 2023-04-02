@@ -8,7 +8,8 @@ import '../../../App.css';
 const FullHeader = (props) =>{
 
     const {
-        title = props.title
+        title = props.title,
+        link = props.link
     } = props
 
     const[user, setUser]=useState('');
@@ -27,7 +28,12 @@ const FullHeader = (props) =>{
     return(
         <Box sx={stackStyle}>
             <Box sx={{gridColumnStart: '2', margin: 'auto 0 auto 0'}}><Logo/></Box>
-            <Box sx={stackT}><Typography sx={stackText}>{title}</Typography></Box>
+            { link !== undefined ? (
+                    <Box sx={stackT}><a style={{color: 'white'}} href={link}><Typography sx={stackText}>{title}</Typography></a></Box>
+            ) : (
+                <Box sx={stackT}><Typography sx={stackText}>{title}</Typography></Box>
+            )}
+
             <Box sx={stackConditionals}>
                 <Box  id='userProfileOn'><UserIcon/></Box>
                 <Box  id='userProfileOff'><SignIn/></Box>

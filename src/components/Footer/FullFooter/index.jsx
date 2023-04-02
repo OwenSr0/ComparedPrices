@@ -5,7 +5,7 @@ const FullFooter = () => {
     return(
         <Box sx={stackStyle}>
             <Link href="/about" sx={stackText2}>About</Link>
-            <Link href="/about" sx={stackText2}>Autor</Link>
+            <Link href="/blog" sx={stackText2}>Blog</Link>
             <Typography sx={stackText1}>2023 © Comparo</Typography>
             <Link href="/info" sx={stackText2}>Condiciones de uso</Link>
             <Link href="/info" sx={stackText2}>Aviso de privacidad</Link>
@@ -19,7 +19,7 @@ const stackStyle = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop:'0',
+    marginTop:'1em',
     height: {
         sm: '3em',
         lg: '2em'

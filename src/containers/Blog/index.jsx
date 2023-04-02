@@ -4,12 +4,14 @@ import { Box } from '@mui/material';
 import FullHeader from '../../components/Header/FullHeader/index';
 import BodyBlog from './Body/index';
 import BodyArticle from './BodyArticle/index';
+import FullFooter from '../../components/Footer/FullFooter/index';
 
 import { useLocation } from 'react-router-dom';
 
 
 const Blog = () => {
     const title = 'Blog';
+    const link = '/blog';
 
     const [items, setItems] = useState([])
 
@@ -21,7 +23,6 @@ const Blog = () => {
     async function getBlogs() {
         const res = await axios.get('http://localhost:80/api/blog');
         try {
-            console.log(res.data)
             setItems(res.data);
         } catch (error) {
           console.log(error);
@@ -32,18 +33,18 @@ const Blog = () => {
         if(itemId === null){
         getBlogs()
         }
-        },[])
+        },[itemId])
         
 
     return(
         <Box>
-            <FullHeader title={title}/>
-
+            <FullHeader title={title} link={link}/>
             {itemId !== null ? (
                 <BodyArticle itemId={itemId}/>
                 ) : (
                     <BodyBlog items={items}/>
                     )}
+            <FullFooter />
         </Box>
     )
 }

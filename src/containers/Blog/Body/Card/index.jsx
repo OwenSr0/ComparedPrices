@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import { Box, Card, Typography, Button } from '@mui/material';
+import './index.css'
 
 const BlogCard = (props) => {
+
+    const [resumen, setResume] = useState('')
 
     const { 
         title,
@@ -11,21 +14,29 @@ const BlogCard = (props) => {
         date,
         time,
     } = props.item
+
+    function handleClick(){
+        window.location.assign(`/blog?q=${title}`);
+    }
+
+    if(resume.length > 250 && !resumen){
+        setResume(resume.slice(0, 250) + '...')
+    }
     return(
         <Card sx={stackStyle}>
             
             <Typography sx={stackTitle}>{title}</Typography>
-            <Box sx={{display:'flex'}}>
-                <img src={img} width="640px" height="400px" />
+            <Box sx={stackBox1}>
+                <img src={img} width="640px" height="400px" alt="principal" id="imgArticle"/>
                 <Box sx={stackBox2}>
-                    <Typography sx={stackDescripton}>{resume}</Typography>
-                    <Box>
+                    <Typography sx={stackDescripton}>{resumen}</Typography>
+                    <Box sx={stackBox3}>
                         <Typography sx={stackTy}>{autor}</Typography>
-                        <Box sx={stackBox3}>
+                        <Box sx={stackBox4}>
                             <Typography sx={stackTy}>{date}</Typography>
                             <Typography sx={stackTy}>{time}</Typography>
                         </Box>
-                        <Button sx={stackButton} variant="outlined">Ver</Button>
+                        <Button sx={stackButton} onClick={handleClick} variant="contained">Ver</Button>
                     </Box>
                     
                 </Box>
@@ -41,20 +52,43 @@ const stackStyle = {
     background: '#242526',
     padding: '1em',
     borderRadius: '15px',
-    margin: '1em'
+    margin: '2em'
+}
+
+const stackBox1 = {
+    display: 'flex',
+    flexDirection: {
+        xs: 'column',
+        lg: 'row'
+    },
+    alignItems: {
+        xs: 'center',
+        lg: 'center'
+    }
 }
 
 const stackBox2 = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    marginLeft: '1em',
+    marginLeft: {
+        lg: '1em'
+    },
     width: {
+        sm: '22.5em',
+        lg: '10em',
         xl: '8em'
     }
 }
 
 const stackBox3 = {
+    marginTop: {
+        xs: '0.5em',
+        lg: '0'
+    },
+}
+
+const stackBox4 = {
     display: 'flex',
     justifyContent: 'space-between'
 }
@@ -63,24 +97,46 @@ const stackTitle = {
     textAlign: 'center',
     color: 'white',
     fontSize: {
-        xl: '26px'
+        xs: '20px',
+        sm: '30px',
+        lg: '26px'
     },
     marginBottom: '5px'
 }
 
 const stackDescripton = {
+    textAlign: 'justify',
     color: 'white',
+    marginTop: {
+        xs: '1em',
+        lg: '0'
+    },
     fontSize: {
-        xl: '18px'
+        xs: '16px',
+        sm: '24px',
+        lg: '18px'
     },
 }
 
 const stackTy = {
-    color: 'white'
+    color: 'white',
+    fontSize: {
+        xs: '16px',
+        sm: '24px',
+        lg: '18px'
+    }
 }
 
 const stackButton = {
     display: 'flex',
     justifyContent: 'center',
+    width: {
+        xs: '5em'
+    },
+    fontSize: {
+        xs: '16px',
+        sm: '24px',
+        lg: '24px',
+    },
     margin: '10px auto 0 auto'
 }
