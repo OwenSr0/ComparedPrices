@@ -16,6 +16,7 @@ const BlogAdd = () => {
     const navigate = useNavigate();
 
     const title = 'Blog edit';
+    const link = '/blog';
     const loggedUserToken = window.localStorage.getItem('loggedAppUser');
 
     useEffect(()=>{
@@ -33,7 +34,7 @@ const BlogAdd = () => {
             
             { user === true &&
             <Box>
-                <FullHeader title={title}/>
+                <FullHeader title={title} link={link}/>
                 <BlogAddBody/>
             </Box>}
         </Box>

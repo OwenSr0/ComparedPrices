@@ -21,7 +21,7 @@ const Blog = () => {
 
     
     async function getBlogs() {
-        const res = await axios.get('http://localhost:80/api/blog');
+        const res = await axios.get('https://backend.comparo.land/api/blog');
         try {
             setItems(res.data);
         } catch (error) {

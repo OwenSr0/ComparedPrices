@@ -22,7 +22,7 @@ const BodyArticle = (props) => {
               title: title,
               boolean: true
           }
-          const res = await axios.post('http://localhost:80/api/blog/get', validate);
+          const res = await axios.post('https://backend.comparo.land/api/blog/get', validate);
           try {
             if(res.status === 200){
               const { img, autor, date, time, dataArray} = res.data;
@@ -58,7 +58,6 @@ const BodyArticle = (props) => {
                         const match = dataArray[i];
                         if (match.startsWith('title::')) {
                           const [, title] = match.split('::');
-                          console.log(`Title: ${title}`);
                         }
                         else if (match.startsWith('img::')) {
                           const [, img] = match.split('::');

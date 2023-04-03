@@ -39,7 +39,7 @@ const BlogAddBody = () => {
             time: time,
             data: data
           };
-        const res = await axios.post('http://localhost:80/api/blog/add', validate);
+        const res = await axios.post('https://backend.comparo.land/api/blog/add', validate);
         try {
           if(res.status === 200){
             navigate(`/blog?q=${title}`);
@@ -61,9 +61,8 @@ const BlogAddBody = () => {
             data: data,
             id: id
         }
-        const res = await axios.put('http://localhost:80/api/blog/edit', validate);
+        const res = await axios.put('https://backend.comparo.land/api/blog/edit', validate);
         try {
-            console.log(res.status)
             if(res.status === 200){
                 navigate(`/blog?q=${title}`);
               }        
@@ -73,9 +72,8 @@ const BlogAddBody = () => {
     }
 
     async function deleteArticle(){
-        const res = await axios.delete('http://localhost:80/api/blog/delete/' + id);
+        const res = await axios.delete('https://backend.comparo.land/api/blog/delete/' + id);
         try {
-            console.log(res.status)
             if(res.status === 200){
                 navigate(`/blog`);
               }
@@ -90,7 +88,7 @@ const BlogAddBody = () => {
                 title: itemId,
                 boolean: false
             }
-            const res = await axios.post('http://localhost:80/api/blog/get', validate);
+            const res = await axios.post('https://backend.comparo.land/api/blog/get', validate);
             try{
                 if(res.status === 204){
                     navigate(`/blog`);
