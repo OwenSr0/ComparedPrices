@@ -1,7 +1,18 @@
+#imgProducts{
+  max-width: 150px;
+  max-height: 150px;
+}
 
+@media screen and (max-width: 1200px){
+  #imgProducts{
+    max-width: 125px;
+    max-height: 125px;
+    };
+}
 
 @media screen and (max-width: 599px){
-  #imgProduct{
-      width: 100px;
+  #imgProducts{
+    max-width: 125px;
+    max-height: 125px;
     };
 }

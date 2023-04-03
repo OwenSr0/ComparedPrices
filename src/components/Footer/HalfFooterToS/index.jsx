@@ -6,7 +6,7 @@ const HalfFooterToS = () => {
         <Box sx={stackStyle}>
             <Link href="/about" sx={stackText2}>About</Link>
             <Typography sx={stackText1}>2023 © Comparo</Typography>
-            <Link href="/about" sx={stackText2}>Autor</Link>
+            <Link href="/blog" sx={stackText2}>Blog</Link>
         </Box>
     )
 }

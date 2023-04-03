@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from '@mui/material';
+import { Box, Card, Typography } from '@mui/material';
 import ItemRow from './ItemRow/index'
 
 const ItemBox = (props) => {
@@ -9,10 +9,10 @@ const ItemBox = (props) => {
     } = props
 
     return(
-        <Box sx={stackStyle}>
+        <Card sx={stackStyle}>
             <Box sx={stackBox}><Typography sx={stackTy}>{title}</Typography></Box>
             <ItemRow props={props} />
-        </Box>
+        </Card>
     )
 }
 
@@ -27,11 +27,12 @@ const stackStyle = {
         lg: '18em'
     },
     height: 'auto',
-    background: 'white',
+    background: '#1E1E1E',
     borderRadius: '20px',
     padding: '10px',
     margin: '1em',
-    shadow: '3px white'
+    shadow: '3px white',
+    border: 'solid 2px white'
 }
 
 const stackBox = {
@@ -42,7 +43,7 @@ const stackBox = {
 
 
 const stackTy = {
-    color: 'black',
+    color: 'white',
     fontSize: '18px',
     textAlign: 'justify',
     textAlignLast: 'center'

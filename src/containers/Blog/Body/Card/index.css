@@ -1,3 +1,8 @@
+#imgArticle{
+  width: 640px;
+  height: 400px;
+}
+
 @media screen and (max-width: 599px){
   #imgArticle{
       width: 269px;

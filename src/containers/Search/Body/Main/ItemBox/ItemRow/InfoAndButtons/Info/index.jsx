@@ -24,7 +24,8 @@ const stackInfo = {
     background: '#242526',
     borderRadius: '10px',
     padding: '5px',
-    margin: 'auto 0 0.5em 0'
+    margin: '5px 0 0.5em 0',
+    border: 'solid 1px white'
 }
 
 const stackTy = {

@@ -1,0 +1,19 @@
+#mainImg{
+  width: 700px;
+  height: 420px;
+}
+
+@media screen and (max-width: 599px){
+  #mainImg{
+    width: 260px;
+    height: 160px;  
+  }
+  #imgPhotos{
+    width: 245px;
+    height: 150px;  
+  }
+  #imgPubli{
+    width: 100px;
+    height: 100px; 
+  }
+}

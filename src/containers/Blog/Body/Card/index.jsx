@@ -6,6 +6,7 @@ const BlogCard = (props) => {
 
     const [resumen, setResume] = useState('')
 
+    const user = props.user;
     const { 
         title,
         img,
@@ -27,7 +28,7 @@ const BlogCard = (props) => {
             
             <Typography sx={stackTitle}>{title}</Typography>
             <Box sx={stackBox1}>
-                <img src={img} width="640px" height="400px" alt="principal" id="imgArticle"/>
+                <img src={img} alt="principal" id="imgArticle"/>
                 <Box sx={stackBox2}>
                     <Typography sx={stackDescripton}>{resumen}</Typography>
                     <Box sx={stackBox3}>
@@ -36,7 +37,10 @@ const BlogCard = (props) => {
                             <Typography sx={stackTy}>{date}</Typography>
                             <Typography sx={stackTy}>{time}</Typography>
                         </Box>
-                        <Button sx={stackButton} onClick={handleClick} variant="contained">Ver</Button>
+                        <Box sx={{display:'flex'}}>
+                            {user === true && <Button sx={stackButton} onClick={(e) => {window.location.assign(`/blog/add?q=${title}`)}} variant="contained" color="warning">Editar</Button>}
+                            <Button sx={stackButton} onClick={handleClick} variant="contained">Ver</Button>
+                        </Box>
                     </Box>
                     
                 </Box>
@@ -52,7 +56,7 @@ const stackStyle = {
     background: '#242526',
     padding: '1em',
     borderRadius: '15px',
-    margin: '2em'
+    margin: '0.5em',
 }
 
 const stackBox1 = {
@@ -75,6 +79,7 @@ const stackBox2 = {
         lg: '1em'
     },
     width: {
+        xs: '15em',
         sm: '22.5em',
         lg: '10em',
         xl: '8em'

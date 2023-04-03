@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import { Container } from '@mui/material';
 import VerificationHeader from '../../components/Header/VerificationHeader/index';
 import BodyLogin from './Body';
@@ -6,26 +6,25 @@ import HalfFooterPrivacy from '../../components/Footer/HalfFooterPrivacy/index';
 import {useNavigate} from 'react-router-dom';
 
 const Login = () => {
-    const[user, setUser]=useState('');
     const navigate = useNavigate();
+    const loggedUserToken = window.localStorage.getItem('loggedAppUser')
 
     useEffect(() => {
-        const loggedUserToken = window.localStorage.getItem('loggedAppUser')
         if(loggedUserToken){
-            setUser(loggedUserToken)
-        }
-    }, [])
-
-        if (user){
-            navigate("/home")
-        }
+            navigate("/")
+        } 
+    }, [navigate, loggedUserToken])
 
     return(
-        <Container sx={stackStyle}>
-            <VerificationHeader />
-            <BodyLogin />
-            <HalfFooterPrivacy />
-        </Container>
+        <div>
+            { !loggedUserToken &&
+            <Container sx={stackStyle}>
+                <VerificationHeader />
+                <BodyLogin />
+                <HalfFooterPrivacy />
+            </Container>
+            }
+        </div>
         
     )
 }

@@ -16,8 +16,6 @@ const ItemComparo = (props) => {
 
 
     } = props
-
-    console.log(url)
     return(
         <Box sx={stackStyle}>
             <Typography sx={stackTy}>{title}</Typography>
@@ -45,7 +43,7 @@ const stackButton = {
     width: {
         sm: '3.5em',
         lg: '3.5em',
-        xl: '5em'
+        xl: '4.5em'
     },
     height: {
         lg: '2em',

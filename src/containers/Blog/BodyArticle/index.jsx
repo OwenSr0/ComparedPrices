@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Box, Typography, Card, Button } from '@mui/material';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import './index.css'
 
 const BodyArticle = (props) => {
 
@@ -16,31 +16,31 @@ const BodyArticle = (props) => {
         title = props.itemId
     } = props
 
-    async function getBlog() {
-        const validate = {
-            title: title,
-        }
-        const res = await axios.post('http://localhost:80/api/blog/get', validate);
-        try {
-          if(res.status === 200){
-            const { img, autor, date, time, dataArray} = res.data;
-            setImg(img);setAutor(autor);setDate(date);setTime(time);setDataArray(dataArray)
-          } else{
-            navigate('/blog')
-          }
-        } catch (error) {
-          console.log(error);
-        }
-      }
-
       useEffect(()=>{
+        async function getBlog() {
+          const validate = {
+              title: title,
+              boolean: true
+          }
+          const res = await axios.post('http://localhost:80/api/blog/get', validate);
+          try {
+            if(res.status === 200){
+              const { img, autor, date, time, dataArray} = res.data;
+              setImg(img);setAutor(autor);setDate(date);setTime(time);setDataArray(dataArray)
+            } else{
+              navigate('/blog')
+            }
+          } catch (error) {
+            console.log(error);
+          }
+        }
         getBlog()
-        },[])
+        },[navigate, title])
 
     return(
         <Box sx={stackStyle}>
             <Typography sx={stackTitle}>{title}</Typography>
-            <img src={img} alt="img principal" width="700" heigth="420" />
+            <img src={img} alt="img principal" id="mainImg"/>
             <Box sx={stackBox1}>
               <Card sx={stackCard}>
                 <Typography sx={stackTyCard}>{autor}</Typography>
@@ -62,13 +62,13 @@ const BodyArticle = (props) => {
                         }
                         else if (match.startsWith('img::')) {
                           const [, img] = match.split('::');
-                          itemBoxes.push(<Box key={i} sx={stackBoxCenter}><img  src={img} width="640" height="400" alt="img secundary"/></Box>);
+                          itemBoxes.push(<Box key={i} sx={stackBoxCenter}><img  src={img} width="640" height="400" alt="img secundary" id="imgPhotos"/></Box>);
                         }
                         else if(match.startsWith("imgL::")){
                           const [, href, img, link] = match.split('::');
                           itemBoxes.push(
                           <Box key={i} sx={stackBoxSell}>
-                            <Button onClick={() => window.open(href)}><img src={img} alt="publi"/></Button>
+                            <Button onClick={() => window.open(href)}><img src={img} alt="publi" id="imgPubli"/></Button>
                             <Button onClick={() => window.open(link)} sx={stackButtonBuy}>Comprar en Amazon</Button>
                           </Box>
                           );
@@ -97,7 +97,8 @@ const stackStyle = {
     flexDirection: 'column',
     alignItems: 'center',
     marginTop: {
-      xl: '1em'
+      xs: '1.5em',
+      sm: '1em'
     }
 }
 
@@ -105,12 +106,21 @@ const stackBox1 = {
   display: 'flex',
   justifyContent: 'flex-end',
   width: {
-    xs: '35%'
+    sm: '25em',
+    md: '22.5em',
+    lg: '27.5em',
+    xl: '22.5em'
   }
 }
 
 const stackBox2 = {
-  width: '35%'
+  width: {
+    xs: '15em',
+    sm: '25em',
+    md: '22.5em',
+    lg: '27.5em',
+    xl: '22.5em'
+  }
 }
 
 const stackBoxCenter = {
@@ -129,38 +139,57 @@ const stackCard = {
   padding: '0.5em',
   margin: '1em 0',
   width: {
-    xs: '11em'
+    xs: '15em',
+    sm: '11em',
+    xl: '9em'
   }              
 }
 
 const stackButtonBuy = {
   margin: 'auto 2em',
-  maxWidth: '7.5em',
+  maxWidth: {
+    xs: '8.5em',
+    sm: '7.5em'
+  },
   textAlign: 'center',
   border: 'solid 1px white',
-  color: 'white'
+  color: 'white',
+  fontSize: {
+    xs: '8px',
+    sm: '18px'
+  }
 }
 
 const stackTitle = {
+  textAlign: 'center',
   maxWidth: {
-    xs: '42.5'
+    xs: '15em',
+    sm: '22.5em',
+    lg: '42.5%'
   },
   marginBottom: {
     xs: '15px'
   },
   fontSize: {
-    xs: '34px'
+    xs: '18px',
+    sm: '28px',
+    lg: '28px',
+    xl: '34px'
   }
 }
 
 const stackTyCard = {
   color: 'white',
   fontSize: {
-    xs: '22px'
+    xs: '14px',
+    sm: '18px',
   }
 }
 
 const stackTyText = {
-  fontSize: '26x',
+  fontSize: {
+    xs: '15px',
+    sm: '24px'
+  },
   textAlign: 'justify'
 }

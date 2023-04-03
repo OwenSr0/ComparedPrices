@@ -18,35 +18,32 @@ const SearchMain = () => {
     var page = parseInt(query.get('page') || '1', 6);
     const search = query.get('q');
 
-    const getItems=async(search)=> {
-        if(isNaN(page)){
-            page = 1;
-        }
-        var searchs = {
-            search: search,
-            page: page - 1,
-        }
-        try {
-            const res = await axios.post('https://backend.comparo.land/api/searches/search', searchs);
-            setItems(res.data);
-            if (res.data.length === 0) {
-              setValid('No se han encontrado resultados');
-            } else {
-              setValid('');
-            }
-          } catch (err) {
-            setValid('No se han encontrado resultados');
-            console.log(err);
-          }
-        };
-
     useEffect(()=>{
+        const getItems=async(search)=> {
+            var searchs = {
+                search: search,
+                page: page - 1,
+            }
+            try {
+                const res = await axios.post('https://backend.comparo.land/api/searches/search', searchs);
+                setItems(res.data);
+                if (res.data.length === 0) {
+                  setValid('No se han encontrado resultados');
+                } else {
+                  setValid('');
+                }
+              } catch (err) {
+                setValid('No se han encontrado resultados');
+                console.log(err);
+              }
+            };
+
         if (search) {
             getItems(search);
         } else {
             setValid('');
         }
-    },[page])
+    },[setValid, search, page ])
 
     return(
         <Box>

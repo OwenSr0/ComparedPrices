@@ -4,10 +4,10 @@ import { Box, Typography, Link } from '@mui/material';
 const FullFooter = () => {
     return(
         <Box sx={stackStyle}>
+             <Link href="/info" sx={stackText2}>Condiciones de uso</Link>
             <Link href="/about" sx={stackText2}>About</Link>
-            <Link href="/blog" sx={stackText2}>Blog</Link>
             <Typography sx={stackText1}>2023 © Comparo</Typography>
-            <Link href="/info" sx={stackText2}>Condiciones de uso</Link>
+            <Link href="/blog" sx={stackText2}>Blog</Link>
             <Link href="/info" sx={stackText2}>Aviso de privacidad</Link>
         </Box>
     )
@@ -20,6 +20,10 @@ const stackStyle = {
     justifyContent: 'center',
     alignItems: 'center',
     marginTop:'1em',
+    paddingBottom: {
+        xs: '2em',
+        sm: '0'
+    },
     height: {
         sm: '3em',
         lg: '2em'

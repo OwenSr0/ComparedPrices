@@ -15,14 +15,14 @@ const ProductHeader = (props) => {
     return(
         <Box sx={stackStyle}>
             <Box sx={stackBoxImg}>
-                <Box sx={stackImg}><img src={image} alt="product" id="imgProduct"/></Box>
+                <Box sx={stackImg}><img src={image} alt="product" id="imgProducts"/></Box>
             </Box>
             <Box sx={stackProduct}>
                 <Typography sx={stackTitle}>{title}</Typography>
-                <Typography>{platform}</Typography>
+                <Typography sx={stackTyPlatform}>{platform}</Typography>
             </Box>
             <Box sx={stackBox}>
-                <Typography sx={{textAlign: 'center', margin: '1em'}}>${price}</Typography>
+                <Typography sx={stackTyPlatform}>${price}</Typography>
                 <Button sx={stackButton} onClick={() => window.open(url)}>Comprar</Button>
             </Box>
         </Box>
@@ -50,7 +50,7 @@ const stackStyle = {
     borderRadius: '25px',
     alignItems: {
         xs: 'center',
-        sm: 'unset'
+        lg: 'unset'
     }
 }
 
@@ -59,10 +59,11 @@ const stackBoxImg = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '20px',
+    padding: {
+        xs: '10px'
+    },
     borderRadius: '26px',
-    width: 'auto'
-
+    width: 'auto',
 }
 
 const stackImg = {
@@ -70,13 +71,13 @@ const stackImg = {
     justifyContent: 'center',
     alignItems: 'center',
     maxWidth: {
-        xs: '100px',
-        sm: '110px',
+        xs: '125px',
+        sm: '125px',
         xl: '150px'
     },
     maxHeight: {
-        xs: '100px',
-        sm: '110px',
+        xs: '125px',
+        sm: '125px',
         xl: '150px'
     }
 }
@@ -99,6 +100,18 @@ const stackTitle = {
     fontSize: {
         xs: '14px',
         sm: '24px'
+    }
+}
+
+const stackTyPlatform = {
+    fontSize: {
+        xs: '18px',
+        sm: '24px'
+    },
+    textAlign: 'center',
+    margin: {
+        xs: '0.2em', 
+        sm: '1em'
     }
 }
 
