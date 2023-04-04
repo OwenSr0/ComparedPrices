@@ -22,7 +22,7 @@ const BlogCard = (props) => {
 
     if(resume.length > 250 && !resumen){
         setResume(resume.slice(0, 250) + '...');
-    } else {
+    } else if(!resumen) {
         setResume(resume);
     }
     return(
