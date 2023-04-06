@@ -74,7 +74,7 @@ const BlogAddBody = () => {
     async function deleteArticle(){
         const res = await axios.delete('https://backend.comparo.land/api/blog/delete/' + id);
         try {
-            if(res.status === 200){
+            if(res.status === 200 || res.status === 204){
                 navigate(`/blog`);
               }
         } catch (error) {
@@ -111,7 +111,7 @@ const BlogAddBody = () => {
             <Box sx={stackBox}>
                 <Button variant="contained" color="error" onClick={deleteArticle}>Eliminar</Button>
                 <Button variant="contained" color="warning"  onClick={putArticle}>Editar</Button>
-                <Button variant="contained" color="success" onClick={addBlog}>Guardar</Button>
+                { itemId === null && <Button variant="contained" color="success" onClick={addBlog}>Guardar</Button>}
             </Box>
             <Box sx={stackText1}>
                 <FormControl sx={stackForm} variant="filled">

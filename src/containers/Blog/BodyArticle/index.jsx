@@ -64,10 +64,11 @@ const BodyArticle = (props) => {
                           itemBoxes.push(<Box key={i} sx={stackBoxCenter}><img  src={img} width="640" height="400" alt="img secundary" id="imgPhotos"/></Box>);
                         }
                         else if(match.startsWith("imgL::")){
-                          const [, href, img, link] = match.split('::');
+                          const [, href, img, ads, link] = match.split('::');
                           itemBoxes.push(
                           <Box key={i} sx={stackBoxSell}>
                             <Button onClick={() => window.open(href)}><img src={img} alt="publi" id="imgPubli"/></Button>
+                            <img src={ads} alt="ad" />
                             <Button onClick={() => window.open(link)} sx={stackButtonBuy}>Comprar en Amazon</Button>
                           </Box>
                           );
@@ -130,18 +131,15 @@ const stackBoxCenter = {
 
 const stackBoxSell = {
   display: 'flex',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  marginBottom: '0.5em'
 }
 
 const stackCard = {
   background: '#242526',
   padding: '0.5em',
   margin: '1em 0',
-  width: {
-    xs: '15em',
-    sm: '11em',
-    xl: '9em'
-  }              
+  width: "auto"      
 }
 
 const stackButtonBuy = {
