@@ -64,6 +64,8 @@ const RegisterForm = () => {
                 case 208:
                     alert('Error vuelve a intentarlo mas tarde');
                     break;
+                default:
+                    return false;
             }
         } catch (err) {
             console.log(err);
@@ -81,7 +83,6 @@ const RegisterForm = () => {
                         <NumberRegisterField setNumber={setNumber} register={register}/>
                     </Box>
                     <Turnstile
-                    className="cf-turnstile"
                     sitekey="0x4AAAAAAAD2hnSRwvyh4g00"
                     theme="dark"
                     autoResetOnExpire={true}

@@ -10,22 +10,52 @@ import Turnstile from "react-turnstile";
 const BodyLogin = () => {
     const navigate = useNavigate();
 
-    const[email, setEmail]=useState('');
-    const[password, setPassword]=useState('');
+    const [email, setEmail]=useState('');
+    const [password, setPassword]=useState('');
+    const [verify, setVerify] = useState('')
 
     async function login() {
-        if (!email || !password) {
+        if (!email || !password || !verify) {
             alert('Rellena todos los campos');
             return false;
         }
-        try {
-          const validate = {
+
+        if ( !email.includes('@')){
+            alert('Ingresa un email valido');
+            return false;
+        }
+
+        if ( password.length < 4 || password.length > 30 || password.includes(" ")){
+            alert('Ingresa una contraseña valida');
+            return false;
+        }
+
+        const validate = {
             email: email,
             password: password,
+            verify: verify
           };
-          const res = await axios.post('https://backend.comparo.land/api/user/login', validate);
-          window.localStorage.setItem('loggedAppUser', res.data.token);
-          navigate('/home');
+        const res = await axios.post('https://backend.comparo.land/api/user/login', validate);
+        if ( !email.includes('@')){
+            alert('Ingresa un email valido');
+            return false;
+        }
+        try {
+            switch(res.status){
+                case 200:
+                    window.localStorage.setItem('loggedAppUser', res.data.token);
+                    navigate('/home');
+                    break;
+                case 204:
+                    alert("Comprueba que seas humano");
+                    break;
+                case 206:
+                    alert('Correo o contraseña incorrecto')
+                    break;
+                default:
+                    alert('Vuelve a intentarlo más tarde');
+                    break;
+            }
         } catch (error) {
           console.log(error);
         }
@@ -42,8 +72,10 @@ const BodyLogin = () => {
                 </Box>
                 <Turnstile
                     sitekey="0x4AAAAAAAD2hnSRwvyh4g00"
+                    theme="dark"
                     autoResetOnExpire={true}
-                    onVerify={(token) => alert(token)}
+                    onVerify={(token) => setVerify(token)}
+                    onError={(err) => console.log(err)}
                 />
                 <Box sx={stackBox}>
                     <button onClick={login} className='btn btn-success'>Iniciar Sesión</button>
@@ -52,7 +84,6 @@ const BodyLogin = () => {
                     <Typography sx={stackTy2}>¿No tienes cuenta?</Typography>
                     <Link sx={stackLink} href="register" >Registrate</Link>
                 </Box>
-                
             </Container>
     )
 }
