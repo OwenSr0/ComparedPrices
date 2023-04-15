@@ -4,6 +4,7 @@ import LoginField from '../../../components/TextField/Login/Email/index';
 import PasswordField from '../../../components/TextField/Login/Password/index';
 import { useNavigate } from 'react-router-dom';
 import { Container, Box, Link, Typography } from '@mui/material';
+import Turnstile from "react-turnstile";
 
 
 const BodyLogin = () => {
@@ -39,6 +40,11 @@ const BodyLogin = () => {
                     <LoginField setEmail={setEmail} login={login}/>
                     <PasswordField setPassword={setPassword} login={login}/>
                 </Box>
+                <Turnstile
+                    sitekey="0x4AAAAAAAD2hnSRwvyh4g00"
+                    autoResetOnExpire={true}
+                    onVerify={(token) => alert(token)}
+                />
                 <Box sx={stackBox}>
                     <button onClick={login} className='btn btn-success'>Iniciar Sesión</button>
                 </Box>
@@ -54,9 +60,10 @@ const BodyLogin = () => {
 export default BodyLogin;
 
 const stackStyle = {
+    background: '#242526',
     display: 'flex',
     flexDirection: 'column',
-    background: '#242526',
+    alignItems: 'center',
     maxWidth:{
     xs:'90%',
     sm:'70%',

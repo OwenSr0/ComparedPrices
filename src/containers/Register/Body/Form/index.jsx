@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, Typography, Link, Button } from '@mui/material';
+import Turnstile from "react-turnstile";
 import axios from 'axios';
 
 import EmailRegisterField from "../../../../components/TextField/Register/EmailText";
@@ -10,16 +11,32 @@ import {useNavigate} from 'react-router-dom';
 
 const RegisterForm = () => {
 
-    const[name, setName]=useState('');
-    const[email, setEmail]=useState('');
-    const[password, setPassword]=useState('');
-    const[number, setNumber]=useState('');
+    const [name, setName]=useState('');
+    const [email, setEmail]=useState('');
+    const [password, setPassword]=useState('');
+    const [number, setNumber]=useState('');
+    const [verify, setVerify] = useState('')
 
     const navigate = useNavigate();
 
     async function register() {
-        if (!name || !email || !password) {
+        console.log(verify)
+        if (!name || !email || !password || !verify) {
             alert('Rellena todos los campos');
+            return false;
+        }
+        if ( name.length < 4 || name.length > 30){
+            alert('Nombre invalido, muy corto o muy largo');
+            return false;
+        }
+
+        if ( !email.includes('@')){
+            alert('Ingresa un email valido');
+            return false;
+        }
+
+        if ( password.length < 4 || password.length > 30 || password.includes(" ")){
+            alert('Ingresa una contraseña valida');
             return false;
         }
           
@@ -27,13 +44,27 @@ const RegisterForm = () => {
             name: name,
             email: email,
             password: password,
-            number: number
+            number: number,
+            verify: verify
         };
           
         try {
             const res = await axios.post('https://backend.comparo.land/api/user/register', user);
-            window.localStorage.setItem('loggedAppUser', res.data);
-            navigate("/home");
+            switch(res.status) {
+                case 200:
+                    window.localStorage.setItem('loggedAppUser', res.data);
+                    navigate("/home");
+                    break;
+                case 204:
+                    alert('Verifica que seas humano');
+                    break;
+                case 206:
+                    alert('Usuario ya utilizado')
+                    break;
+                case 208:
+                    alert('Error vuelve a intentarlo mas tarde');
+                    break;
+            }
         } catch (err) {
             console.log(err);
         }
@@ -49,6 +80,14 @@ const RegisterForm = () => {
                         <PasswordRegisterField setPassword={setPassword} register={register}/>
                         <NumberRegisterField setNumber={setNumber} register={register}/>
                     </Box>
+                    <Turnstile
+                    className="cf-turnstile"
+                    sitekey="0x4AAAAAAAD2hnSRwvyh4g00"
+                    theme="dark"
+                    autoResetOnExpire={true}
+                    onVerify={(token) => setVerify(token)}
+                    onError={(err) => console.log(err)}
+                    />
                     <Box>
                         <Button sx={stackButton} onClick={register} variant="contained" >Registrarte</Button>
                         <Box sx={stackBox1}>
