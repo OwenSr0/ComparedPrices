@@ -11,7 +11,7 @@ const Comparo = (props) => {
         <Box sx={stackStyle}>
             <Box sx={stackHeader}>
                 <Typography sx={stackTy}>Título</Typography>
-                <Typography sx={stackTy1}>Pagina</Typography>
+                <Typography sx={stackTy1}>Plataforma</Typography>
                 <Typography sx={stackTy2}>Precio</Typography>
             </Box>
             <Box sx={stackBox}>

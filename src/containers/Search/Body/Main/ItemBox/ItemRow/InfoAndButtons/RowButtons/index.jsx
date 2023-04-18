@@ -8,7 +8,7 @@ const RowButtons= (props) => {
     } = props
 
     const handleClick = (e) => {
-        window.location.assign(`/product?q=${item.id}`);
+        window.location.assign(`/product?platform=${item.platform}&q=${item.id}`);
       }
 
     return(

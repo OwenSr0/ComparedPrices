@@ -9,11 +9,11 @@ const RowInfo = (props) => {
 
     return(
         <Box sx={stackInfo}>
-            <Typography sx={stackTy}>Platform: {item.platform}</Typography>
-            <Typography sx={stackTy}>Price: ${item.price}</Typography>
-            {item.brand !== undefined && <Typography sx={stackTy}>Brand: {item.brand}</Typography>}
-            {item.model !== undefined && <Typography sx={stackTy}>Model: {item.model}</Typography>}
-            <Typography sx={stackTy}>Condition: {item.condition}</Typography>
+            <Typography sx={stackTy}>Plataforma: {item.platform}</Typography>
+            <Typography sx={stackTy}>Precio: ${item.price}</Typography>
+            {item.brand !== undefined && <Typography sx={stackTy}>Marca: {item.brand}</Typography>}
+            {item.model !== undefined && <Typography sx={stackTy}>Modelo: {item.model}</Typography>}
+            <Typography sx={stackTy}>Condición: {item.condition}</Typography>
         </Box>
     )
 }
