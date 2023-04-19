@@ -9,9 +9,10 @@ import FullFooter from '../../components/Footer/FullFooter/index';
 import { useLocation } from 'react-router-dom';
 
 
-const Blog = () => {
+const Blog = (props) => {
+    const region = props.region;
     const title = 'Blog';
-    const link = '/blog';
+    const link = 'blog';
 
     const [items, setItems] = useState([])
 
@@ -38,13 +39,13 @@ const Blog = () => {
 
     return(
         <Box>
-            <FullHeader title={title} link={link}/>
+            <FullHeader title={title} link={link} region={region}/>
             {itemId !== null ? (
-                <BodyArticle itemId={itemId}/>
+                <BodyArticle itemId={itemId} region={region}/>
                 ) : (
-                    <BodyBlog items={items}/>
+                    <BodyBlog items={items} region={region}/>
                     )}
-            <FullFooter />
+            <FullFooter region={region}/>
         </Box>
     )
 }

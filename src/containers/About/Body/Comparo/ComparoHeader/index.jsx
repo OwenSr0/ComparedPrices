@@ -4,7 +4,7 @@ import { Box, Typography } from '@mui/material';
 const ComparoHeader = () => {
     return(
         <Box sx={stackStyle}>
-            <a href="/"><img src="./favicon.png" alt="logo" width='150px' height='150px'/></a>
+            <a href="home"><img src="/favicon.png" alt="logo" width='150px' height='150px'/></a>
             <Typography sx={stackTy}>
                 Nuestro objetivo es lograr que ahorres más en cada compra
             </Typography>

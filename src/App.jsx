@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './containers/Home/index';
 import Login from './containers/Login/index';
@@ -10,33 +10,97 @@ import Info from './containers/Info/index';
 import Contact from './containers/Contact/index';
 import Blog from './containers/Blog/index';
 import BlogAdd from './containers/Blog/Add';
-import Logout from './containers/Logout/index';
 import Test from './containers/Others/Test/index';
+import ReHome from './containers/Others/ReHome';
 import './App.css';
 
 function App() {
 
+  const [region, setRegion] = useState('')
+
+  const routes = [
+    {
+      path: '',
+      element: <Home region={region}/>
+    },  
+    {
+      path: 'home',
+      element: <Home region={region}/>
+    },
+    {
+      path: 'login',
+      element: <Login region={region}/>
+    },
+    {
+      path: 'register',
+      element: <Register region={region}/>
+    },
+    {
+      path: 'search',
+      element: <Search region={region}/>
+    },
+    {
+      path: 'product',
+      element: <Product region={region}/>
+    },
+    {
+      path: 'about',
+      element: <About region={region}/>
+    },
+    {
+      path: 'info',
+      element: <Info region={region}/>
+    },
+    {
+      path: 'contact',
+      element: <Contact region={region}/>
+    },
+    {
+      path: 'blog',
+      element: <Blog region={region}/>,
+      children: [
+        {
+          path: 'add',
+          element: <BlogAdd region={region}/>
+        }
+      ]
+    },
+    {
+      path: 'test',
+      element: <Test region={region}/>
+    }
+  ];
+
+  const mx_es = [
+    {
+      path: '/mx-es',
+      children: routes
+    }
+  ]
+  if(!region){
+    setRegion('mx-es')
+  }
+
+
   return (
-      <BrowserRouter >
-        <Routes >
-          <Route path='/' element={<Home/>}></Route>
-          <Route path='/home' element={<Home />}></Route>
-          <Route path='/login' element={<Login/>}></Route>
-          <Route path='/register' element={<Register/>}></Route>
-          <Route path='/search' element={<Search/>}></Route>
-          <Route path='/product' element={<Product/>}></Route>
-          <Route path='/sign-out' element={<Logout/>}></Route>
-          <Route path='/about' element={<About/>}></Route>
-          <Route path='/info' element={<Info/>}></Route>
-          <Route path='/contact' element={<Contact/>}></Route>
-
-          <Route path='/blog' element={<Blog/>}></Route>
-          <Route path='/blog/add' element={<BlogAdd/>}></Route>
-
-          <Route path='/test' element={<Test/>}></Route>
-        </Routes>
-      </BrowserRouter>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<ReHome region={region}/>}></Route>
+        {mx_es.map(({ path, element, children }) => (
+          <Route key={path} path={path} element={element}>
+            {children && children.map(({ path, element, children }) => (
+              <Route key={path} path={path} element={element} >
+                {children && children.map(({ path, element, children }) => (
+                  <Route key={path} path={path} element={element} />
+              ))}
+              </Route>
+            ))}
+          </Route>
+        ))}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
+

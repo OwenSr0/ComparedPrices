@@ -7,7 +7,8 @@ import { Container, Box, Link, Typography } from '@mui/material';
 import Turnstile from "react-turnstile";
 
 
-const BodyLogin = () => {
+const BodyLogin = (props) => {
+    const region = props.region;
     const navigate = useNavigate();
 
     const [email, setEmail]=useState('');
@@ -44,7 +45,7 @@ const BodyLogin = () => {
             switch(res.status){
                 case 200:
                     window.localStorage.setItem('loggedAppUser', res.data.token);
-                    navigate('/home');
+                    navigate(`/${region}`);
                     break;
                 case 204:
                     alert("Comprueba que seas humano");

@@ -46,8 +46,8 @@ const SupportContact = () => {
                         </Typography>
                     </Box>
                     <Box sx={stackBox2}>
-                        <Button onClick={handleClick}><img src="./img/email-icon.png" alt="email" style={stackImg}/></Button>
-                        <Button onClick={() => window.open('https://twitter.com/ComparoLand')}><img src="./img/twitter-icon.png" alt="twitter" style={stackImg}/></Button>
+                        <Button onClick={handleClick}><img src="/img/email-icon.png" alt="email" style={stackImg}/></Button>
+                        <Button onClick={() => window.open('https://twitter.com/ComparoLand')}><img src="/img/twitter-icon.png" alt="twitter" style={stackImg}/></Button>
                     </Box>
                 </Box>  
             </Box>

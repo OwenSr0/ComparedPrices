@@ -3,11 +3,12 @@ import { Box } from '@mui/material';
 import RowInfo from './Info/index'
 import RowButtons from './RowButtons/index'
 const InfoAndButtons = (props) => {
+    const region = props.region;
 
     return(
         <Box sx={stackStyle}>
             <RowInfo props={props}/>
-            <RowButtons props={props}/>
+            <RowButtons props={props} region={region}/>
 
         </Box>
     )

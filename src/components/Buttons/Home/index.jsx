@@ -3,10 +3,12 @@ import { Box, Button } from '@mui/material';
 
 
 
-  const Home = () => {
+  const Home = (props) => {
+    const region = props.region;
+
     return(
         <Box sx={stackStyle}>
-            <Button href="home" sx={stackButton}>Inicio</Button>
+            <Button href={`/${region}`} sx={stackButton}>Inicio</Button>
         </Box>
     )
   }

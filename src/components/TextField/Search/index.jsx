@@ -4,7 +4,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useLocation } from 'react-router-dom';
 
 
-  const SearchTextField = () => {
+  const SearchTextField = (props) => {
+    const region = props.region;
 
     const location = useLocation();
     const lastQuery = new URLSearchParams(location.search);
@@ -27,13 +28,13 @@ import { useLocation } from 'react-router-dom';
 
     const handleKeyDown = (event) => {
       if (event.key === 'Enter'&& event.target.value.length > 2) {
-        window.location.assign(`/search?q=${query}`);
+        window.location.assign(`/${region}/search?q=${query}`);
       }
     }
   
     const handleClick = () => {
       if(query.length > 2){
-      window.location.href = `/search?q=${query}`;
+      window.location.href = `/${region}/search?q=${query}`;
       }
     }
                   

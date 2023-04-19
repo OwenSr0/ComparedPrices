@@ -4,15 +4,17 @@ import DefaultHeader from '../../components/Header/index';
 import BodyContact from './Body/index';
 import FullFooter from '../../components/Footer/FullFooter/index';
 
-const Contact = () => {
+const Contact = (props) => {
+    const region = props.region;
+
     return(
         <Box sx={stackStyle}>
             <Box >
-                <DefaultHeader />
+                <DefaultHeader region={region}/>
                 <BodyContact />
             </Box>
 
-            <FullFooter />
+            <FullFooter region={region}/>
         </Box>
     )
 }

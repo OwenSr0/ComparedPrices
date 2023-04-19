@@ -4,11 +4,12 @@ import RowItem from './Item/index';
 import InfoAndButtons from './InfoAndButtons/index'
 
 const ItemRow = (props) => {
+    const region = props.region;
 
     return(
         <Box sx={stackStyle}>
             <RowItem props={props}/>
-            <InfoAndButtons props={props}/>
+            <InfoAndButtons props={props} region={region}/>
         </Box>
     )
 }

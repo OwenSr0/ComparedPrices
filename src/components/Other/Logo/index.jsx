@@ -2,10 +2,12 @@ import React from "react";
 import { Box } from '@mui/material';
 import './index.css'
 
-const Logo = () => {
+const Logo = (props) => {
+    const region = props.region;
+
     return(
         <Box sx={stactStyle}>
-            <a href="/"><img src="/favicon.png" alt="Logo"  width='60px' id="img"/></a>
+            <a href={`/${region}`}><img src="/favicon.png" alt="Logo"  width='60px' id="img"/></a>
         </Box>
     )
 }

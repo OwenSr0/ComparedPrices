@@ -6,23 +6,24 @@ import HalfFooterPrivacy from '../../components/Footer/HalfFooterPrivacy/index';
 
 import {useNavigate} from 'react-router-dom';
 
-const Register = () => {
+const Register = (props) => {
+    const region = props.region;
     const navigate = useNavigate();
     const loggedUserToken = window.localStorage.getItem('loggedAppUser')
 
     useEffect(() => {
         if(loggedUserToken){
-            navigate("/")
+            navigate(`/${region}`)
         } 
-    }, [ navigate, loggedUserToken])
+    }, [ navigate, loggedUserToken, region])
 
     return(
         <Box >
         { !loggedUserToken &&
             <Box sx={stackStyle}>
-                <Container><VerificationHeader /></Container>
-                <BodyRegister/>
-                <HalfFooterPrivacy />
+                <Container><VerificationHeader region={region} /></Container>
+                <BodyRegister region={region}/>
+                <HalfFooterPrivacy region={region}/>
             </Box>
         }
         </Box>

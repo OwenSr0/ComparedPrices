@@ -4,7 +4,8 @@ import SearchIcon from '@mui/icons-material/Search';
 
 
 /* Realizar un div que muestre info de que ingresar en el textfield */
-  const TextFieldBody = () => {
+  const TextFieldBody = (props) => {
+    const region = props.region;
 
     const [stackLink, setStackLink] = useState({pointerEvents: 'none'});
     const [query, setQuery] = useState('');
@@ -15,14 +16,14 @@ import SearchIcon from '@mui/icons-material/Search';
     }
 
     const handleKeyDown = (event) => {
-      if (event.key === 'Enter'&& event.target.value.length > 2) {
-        window.location.assign(`/search?q=${query}`);
+      if (event.key === 'Enter' && event.target.value.length > 2) {
+        window.location.assign(`/${region}/search?q=${query}`);
       }
     }
     
     const handleClick = () => {
       if(query.length > 2){
-      window.location.href = `/search?q=${query}`;
+      window.location.href = `/${region}/search?q=${query}`;
       }
     }
     //el div sin nada espera una caja de info que algun dia agregare

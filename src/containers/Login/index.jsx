@@ -5,23 +5,25 @@ import BodyLogin from './Body';
 import HalfFooterPrivacy from '../../components/Footer/HalfFooterPrivacy/index';
 import {useNavigate} from 'react-router-dom';
 
-const Login = () => {
+const Login = (props) => {
+    const region = props.region;
+
     const navigate = useNavigate();
     const loggedUserToken = window.localStorage.getItem('loggedAppUser')
 
     useEffect(() => {
         if(loggedUserToken){
-            navigate("/")
+            navigate(`/${region}`)
         } 
-    }, [navigate, loggedUserToken])
+    }, [navigate, loggedUserToken, region])
 
     return(
         <div>
             { !loggedUserToken &&
             <Container sx={stackStyle}>
-                <VerificationHeader />
-                <BodyLogin />
-                <HalfFooterPrivacy />
+                <VerificationHeader region={region}/>
+                <BodyLogin region={region}/>
+                <HalfFooterPrivacy region={region}/>
             </Container>
             }
         </div>

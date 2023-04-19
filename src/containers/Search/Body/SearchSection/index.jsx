@@ -6,10 +6,11 @@ import AdvancedOptionsB from "../../../../components/Buttons/Search/Advanced/ind
 import SearchTextField from "../../../../components/TextField/Search/index"
 import AdvancedOptions from "./Advanced/index"
 
-const SearchSection = () => {
+const SearchSection = (props) => {
+    const region = props.region;
     return(
         <Box>
-            <SearchTextField />
+            <SearchTextField region={region}/>
             <Box sx={stackSort}>
                 <Box sx={stackBox}>
                     <SortFilter />

@@ -9,7 +9,8 @@ const FullHeader = (props) =>{
 
     const {
         title = props.title,
-        link = props.link
+        link = props.link,
+        region = props.region,
     } = props
 
     const[user, setUser]=useState('');
@@ -27,16 +28,15 @@ const FullHeader = (props) =>{
 
     return(
         <Box sx={stackStyle}>
-            <Box sx={{gridColumnStart: '2', margin: 'auto 0 auto 0'}}><Logo/></Box>
+            <Box sx={{gridColumnStart: '2', margin: 'auto 0 auto 0'}}><Logo region={region}/></Box>
             { link !== undefined ? (
                     <Box sx={stackT}><a style={{color: 'white'}} href={link}><Typography sx={stackText}>{title}</Typography></a></Box>
             ) : (
                 <Box sx={stackT}><Typography sx={stackText}>{title}</Typography></Box>
             )}
-
             <Box sx={stackConditionals}>
-                <Box  id='userProfileOn'><UserIcon/></Box>
-                <Box  id='userProfileOff'><SignIn/></Box>
+                <Box  id='userProfileOn'><UserIcon region={region}/></Box>
+                <Box  id='userProfileOff'><SignIn region={region}/></Box>
             </Box>
             
             

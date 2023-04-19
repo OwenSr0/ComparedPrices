@@ -3,11 +3,12 @@ import { Box } from "@mui/system";
 import TextFieldBody from "../../../components/TextField/Home/index";
 import BoxHub from "./Hub/index"
 
-const BodyHome = () => {
+const BodyHome = (props) => {
+    const region = props.region;
     return(
         <Box sx={stackStyle}>
-                <BoxHub/>
-                <TextFieldBody/>
+            <BoxHub/>
+            <TextFieldBody region={region}/>
         </Box>
          
     )

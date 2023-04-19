@@ -4,7 +4,8 @@ import UserMenu from './Menu/index'
 import '../../../App.css';
 import './index.css'
 
-const UserIcon = () => {
+const UserIcon = (props) => {
+    const region = props.region;
     const[open, setOpen]=useState(false);
     
     function showMenu(){
@@ -23,7 +24,7 @@ const UserIcon = () => {
             <Button sx={stackButton} onClick={showMenu} >
                 <img src="/img/profile-user.png" alt="user-profile" width="50" id="imgUser"/>
             </Button>
-            <Box id='userIcon'><UserMenu /></Box>
+            <Box id='userIcon'><UserMenu region={region} /></Box>
         </Box>
     )
 }

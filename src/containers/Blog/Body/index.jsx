@@ -11,7 +11,8 @@ const BodyBlog = (props) => {
     const loggedUserToken = window.localStorage.getItem('loggedAppUser')
 
     const {
-        items = props.items
+        items = props.items,
+        region = props.region
     } = props
 
     useEffect(()=>{
@@ -29,7 +30,7 @@ const BodyBlog = (props) => {
                         const itemBoxes = [];
                         for (let item in items) {
                             const Item = items[item]
-                            itemBoxes.push(<BlogCard key={item} item={Item} user={user}></BlogCard>);
+                            itemBoxes.push(<BlogCard key={item} item={Item} user={user} region={region}></BlogCard>);
                         }
                         return itemBoxes;
                         })()

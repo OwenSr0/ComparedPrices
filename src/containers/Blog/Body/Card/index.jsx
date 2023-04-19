@@ -7,6 +7,7 @@ const BlogCard = (props) => {
     const [resumen, setResume] = useState('')
 
     const user = props.user;
+    const region = props.region;
     const { 
         title,
         img,
@@ -17,7 +18,7 @@ const BlogCard = (props) => {
     } = props.item
 
     function handleClick(){
-        window.location.assign(`/blog?q=${title}`);
+        window.location.assign(`/${region}/blog?q=${title}`);
     }
 
     if(resume.length > 250 && !resumen){
@@ -40,7 +41,7 @@ const BlogCard = (props) => {
                             <Typography sx={stackTy}>{time}</Typography>
                         </Box>
                         <Box sx={{display:'flex'}}>
-                            {user === true && <Button sx={stackButton} onClick={(e) => {window.location.assign(`/blog/add?q=${title}`)}} variant="contained" color="warning">Editar</Button>}
+                            {user === true && <Button sx={stackButton} onClick={(e) => {window.location.assign(`/${region}/blog/add?q=${title}`)}} variant="contained" color="warning">Editar</Button>}
                             <Button sx={stackButton} onClick={handleClick} variant="contained">Ver</Button>
                         </Box>
                     </Box>

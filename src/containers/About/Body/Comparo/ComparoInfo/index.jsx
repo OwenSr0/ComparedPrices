@@ -6,7 +6,7 @@ const ComparoInfo = () => {
     return(
         <Box sx={stackStyle}>
             <Box sx={stackBox}>
-                <Box sx={stackItem1}><img src="./img/good-price.png" alt="good" width="360px" id="imgGood"/></Box>
+                <Box sx={stackItem1}><img src="/img/good-price.png" alt="good" width="360px" id="imgGood"/></Box>
                 <Box sx={stackItem}>
                     <Box sx={stackItems}> 
                         <Typography sx={stackTy1}>
@@ -32,7 +32,7 @@ const ComparoInfo = () => {
                         </Typography>
                     </Box>
                 </Box>
-                <Box sx={stackItem}><img src="./img/settings.png" alt="setting" width="360px" id="imgSetting"/></Box>
+                <Box sx={stackItem}><img src="/img/settings.png" alt="setting" width="360px" id="imgSetting"/></Box>
             </Box>
 
         </Box>

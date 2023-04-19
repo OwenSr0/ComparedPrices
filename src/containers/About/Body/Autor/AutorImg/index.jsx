@@ -5,7 +5,7 @@ import './index.css'
 const AutorImg = () => {
     return(
         <Box sx={stackStyle}>
-            <img src="./img/autor.png" alt="autor" width='350px'  id="imgAutor"/>
+            <img src="/img/autor.png" alt="autor" width='350px'  id="imgAutor"/>
         </Box>
     )
 }

@@ -4,16 +4,15 @@ import DefaultHeader from '../../components/Header/index';
 import BodyHome from './Body/index';
 import FullFooter from'../../components/Footer/FullFooter/index';
 
-const Home = () => {
-
+const Home = (props) => {
+    const region = props.region;
     return(
         <Box sx={stackStyle}>
             <Box sx={stackBox}>
-                <DefaultHeader />
-                <BodyHome />
+                <DefaultHeader region={region}/>
+                <BodyHome region={region}/>
             </Box>
-            
-            <FullFooter />
+            <FullFooter region={region}/>
         </Box>
     )
 }

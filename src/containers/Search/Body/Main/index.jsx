@@ -8,7 +8,8 @@ import NotFound from "./ItemBox/NotFound/index";
 import { useLocation } from 'react-router-dom';
 
 
-const SearchMain = () => {
+const SearchMain = (props) => {
+    const region = props.region;
 
     const[items, setItems] = useState([])
     const[valid, setValid] = useState('')
@@ -53,7 +54,7 @@ const SearchMain = () => {
                     (() => {
                     const itemBoxes = [];
                     for (let i = 0; i < items.length; i++) {
-                        itemBoxes.push(<ItemBox key={items[i].id} item={items[i]} />);
+                        itemBoxes.push(<ItemBox key={items[i].id} item={items[i]} region={region}/>);
                     }
                     return itemBoxes;
                     })()

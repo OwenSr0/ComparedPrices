@@ -3,11 +3,12 @@ import { Box } from '@mui/material';
 import Home from '../../Buttons/Home/index'
 import Logo from '../../Other/Logo/index'
 
-const VerificationHeader = () =>{
+const VerificationHeader = (props) =>{
+    const region = props.region;
     return(
         <Box sx={stackStyle}>
-            <Logo />
-            <Home/>
+            <Logo region={region}/>
+            <Home region={region}/>
         </Box>
     )
 }

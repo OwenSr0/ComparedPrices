@@ -13,7 +13,8 @@ const BodyArticle = (props) => {
     const [dataArray, setDataArray] = useState([])
     const navigate = useNavigate();
     const {
-        title = props.itemId
+        title = props.itemId,
+        region = props.region
     } = props
 
       useEffect(()=>{
@@ -28,14 +29,14 @@ const BodyArticle = (props) => {
               const { img, autor, date, time, dataArray} = res.data;
               setImg(img);setAutor(autor);setDate(date);setTime(time);setDataArray(dataArray)
             } else{
-              navigate('/blog')
+              navigate(`/${region}/blog`)
             }
           } catch (error) {
             console.log(error);
           }
         }
         getBlog()
-        },[navigate, title])
+        },[navigate, title, region])
 
     return(
         <Box sx={stackStyle}>
@@ -57,7 +58,7 @@ const BodyArticle = (props) => {
                     for (let i = 0; i < dataArray.length; i++) {
                         const match = dataArray[i];
                         if (match.startsWith('title::')) {
-                          const [, title] = match.split('::');
+                          //const [, title] = match.split('::');
                         }
                         else if (match.startsWith('img::')) {
                           const [, img] = match.split('::');

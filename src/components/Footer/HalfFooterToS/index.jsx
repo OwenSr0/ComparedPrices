@@ -1,12 +1,14 @@
 import React from "react";
 import { Box, Typography, Link } from '@mui/material';
 
-const HalfFooterToS = () => {
+const HalfFooterToS = (props) => {
+    const region = props.region;
+
     return(
         <Box sx={stackStyle}>
-            <Link href="/about" sx={stackText2}>About</Link>
+            <Link href={`/${region}/about`} sx={stackText2}>About</Link>
             <Typography sx={stackText1}>2023 © Comparo</Typography>
-            <Link href="/blog" sx={stackText2}>Blog</Link>
+            <Link href={`/${region}/blog`} sx={stackText2}>Blog</Link>
         </Box>
     )
 }

@@ -4,8 +4,8 @@ import UserIcon from './User/index'
 import SignIn from '../Buttons/Sign-In/index'
 import Logo from '../Other/Logo/index'
 import '../../App.css';
-const DefaultHeader = () =>{
-
+const DefaultHeader = (props) =>{
+    const region = props.region;
     const[user, setUser]=useState('');
 
     useEffect(() => {
@@ -21,10 +21,9 @@ const DefaultHeader = () =>{
 
     return(
         <Box sx={stackStyle}>
-            <Box sx={stackBox1}><Logo/></Box>
-            <Box sx={stackBox2} id='userProfileOn'><UserIcon/></Box>
-            <Box sx={stackBox2} id='userProfileOff'><SignIn/></Box>
-            
+            <Box sx={stackBox1}><Logo region={region}/></Box>
+            <Box sx={stackBox2} id='userProfileOn'><UserIcon region={region}/></Box>
+            <Box sx={stackBox2} id='userProfileOff'><SignIn region={region}/></Box>
         </Box>
     )
 }

@@ -5,13 +5,14 @@ import ItemRow from './ItemRow/index'
 const ItemBox = (props) => {
     
     const {
-        title = props.item.title
+        title = props.item.title,
+        region = props.region
     } = props
 
     return(
         <Card sx={stackStyle}>
             <Box sx={stackBox}><Typography sx={stackTy}>{title}</Typography></Box>
-            <ItemRow props={props} />
+            <ItemRow props={props} region={region}/>
         </Card>
     )
 }

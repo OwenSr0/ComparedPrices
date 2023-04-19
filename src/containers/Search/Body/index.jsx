@@ -3,11 +3,13 @@ import { Box } from "@mui/system";
 import SearchSection from "./SearchSection";
 import SearchMain from "./Main/index"
 
-const SearchBody = () => {
+const SearchBody = (props) => {
+    const region = props.region;
+
     return(
         <Box sx={stackStyle}>
-            <SearchSection />
-            <SearchMain />
+            <SearchSection region={region}/>
+            <SearchMain region={region}/>
         </Box>
     )
 }

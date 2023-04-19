@@ -9,8 +9,9 @@ import PasswordRegisterField from "../../../../components/TextField/Register/Pas
 import NumberRegisterField from "../../../../components/TextField/Register/NumberText";
 import {useNavigate} from 'react-router-dom';
 
-const RegisterForm = () => {
-
+const RegisterForm = (props) => {
+    const region = props.region;
+    
     const [name, setName]=useState('');
     const [email, setEmail]=useState('');
     const [password, setPassword]=useState('');
@@ -53,7 +54,7 @@ const RegisterForm = () => {
             switch(res.status) {
                 case 200:
                     window.localStorage.setItem('loggedAppUser', res.data);
-                    navigate("/home");
+                    navigate(`/${region}`);
                     break;
                 case 204:
                     alert('Verifica que seas humano');

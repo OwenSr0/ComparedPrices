@@ -4,11 +4,12 @@ import { Box, Button } from '@mui/material';
 const RowButtons= (props) => {
 
     const {
-        item= props.props.props.props.item,
+        item = props.props.props.props.item,
+        region = props.region
     } = props
 
     const handleClick = (e) => {
-        window.location.assign(`/product?platform=${item.platform}&q=${item.id}`);
+        window.location.assign(`/${region}/product?platform=${item.platform}&q=${item.id}`);
       }
 
     return(

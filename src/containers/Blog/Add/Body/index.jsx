@@ -8,7 +8,8 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 
-const BlogAddBody = () => {
+const BlogAddBody = (props) => {
+    const region = props.region;
 
     const navigate = useNavigate();
 
@@ -42,7 +43,7 @@ const BlogAddBody = () => {
         const res = await axios.post('https://backend.comparo.land/api/blog/add', validate);
         try {
           if(res.status === 200){
-            navigate(`/blog?q=${title}`);
+            navigate(`/${region}/blog?q=${title}`);
           }
           
         } catch (error) {
@@ -64,7 +65,7 @@ const BlogAddBody = () => {
         const res = await axios.put('https://backend.comparo.land/api/blog/edit', validate);
         try {
             if(res.status === 200){
-                navigate(`/blog?q=${title}`);
+                navigate(`/${region}/blog?q=${title}`);
               }        
         } catch (error) {
                 console.log(error);
@@ -75,7 +76,7 @@ const BlogAddBody = () => {
         const res = await axios.delete('https://backend.comparo.land/api/blog/delete/' + id);
         try {
             if(res.status === 200 || res.status === 204){
-                navigate(`/blog`);
+                navigate(`/${region}/blog`);
               }
         } catch (error) {
                 console.log(error);
@@ -91,7 +92,7 @@ const BlogAddBody = () => {
             const res = await axios.post('https://backend.comparo.land/api/blog/get', validate);
             try{
                 if(res.status === 204){
-                    navigate(`/blog`);
+                    navigate(`/${region}/blog`);
                 } else if( res.status === 200){
                     const { title, img, autor, date, time, resume, data, _id} = res.data;
                     setTitle(title);setImg(img);setAutor(autor);setDate(date);setTime(time);setResume(resume);setData(data);setId(_id);
@@ -104,7 +105,7 @@ const BlogAddBody = () => {
         if (itemId !== null && !title) {
             getArticle()
         }
-    },[ navigate, itemId, title])
+    },[ navigate, itemId, title, region])
 
     return(
         <Box sx={stackStyle}>

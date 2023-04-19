@@ -1,10 +1,11 @@
 import React from "react";
 import { Box, Button} from '@mui/material';
 
-  const SignIn = () => {
+  const SignIn = (props) => {
+    const region = props.region
     return(
         <Box sx={stactStyle}>
-            <Button href="/login" sx={stackButton}>Ingresa</Button>
+            <Button href={`/${region}/login`} sx={stackButton}>Ingresa</Button>
         </Box>
     )
   }

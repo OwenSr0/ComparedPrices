@@ -9,14 +9,15 @@ import checkUser from '../../../functions/checkUser';
 
 
 
-const BlogAdd = () => {
+const BlogAdd = (props) => {
+    const region = props.region;
 
     const [user, setUser] = useState('');
 
     const navigate = useNavigate();
 
     const title = 'Blog edit';
-    const link = '/blog';
+    const link = 'blog';
     const loggedUserToken = window.localStorage.getItem('loggedAppUser');
 
     useEffect(()=>{
@@ -25,9 +26,9 @@ const BlogAdd = () => {
                     setUser(fulfilledValue);
                   });
         } else{
-            navigate(`/blog`);
+            navigate(`/${region}/blog`);
         }
-    },[navigate, loggedUserToken, user])
+    },[navigate, loggedUserToken, user, region])
 
     return(
         <Box>
@@ -35,7 +36,7 @@ const BlogAdd = () => {
             { user === true &&
             <Box>
                 <FullHeader title={title} link={link}/>
-                <BlogAddBody/>
+                <BlogAddBody region={region}/>
             </Box>}
         </Box>
     )

@@ -35,8 +35,8 @@ const ComparoSocial = () => {
     return(
         <Box sx={stackStyle}>
             <Box sx={stackBox}>
-                <Button onClick={() => window.open('https://twitter.com/ComparoLand')}><img src="./img/twitter-icon.png" alt="twitter" width="100px" id="imgTwitter"/></Button>
-                <Button onClick={handleClick}><img src="./img/email-icon.png" alt="email" width="100px" id="imgEmail"/></Button>
+                <Button onClick={() => window.open('https://twitter.com/ComparoLand')}><img src="/img/twitter-icon.png" alt="twitter" width="100px" id="imgTwitter"/></Button>
+                <Button onClick={handleClick}><img src="/img/email-icon.png" alt="email" width="100px" id="imgEmail"/></Button>
             </Box>
         </Box>
     )

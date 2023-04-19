@@ -2,20 +2,24 @@ import React from "react";
 import { Box, Link } from '@mui/material';
 import {useNavigate} from 'react-router-dom';
 
-const UserMenu = () => {
+const UserMenu = (props) => {
+    const region = props.region;
 
     const navigate = useNavigate();
-
-
-    function logoutB(){
-        navigate("/sign-out")
+    
+    function logout() {
+        setTimeout(out, 5000)
+    }
+    function out(){
+        window.localStorage.removeItem('loggedAppUser')
+        navigate(`/${region}`)
     }
     return(
         <Box sx={stackStyle}>
             <Box sx={stackBox}>
                 <Link sx={stackLink} href="#">Perfíl</Link>
                 <Link sx={stackLinks} href="#">Configuración</Link>
-                <Link sx={stackLink} onClick={logoutB}>Cerrar Sesión</Link>
+                <Link sx={stackLink} onClick={logout}>Cerrar Sesión</Link>
             </Box>
             
         </Box>

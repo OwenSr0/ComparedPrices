@@ -4,14 +4,15 @@ import FullHeader from '../../components/Header/FullHeader/index';
 import ProductBody from './Body/index';
 import FullFooter from'../../components/Footer/FullFooter/index';;
 
-const Product = () => {
+const Product = (props) => {
+    const region = props.region;
     return(
         <Box sx={stackStyle}>
             <Box sx={stackBox}>
-                <FullHeader />
+                <FullHeader region={region}/>
                 <ProductBody />
             </Box>
-            <FullFooter />
+            <FullFooter region={region}/>
         </Box>
     )
 }

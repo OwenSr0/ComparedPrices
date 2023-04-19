@@ -3,12 +3,12 @@ import { Box } from '@mui/material';
 import RegisterForm from './Form/index';
 import RegisterHub from './Container/index'
 
-const BodyRegister = () => {
-
+const BodyRegister = (props) => {
+    const region = props.region;
     return(
         <Box sx={StackStyle}>
             <RegisterHub />
-            <RegisterForm />
+            <RegisterForm region={region}/>
         </Box>
     )
 }
